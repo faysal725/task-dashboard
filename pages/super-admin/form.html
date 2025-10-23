@@ -188,77 +188,52 @@
                 </div>
 
                 <!-- sidebar panel links  -->
-                <nav class="space-y-1">
+                <nav class="space-y-2">
                     <a href="/"
                         class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
                         <img src="../../assets/icons/sidebarIcons/dashboard.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
                             Dashboard</p>
                     </a>
                     <a href="/"
                         class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/calendar.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
-                            Calendar</p>
+                        <img src="../../assets/icons/sidebarIcons/globe.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                            Domain</p>
 
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
                     </a>
                     <a href="/"
                         class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/cmnts.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
-                            Massage</p>
+                        <img src="../../assets/icons/sidebarIcons/building.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                            Organization</p>
 
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
                     </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/board.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
-                            Task</p>
+                    <div class="">
+                        <div onclick="expandOrCollapseSubsection('company_essential_sm')"
+                            class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white cursor-pointer">
+                            <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
+                            <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                Company Essential </p>
 
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
-                    </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/folder.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
-                            Library </p>
+                            <i class="fa fa-chevron-down text-white fa-xs ml-auto block" aria-hidden="true"></i>
+                        </div>
 
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
-                    </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/group.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
-                            Groups </p>
-
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
-                    </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/day.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
-                            Day Sheet </p>
-
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
-                    </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/board-check.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
-                            Assessments </p>
-
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
-                    </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
-                            Forms </p>
-
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
-                    </a>
+                        <div id="company_essential_sm"
+                            class="text-white pl-8 max-h-0 overflow-hidden transition-all duration-400 "
+                            aria-expanded="false">
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 1</p>
+                            </div>
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 2</p>
+                            </div>
+                        </div>
+                    </div>
                 </nav>
 
 
@@ -286,17 +261,18 @@
         </section>
 
         <!-- sidebar section  -->
-        <section
-            class="bg-black w-28 4xl:w-80  4xl:min-w-80 p-6 hidden xl:flex flex-col gap-4 transition-all duration-300">
-            <div class="border-b border-white/10 pb-4 hidden 4xl:block">
+        <section class="bg-black w-28 4xl:min-w-80 p-6 hidden xl:flex flex-col gap-4 transition-all duration-300"
+            id="sidebar_container">
+
+            <div class="border-b border-white/10 pb-4" id="logo_container">
                 <img src="../../assets/logo/logo.png" alt="" class="h-10 w-auto object-contain">
             </div>
 
             <!-- for 4xl -->
-            <div class="hidden 4xl:block grow">
+            <div class=" grow" id="lg_nav">
                 <!-- search box -->
                 <div
-                    class=" h-12 px-3 py-1 bg-white/10 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/10 hidden 4xl:flex items-center gap-2 mb-4">
+                    class=" h-12 px-3 py-1 bg-white/10 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/10 flex items-center gap-2 mb-4">
                     <input type="text" placeholder="Search" class="w-full bg-transparent outline-none text-white">
                     <img src="../../assets/icons/search.svg" alt="">
                 </div>
@@ -307,42 +283,59 @@
                 </button>
 
                 <!-- sidebar links  -->
-                <nav class="space-y-1">
+                <nav class="space-y-2">
                     <a href="/"
                         class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
                         <img src="../../assets/icons/sidebarIcons/dashboard.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug hidden 4xl:block">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
                             Dashboard</p>
                     </a>
                     <a href="/"
                         class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/calendar.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug hidden 4xl:block">
+                        <img src="../../assets/icons/sidebarIcons/globe.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
                             Domain</p>
 
                     </a>
                     <a href="/"
                         class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/calendar.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug hidden 4xl:block">
+                        <img src="../../assets/icons/sidebarIcons/building.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
                             Organization</p>
 
                     </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug hidden 4xl:block">
-                            Company Essential </p>
+                    <div class="">
+                        <div onclick="expandOrCollapseSubsection('company_essential')"
+                            class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white cursor-pointer">
+                            <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
+                            <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                Company Essential </p>
 
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
-                    </a>
+                            <i class="fa fa-chevron-down text-white fa-xs ml-auto block" aria-hidden="true"></i>
+                        </div>
+
+                        <div id="company_essential"
+                            class="text-white pl-8 max-h-0 overflow-hidden transition-all duration-400 "
+                            aria-expanded="false">
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 1</p>
+                            </div>
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 2</p>
+                            </div>
+                        </div>
+                    </div>
                 </nav>
 
             </div>
 
 
             <!-- for smaller then 4xl -->
-            <div class="block 4xl:hidden grow">
+            <div class=" grow" id="small_nav">
 
 
                 <!-- sidebar links  -->
@@ -357,12 +350,12 @@
                     </button>
 
                     <button>
-                        <img src="../../assets/icons/sidebarIcons/calendar.svg" alt="">
+                        <img src="../../assets/icons/sidebarIcons/globe.svg" alt="">
                     </button>
 
 
                     <button>
-                        <img src="../../assets/icons/sidebarIcons/cmnts.svg" alt="">
+                        <img src="../../assets/icons/sidebarIcons/building.svg" alt="">
                     </button>
 
 
@@ -372,52 +365,33 @@
 
                     <div class="mt-auto flex flex-col items-center gap-4 bg-white/5 rounded w-full py-4">
                         <button class="">
-                        <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
+                            <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
 
-                    </button>
+                        </button>
 
-                    <button class="">
-                        <img src="../../assets/icons/settings.svg" alt="" class="w-6 h-6 cursor-pointer">
+                        <button class="">
+                            <img src="../../assets/icons/settings.svg" alt="" class="w-6 h-6 cursor-pointer">
 
-                    </button>
-                    <button  class="">
-                        <img src="../../assets/icons/user.svg" alt="" class="w-6 h-6 cursor-pointer">
+                        </button>
+                        <button class="">
+                            <img src="../../assets/icons/user.svg" alt="" class="w-6 h-6 cursor-pointer">
 
-                    </button>
-                    <button  class="">
+                        </button>
+                        <button class="">
 
-                        <img src="../../assets/icons/log-out.svg" alt="" class="w-6 h-6 cursor-pointer">
-                    </button>
+                            <img src="../../assets/icons/log-out.svg" alt="" class="w-6 h-6 cursor-pointer">
+                        </button>
                     </div>
 
                 </nav>
 
 
-                <!-- <div class="flex flex-col gap-4">
-                    <button>
-                        <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
-
-                    </button>
-
-                    <button>
-                        <img src="../../assets/icons/settings.svg" alt="" class="w-6 h-6 cursor-pointer">
-
-                    </button>
-                    <button>
-                        <img src="../../assets/icons/user.svg" alt="" class="w-6 h-6 cursor-pointer">
-
-                    </button>
-                    <button>
-
-                        <img src="../../assets/icons/log-out.svg" alt="" class="w-6 h-6 cursor-pointer">
-                    </button>
-                </div> -->
-
             </div>
 
 
 
-            <div class="sticky bottom-0 z-10 p-3 bg-white/5 rounded hidden 4xl:flex justify-between items-center">
+            <div class="sticky bottom-0 z-10 p-3 bg-white/5 rounded flex justify-between items-center"
+                id="bottom_options">
                 <button>
                     <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
 
@@ -445,7 +419,10 @@
 
             <!-- navbar -->
             <div class="bg-white py-4 px-6 flex justify-between items-center sticky top-0 z-20">
-                <button class="p-1 bg-gray-50 rounded" onclick="toggleSidebar()">
+                <button class="p-1 bg-gray-50 rounded hidden 4xl:block" onclick="expandeOrCollapseSidebar()">
+                    <img src="../../assets/icons/navbarIcons/bars.svg" alt="">
+                </button>
+                <button class="p-1 bg-gray-50 rounded block 4xl:hidden" onclick="toggleSidebar()">
                     <img src="../../assets/icons/navbarIcons/bars.svg" alt="">
                 </button>
 
@@ -675,6 +652,7 @@
     <script src="../../js/accordion.js"></script>
     <script src="../../js/calender.js"></script>
     <script src="../../js/sidebar.js"></script>
+    <script src="../../js/global.js"></script>
 </body>
 
 </html>
