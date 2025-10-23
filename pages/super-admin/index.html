@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <!-- Inter font from Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- accordion cdn  -->
+
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        lexend: ['Lexend Deca', 'sans-serif'],
+                    },
+                    maxWidth: {
+                        '8xl': '1408px', // custom max-width
+                    },
+                    colors: {
+                        'primary': 'var(--color-primary)',
+                        'black': 'var(--color-black)',
+
+                        'success': 'var(--color-success)',
+                        'warning': 'var(--color-warning)',
+                        'error': 'var(--color-error)',
+                        'info': 'var(--color-info)',
+
+                        // Primary shade palette
+                        'primaryS-50': 'var(--color-primary-shade-50)',
+                        'primaryS-100': 'var(--color-primary-shade-100)',
+                        'primaryS-200': 'var(--color-primary-shade-200)',
+                        'primaryS-300': 'var(--color-primary-shade-300)',
+                        'primaryS-400': 'var(--color-primary-shade-400)',
+                        'primaryS-500': 'var(--color-primary-shade-500)',
+                        'primaryS-600': 'var(--color-primary-shade-600)',
+                        'primaryS-700': 'var(--color-primary-shade-700)',
+                        'primaryS-800': 'var(--color-primary-shade-800)',
+                        'primaryS-900': 'var(--color-primary-shade-900)',
+                        'primaryS-950': 'var(--color-primary-shade-950)',
+
+                        // Gray palette
+                        'gray-100': 'var(--color-gray-100)',
+                        'gray-200': 'var(--color-gray-200)',
+                        'gray-300': 'var(--color-gray-300)',
+                        'gray-400': 'var(--color-gray-400)',
+                        'gray-500': 'var(--color-gray-500)',
+                        'gray-600': 'var(--color-gray-600)',
+                        'gray-700': 'var(--color-gray-700)',
+                        'gray-800': 'var(--color-gray-800)',
+                        'gray-900': 'var(--color-gray-900)',
+
+                    },
+                    screens: {
+                        // Mobile sizes
+                        'xxs': '320px',   // iPhone SE, small Android
+                        'xs': '375px',    // iPhone X, 12 mini
+                        'sm': '414px',    // iPhone 12/13/14 Pro Max
+                        'msm': '480px',   // small phones / older Android
+                        'md': '600px',    // large phones / small tablets
+                        'lg': '768px',    // tablets (portrait)
+                        'xl': '992px',    // tablets (landscape), small laptops
+                        '2xl': '1200px',  // standard laptop
+                        '3xl': '1366px',  // common laptop resolutions
+                        '4xl': '1440px',  // wide laptops / HD screens
+                        '5xl': '1600px',  // large monitors
+                        '6xl': '1920px',  // full HD / desktop monitors
+                        '7xl': '2560px',  // 2K / ultrawide screens
+                        '8xl': '3840px',  // 4K displays
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/calender.css">
+
+
+</head>
+
+<body class="">
+
+
+    <main class="flex justify-start bg-blue-600 h-screen max-h-screen overflow-hidden">
+
+        <!-- profile panel -->
+        <section class="fixed right-0 w-80 h-full bg-black z-50 transition-all duration-300 translate-x-[100%] p-6 "
+            id="profile_panel">
+
+            <div class="flex justify-end">
+                <button class="text-white border border-white/10 rounded-lg w-8 h-8 " onclick="toggleProfilePanel()">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+
+
+            <div class="inline-flex justify-start items-start gap-3 border-b border-white/20 w-full pb-4 mb-4">
+                <img class="w-12 h-12 rounded-full outline outline-2 outline-primary"
+                    src="../../assets/images/navbar/profile.png" />
+                <div class="inline-flex flex-col justify-start items-start">
+                    <div class="justify-center text-white text-base font-semibold font-['Poppins'] leading-normal">Tarik
+                        Bin Aziz</div>
+                    <div class="justify-center text-primary text-sm font-normal font-['Poppins'] leading-snug">Admin
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col justify-center items-center gap-3">
+                <button class=" relative w-full ">
+                    <img src="../../assets/icons/navbarIcons/language.svg" alt="" class="absolute top-3 left-3 ">
+
+                    <select
+                        class="outline-none  rounded-lg appearance-none bg-neutral-100 w-full h-10 pl-10 text-zinc-900 text-xs font-normal font-['Poppins'] leading-tight">
+
+                        <option value="eng">
+                            <span>
+                                <img src="../../assets/icons/navbarIcons/language.svg" alt="">
+                            </span>
+                            <span>English</span>
+                        </option>
+                        <option value="Ar">
+                            <span>Arabic</span>
+                        </option>
+                    </select>
+
+                    <span class="absolute top-4 right-6">
+                        <img src="../../assets/icons/chevron-down.svg" alt="">
+                    </span>
+                </button>
+
+                <button class="bg-gray-50 rounded-lg p-2 relative flex justify-start items-center gap-1 w-full">
+                    <img src="../../assets/icons/navbarIcons/bell.svg" alt="" class="w-6 h-6">
+                    <p class="justify-start text-zinc-900 text-xs font-normal font-['Poppins'] leading-tight">
+                        Notification </p>
+                    <span class="ml-auto inline-block w-4 h-4 bg-error text-[10px] rounded-full text-white">3</span>
+                </button>
+
+
+                <button class="bg-gray-50 rounded-lg p-2 relative flex justify-start items-center gap-1 w-full">
+                    <img src="../../assets/icons/navbarIcons/comment-dot.svg" alt="" class="w-6 h-6">
+                    <p class="justify-start text-zinc-900 text-xs font-normal font-['Poppins'] leading-tight">Massage
+                    </p>
+                    <span class="ml-auto inline-block w-4 h-4 bg-error text-[10px] rounded-full text-white">3</span>
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+        <!-- sidebar panel -->
+        <section
+            class="fixed w-80 h-full bg-black z-50 transition-all duration-300 translate-x-[-100%] p-6 flex flex-col gap-4"
+            id="sidepanel">
+            <div class="border-b border-white/10 pb-4 flex justify-between">
+                <img src="../../assets/logo/logo.png" alt="" class="h-10 w-auto object-contain">
+
+                <button class="text-white border border-white/10 rounded-lg w-8 h-8" onclick="toggleSidebar()">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="flex flex-col justify-start grow">
+                <!-- search box -->
+                <div
+                    class=" h-12 px-3 py-1 bg-white/10 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/10 flex items-center gap-2 mb-4">
+                    <input type="text" placeholder="Search" class="w-full bg-transparent outline-none text-white">
+                    <img src="../../assets/icons/search.svg" alt="">
+                </div>
+
+                <!-- sidebar panel links  -->
+                <nav class="space-y-1">
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/dashboard.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
+                            Dashboard</p>
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/calendar.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
+                            Calendar</p>
+
+                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/cmnts.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
+                            Massage</p>
+
+                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/board.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
+                            Task</p>
+
+                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/folder.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
+                            Library </p>
+
+                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/group.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
+                            Groups </p>
+
+                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/day.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
+                            Day Sheet </p>
+
+                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/board-check.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
+                            Assessments </p>
+
+                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
+                            Forms </p>
+
+                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
+                    </a>
+                </nav>
+
+
+                <div class="sticky bottom-0 z-10 p-3 bg-white/5 rounded flex justify-between items-center mt-auto">
+                    <button>
+                        <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                    </button>
+
+                    <button>
+                        <img src="../../assets/icons/settings.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                    </button>
+                    <button>
+                        <img src="../../assets/icons/user.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                    </button>
+                    <button>
+
+                        <img src="../../assets/icons/log-out.svg" alt="" class="w-6 h-6 cursor-pointer">
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- sidebar section  -->
+        <section
+            class="bg-black w-28 4xl:w-80  4xl:min-w-80 p-6 hidden xl:flex flex-col gap-4 transition-all duration-300">
+            <div class="border-b border-white/10 pb-4 hidden 4xl:block">
+                <img src="../../assets/logo/logo.png" alt="" class="h-10 w-auto object-contain">
+            </div>
+
+            <!-- for 4xl -->
+            <div class="hidden 4xl:block grow">
+                <!-- search box -->
+                <div
+                    class=" h-12 px-3 py-1 bg-white/10 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/10 hidden 4xl:flex items-center gap-2 mb-4">
+                    <input type="text" placeholder="Search" class="w-full bg-transparent outline-none text-white">
+                    <img src="../../assets/icons/search.svg" alt="">
+                </div>
+
+                <button class=" 4xl:hidden">
+
+                    <img src="../../assets/icons/search.svg" alt="">
+                </button>
+
+                <!-- sidebar links  -->
+                <nav class="space-y-1">
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/dashboard.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug hidden 4xl:block">
+                            Dashboard</p>
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/calendar.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug hidden 4xl:block">
+                            Domain</p>
+
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/calendar.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug hidden 4xl:block">
+                            Organization</p>
+
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug hidden 4xl:block">
+                            Company Essential </p>
+
+                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
+                    </a>
+                </nav>
+
+            </div>
+
+
+            <!-- for smaller then 4xl -->
+            <div class="block 4xl:hidden grow">
+
+
+                <!-- sidebar links  -->
+                <nav class="flex flex-col items-center justify-center gap-8 h-full">
+                    <button class="mb-auto">
+
+                        <img src="../../assets/icons/search.svg" alt="">
+                    </button>
+
+                    <button>
+                        <img src="../../assets/icons/sidebarIcons/dashboard.svg" alt="">
+                    </button>
+
+                    <button>
+                        <img src="../../assets/icons/sidebarIcons/calendar.svg" alt="">
+                    </button>
+
+
+                    <button>
+                        <img src="../../assets/icons/sidebarIcons/cmnts.svg" alt="">
+                    </button>
+
+
+                    <button>
+                        <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
+                    </button>
+
+                    <div class="mt-auto flex flex-col items-center gap-4 bg-white/5 rounded w-full py-4">
+                        <button class="">
+                            <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                        </button>
+
+                        <button class="">
+                            <img src="../../assets/icons/settings.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                        </button>
+                        <button class="">
+                            <img src="../../assets/icons/user.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                        </button>
+                        <button class="">
+
+                            <img src="../../assets/icons/log-out.svg" alt="" class="w-6 h-6 cursor-pointer">
+                        </button>
+                    </div>
+
+                </nav>
+
+
+                <!-- <div class="flex flex-col gap-4">
+                    <button>
+                        <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                    </button>
+
+                    <button>
+                        <img src="../../assets/icons/settings.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                    </button>
+                    <button>
+                        <img src="../../assets/icons/user.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                    </button>
+                    <button>
+
+                        <img src="../../assets/icons/log-out.svg" alt="" class="w-6 h-6 cursor-pointer">
+                    </button>
+                </div> -->
+
+            </div>
+
+
+
+            <div class="sticky bottom-0 z-10 p-3 bg-white/5 rounded hidden 4xl:flex justify-between items-center">
+                <button>
+                    <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                </button>
+
+                <button>
+                    <img src="../../assets/icons/settings.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                </button>
+                <button>
+                    <img src="../../assets/icons/user.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                </button>
+                <button>
+
+                    <img src="../../assets/icons/log-out.svg" alt="" class="w-6 h-6 cursor-pointer">
+                </button>
+            </div>
+        </section>
+
+
+
+        <!-- contant section -->
+        <section class="bg-gray-50 grow overflow-y-auto bg-neutral-100">
+
+            <!-- navbar -->
+            <div class="bg-white py-4 px-6 flex justify-between items-center sticky top-0 z-20">
+                <button class="p-1 bg-gray-50 rounded" onclick="toggleSidebar()">
+                    <img src="../../assets/icons/navbarIcons/bars.svg" alt="">
+                </button>
+
+                <div class="flex justify-center items-center gap-6">
+                    <div class="flex gap-3">
+
+
+                        <button class="hidden md:block relative">
+                            <img src="../../assets/icons/navbarIcons/language.svg" alt=""
+                                class="absolute top-3 left-3 ">
+
+                            <select class="outline-none  rounded-lg appearance-none bg-neutral-100 w-36 h-10 pl-10">
+
+                                <option value="eng">
+                                    <span>
+                                        <img src="../../assets/icons/navbarIcons/language.svg" alt="">
+                                    </span>
+                                    <span>English</span>
+                                </option>
+                                <option value="Ar">
+                                    <span>Arabic</span>
+                                </option>
+                            </select>
+
+                            <span class="absolute top-4 right-6">
+                                <img src="../../assets/icons/chevron-down.svg" alt="">
+                            </span>
+                        </button>
+
+                        <button class="bg-gray-50 rounded-lg p-2 relative hidden md:flex justify-center items-center">
+                            <span
+                                class="inline-block w-4 h-4 bg-error text-[10px] rounded-full text-white absolute -top-1 -right-1">3</span>
+                            <img src="../../assets/icons/navbarIcons/bell.svg" alt="">
+                        </button>
+
+
+                        <button class="bg-gray-50 rounded-lg p-2 relative hidden md:flex justify-center items-center">
+                            <span
+                                class="inline-block w-4 h-4 bg-error text-[10px] rounded-full text-white absolute -top-1 -right-1">3</span>
+                            <img src="../../assets/icons/navbarIcons/comment-dot.svg" alt="">
+                        </button>
+                    </div>
+                    <button class="flex items-start gap-3" onclick="toggleProfilePanel()">
+                        <div>
+                            <p class="text-black text-base font-semibold font-['Poppins'] leading-normal">Tarik Bin Aziz
+                            </p>
+                            <p class="text-primary text-sm font-normal font-['Poppins'] leading-snug">Admin</p>
+                        </div>
+                        <div>
+                            <img src="../../assets/images/navbar/profile.png" alt="" class="rounded-full">
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="p-2 md:p-6  ">
+
+                <!-- page content -->
+                <div class="w-full h-full space-y-6 ">
+                    <div class=" rounded-lg bg-center p-2 md:p-6 overflow-hidden relative flex flex-col justify-start items-start gap-4 bg-no-repeat bg-cover"
+                        style="background-image: url('../../assets/images/summary/bg.jpg');">
+
+                        <div
+                            class="bg-gradient-to-l from-slate-900 to-sky-900/10 w-full h-full absolute top-0 left-0 z-0">
+                        </div>
+
+
+                        <p
+                            class="text-white/80 text-4xl font-semibold font-['Lexend_Deca'] leading-[48px] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)] relative z-10">
+                            Good <br />Morning Tarik . . .</p>
+
+
+                        <div class="flex justify-start items-center gap-3 relative z-10">
+                            <p
+                                class="text-white/80 text-2xl font-normal font-['Lexend_Deca'] leading-loose flex justify-start items-center gap-2">
+                                <img src="../../assets/icons/summary/calendar.svg" alt="">
+                                12/10/2025
+                            </p>
+                            <p class="text-white/80 text-2xl font-thin font-['Lexend_Deca'] leading-loose">|</p>
+                            <p
+                                class="text-white/80 text-2xl font-normal font-['Lexend_Deca'] leading-loose flex justify-start items-center gap-2">
+                                <img src="../../assets/icons/summary/clock.svg" alt="">
+                                14:30
+                            </p>
+                        </div>
+
+                        <div
+                            class="p-4 bg-white/10 rounded-lg grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-4 mt-auto w-full">
+
+
+                            <!-- pending cards -->
+                            <div
+                                class="w-full h-full p-3 bg-white/10 rounded-lg shadow-[0px_4px_0px_0px_rgba(255,255,255,0.24)] backdrop-blur-[10px] inline-flex flex-col justify-center items-start gap-2">
+
+                                <p
+                                    class="text-right justify-start text-white text-xl font-bold font-['Lexend_Deca'] leading-7">
+                                    55</p>
+                                <p
+                                    class="justify-start text-white text-xs font-normal font-['Lexend_Deca'] leading-tight">
+                                    Total User</p>
+                            </div>
+
+
+
+                            <!-- pending cards -->
+                            <div
+                                class="w-full h-full p-3 bg-white/10 rounded-lg shadow-[0px_4px_0px_0px_rgba(255,255,255,0.24)] backdrop-blur-[10px] inline-flex flex-col justify-center items-start gap-2">
+
+                                <p
+                                    class="text-right justify-start text-white text-xl font-bold font-['Lexend_Deca'] leading-7">
+                                    55</p>
+                                <p
+                                    class="justify-start text-white text-xs font-normal font-['Lexend_Deca'] leading-tight">
+                                    Total Organization</p>
+                            </div>
+
+
+
+                            <!-- pending cards -->
+                            <div
+                                class="w-full h-full p-3 bg-white/10 rounded-lg shadow-[0px_4px_0px_0px_rgba(255,255,255,0.24)] backdrop-blur-[10px] inline-flex flex-col justify-center items-start gap-2">
+
+                                <p
+                                    class="text-right justify-start text-white text-xl font-bold font-['Lexend_Deca'] leading-7">
+                                    55</p>
+                                <p
+                                    class="justify-start text-white text-xs font-normal font-['Lexend_Deca'] leading-tight">
+                                    Total User</p>
+                            </div>
+
+
+                            <!-- pending cards -->
+                            <div
+                                class="w-full h-full p-3 bg-white/10 rounded-lg shadow-[0px_4px_0px_0px_rgba(255,255,255,0.24)] backdrop-blur-[10px] inline-flex flex-col justify-center items-start gap-2">
+
+                                <p
+                                    class="text-right justify-start text-white text-xl font-bold font-['Lexend_Deca'] leading-7">
+                                    55</p>
+                                <p
+                                    class="justify-start text-white text-xs font-normal font-['Lexend_Deca'] leading-tight">
+                                    Total User</p>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <!-- Organization -->
+                    <div class=" bg-white p-4 space-y-3 rounded-lg">
+                        <div class="flex flex-col md:flex-row items-center gap-4">
+                            <p class="text-black text-2xl font-medium font-['Lexend_Deca'] leading-loose ">Recent
+                                Events </p>
+
+
+                            <div class="flex justify-start lg:justify-end items-center flex-wrap gap-2 ml-auto">
+                                <button class="relative w-fit">
+
+                                    <select
+                                        class="outline-none  rounded appearance-none bg-neutral-100 w-44 h-10 pl-4 text-xs font-medium font-['Lexend_Deca'] leading-tight">
+
+                                        <option value="all">
+                                            All Organization
+                                        </option>
+                                        <option value="user-1">
+                                            user 1
+                                        </option>
+                                    </select>
+
+                                    <span class="absolute top-4 right-3">
+                                        <img src="../../assets/icons/chevron-down.svg" alt="">
+                                    </span>
+                                </button>
+
+                                <button
+                                    class="relative px-3 py-1 flex justify-between items-center gap-2 bg-primary h-10 rounded ">
+
+                                    <p
+                                        class="text-white text-xs font-normal font-['Lexend_Deca'] leading-tight text-nowrap">
+                                        Create New Organization </p>
+
+
+
+                                    <div class="w-6 h-6 relative flex items-center justify-center">
+                                        <img src="../../assets/icons/plus.svg" alt="" class="w-4 h-4">
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- cards -->
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                            <!-- card 1 -->
+                            <div
+                                class="p-4 space-y-2 bg-neutral-100 rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)]">
+                                <p class=" text-primary text-xl font-semibold font-['Lexend_Deca'] leading-7">
+                                    Organization Name</p>
+
+                                <p class="text-black text-sm font-normal leading-snug">
+                                    Gideon Financial: Empowering families to achieve their dreams.</p>
+
+                                <div
+                                    class="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0">
+
+                                    <div class="flex justify-start gap-2">
+                                        <div class="flex justify-start items-center">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full -ml-3">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full -ml-3">
+                                        </div>
+                                        <p class="text-black text-sm font-medium leading-snug">20 Members</p>
+                                    </div>
+
+                                    <button
+                                        class="h-8 px-3 bg-white rounded-md outline outline-1 outline-offset-[-1px] outline-primary inline-flex justify-center items-center gap-1">
+                                        <div
+                                            class="text-center justify-start text-primary text-xs font-medium font-['Lexend_Deca'] leading-tight">
+                                            View Details</div>
+                                    </button>
+                                </div>
+                            </div>
+
+
+                            <!-- card 2 -->
+                            <div
+                                class="p-4 space-y-2 bg-neutral-100 rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)]">
+                                <p class=" text-primary text-xl font-semibold font-['Lexend_Deca'] leading-7">
+                                    Organization Name</p>
+
+                                <p class="text-black text-sm font-normal leading-snug">
+                                    Gideon Financial: Empowering families to achieve their dreams.</p>
+
+                                <div
+                                    class="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0">
+
+                                    <div class="flex justify-start gap-2">
+                                        <div class="flex justify-start items-center">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full -ml-3">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full -ml-3">
+                                        </div>
+                                        <p class="text-black text-sm font-medium leading-snug">20 Members</p>
+                                    </div>
+
+                                    <button
+                                        class="h-8 px-3 bg-white rounded-md outline outline-1 outline-offset-[-1px] outline-primary inline-flex justify-center items-center gap-1">
+                                        <div
+                                            class="text-center justify-start text-primary text-xs font-medium font-['Lexend_Deca'] leading-tight">
+                                            View Details</div>
+                                    </button>
+                                </div>
+                            </div>
+
+
+                            <!-- card 3 -->
+                            <div
+                                class="p-4 space-y-2 bg-neutral-100 rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)]">
+                                <p class=" text-primary text-xl font-semibold font-['Lexend_Deca'] leading-7">
+                                    Organization Name</p>
+
+                                <p class="text-black text-sm font-normal leading-snug">
+                                    Gideon Financial: Empowering families to achieve their dreams.</p>
+
+                                <div
+                                    class="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0">
+
+                                    <div class="flex justify-start gap-2">
+                                        <div class="flex justify-start items-center">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full -ml-3">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full -ml-3">
+                                        </div>
+                                        <p class="text-black text-sm font-medium leading-snug">20 Members</p>
+                                    </div>
+
+                                    <button
+                                        class="h-8 px-3 bg-white rounded-md outline outline-1 outline-offset-[-1px] outline-primary inline-flex justify-center items-center gap-1">
+                                        <div
+                                            class="text-center justify-start text-primary text-xs font-medium font-['Lexend_Deca'] leading-tight">
+                                            View Details</div>
+                                    </button>
+                                </div>
+                            </div>
+
+
+                            <!-- card 4 -->
+                            <div
+                                class="p-4 space-y-2 bg-neutral-100 rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)]">
+                                <p class=" text-primary text-xl font-semibold font-['Lexend_Deca'] leading-7">
+                                    Organization Name</p>
+
+                                <p class="text-black text-sm font-normal leading-snug">
+                                    Gideon Financial: Empowering families to achieve their dreams.</p>
+
+                                <div
+                                    class="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0">
+
+                                    <div class="flex justify-start gap-2">
+                                        <div class="flex justify-start items-center">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full -ml-3">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full -ml-3">
+                                        </div>
+                                        <p class="text-black text-sm font-medium leading-snug">20 Members</p>
+                                    </div>
+
+                                    <button
+                                        class="h-8 px-3 bg-white rounded-md outline outline-1 outline-offset-[-1px] outline-primary inline-flex justify-center items-center gap-1">
+                                        <div
+                                            class="text-center justify-start text-primary text-xs font-medium font-['Lexend_Deca'] leading-tight">
+                                            View Details</div>
+                                    </button>
+                                </div>
+                            </div>
+
+
+                            <!-- card 5 -->
+                            <div
+                                class="p-4 space-y-2 bg-neutral-100 rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)]">
+                                <p class=" text-primary text-xl font-semibold font-['Lexend_Deca'] leading-7">
+                                    Organization Name</p>
+
+                                <p class="text-black text-sm font-normal leading-snug">
+                                    Gideon Financial: Empowering families to achieve their dreams.</p>
+
+                                <div
+                                    class="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0">
+
+                                    <div class="flex justify-start gap-2">
+                                        <div class="flex justify-start items-center">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full -ml-3">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full -ml-3">
+                                        </div>
+                                        <p class="text-black text-sm font-medium leading-snug">20 Members</p>
+                                    </div>
+
+                                    <button
+                                        class="h-8 px-3 bg-white rounded-md outline outline-1 outline-offset-[-1px] outline-primary inline-flex justify-center items-center gap-1">
+                                        <div
+                                            class="text-center justify-start text-primary text-xs font-medium font-['Lexend_Deca'] leading-tight">
+                                            View Details</div>
+                                    </button>
+                                </div>
+                            </div>
+
+
+                            <!-- card 6 -->
+                            <div
+                                class="p-4 space-y-2 bg-neutral-100 rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)]">
+                                <p class=" text-primary text-xl font-semibold font-['Lexend_Deca'] leading-7">
+                                    Organization Name</p>
+
+                                <p class="text-black text-sm font-normal leading-snug">
+                                    Gideon Financial: Empowering families to achieve their dreams.</p>
+
+                                <div
+                                    class="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0">
+
+                                    <div class="flex justify-start gap-2">
+                                        <div class="flex justify-start items-center">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full -ml-3">
+                                            <img src="../../assets/images/navbar/profile.png" alt=""
+                                                class="w-6 h-6 rounded-full -ml-3">
+                                        </div>
+                                        <p class="text-black text-sm font-medium leading-snug">20 Members</p>
+                                    </div>
+
+                                    <button
+                                        class="h-8 px-3 bg-white rounded-md outline outline-1 outline-offset-[-1px] outline-primary inline-flex justify-center items-center gap-1">
+                                        <div
+                                            class="text-center justify-start text-primary text-xs font-medium font-['Lexend_Deca'] leading-tight">
+                                            View Details</div>
+                                    </button>
+                                </div>
+                            </div>
+
+
+                            <div class="col-span-1 md:col-span-2 flex justify-center items-center gap-2">
+                                <button class="bg-primary p-2 px-4 text-white rounded">1</button>
+                                <button class="bg-gray-100 p-2 px-4 text-primary rounded">2</button>
+                                <button class="bg-gray-100 p-2 px-4 text-primary rounded">3</button>
+                                <button class="bg-gray-100 p-2 px-4 text-primary rounded">4</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="../../js/accordion.js"></script>
+    <script src="../../js/calender.js"></script>
+    <script src="../../js/sidebar.js"></script>
+</body>
+
+</html>

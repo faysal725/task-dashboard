@@ -1,0 +1,361 @@
+/* CSS Variables */
+:root {
+  --color-primary: #076988;
+  --color-black: #17181D;
+
+  --color-success: #4BB543;
+  --color-warning: #FFC107;
+  --color-error: #F04438;
+  --color-info: #067BFF;
+
+  --color-primary-shade-50: #E9FFFF;
+  --color-primary-shade-100: #C8FFFF;
+  --color-primary-shade-200: #98FDFF;
+  --color-primary-shade-300: #51F9FF;
+  --color-primary-shade-400: #04E9FF;
+  --color-primary-shade-500: #00CCF3;
+  --color-primary-shade-600: #00A0CB;
+  --color-primary-shade-700: #007FA3;
+  --color-primary-shade-800: #076988;
+  --color-primary-shade-900: #0B536E;
+  --color-primary-shade-950: #00374D;
+
+
+  --color-gray-50: #F6F7F9;
+  --color-gray-100: #EDEEF1;
+  --color-gray-200: #D7DAE0;
+  --color-gray-300: #B3BAC6;
+  --color-gray-400: #8A94A6;
+  --color-gray-500: #687387;
+  --color-gray-600: #565F73;
+  --color-gray-700: #464D5E;
+  --color-gray-800: #3D434F;
+  --color-gray-900: #363A44;
+  --color-gray-950: #24262D;
+
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Base font setup */
+body {
+  font-family: 'Lexend Deca';
+}
+
+
+.menu_link {
+  color: var(--color-black);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.menu_link_active {
+  color: var(--primary2-600, #1469B5);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  /* 150% */
+}
+
+
+/* sidebar code  */
+.sidebar {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.main-content {
+  transition: margin-left 0.3s ease-in-out;
+}
+
+
+/* scrollbar section  */
+
+.scrollbar_hide {
+  -ms-overflow-style: none;
+  /* for Internet Explorer and Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.scrollbar_hide::-webkit-scrollbar {
+  display: none;
+}
+
+
+.scrollbar_style::-webkit-scrollbar {
+  height: 2px;
+  width: 4px;
+}
+
+/* Track */
+.scrollbar_style::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(187, 187, 187);
+  border-radius: 10px;
+}
+
+/* Handle */
+.scrollbar_style::-webkit-scrollbar-thumb {
+  background: rgb(187, 187, 187);
+  border-radius: 90px;
+
+}
+
+.scrollbar_style::-webkit-scrollbar-corner {}
+
+/* Handle on hover */
+.scrollbar_style::-webkit-scrollbar-thumb:hover {
+  background: rgb(187, 187, 187)
+}
+
+
+/* progress bar  */
+.progress_completed {
+  -webkit-appearance: none;
+}
+
+
+.progress_completed::-webkit-progress-inner-element {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+::-webkit-progress-bar {
+  background-color: var(--color-gray-100);
+}
+
+.progress_completed::-webkit-progress-value {
+  background-color: var(--color-success);
+}
+
+/* pending */
+.progress_pending {
+  -webkit-appearance: none;
+}
+
+
+.progress_pending::-webkit-progress-inner-element {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+
+.progress_pending::-webkit-progress-value {
+  background-color: var(--color-warning);
+}
+
+
+/* in processing */
+.progress_processing {
+  -webkit-appearance: none;
+}
+
+
+.progress_processing::-webkit-progress-inner-element {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+
+.progress_processing::-webkit-progress-value {
+  background-color: var(--color-info);
+}
+
+
+
+/* error */
+.progress_incomplete {
+  -webkit-appearance: none;
+}
+
+
+.progress_incomplete::-webkit-progress-inner-element {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+
+.progress_incomplete::-webkit-progress-value {
+  background-color: var(--color-error);
+}
+
+
+
+
+
+/* glass */
+.glassmorphism {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* For Safari support */
+}
+
+
+
+
+
+
+/* super admin codes */
+.text_input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.text_input>p {
+  color: var(--color-black);
+  font-size: clamp(14px, 2vw, 18px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
+
+}
+
+.required:after {
+  content: "*";
+  color: var(--color-error);
+}
+
+
+.text_input>input {
+  height: 48px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--Gray-100, #EDEEF1);
+  background: var(--Gray-50, #F6F7F9);
+}
+
+.text_input>input::placeholder {
+  color: var(--color-gray-500, #687387);
+
+  font-family: Poppins;
+  font-size: clamp(14px, 2vw, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.text_input>div {
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid var(--color-gray-100, #EDEEF1);
+  background: var(--color-gray-50, #F6F7F9);
+  appearance: none;
+  position: relative;
+}
+
+.text_input>div>select {
+  width: 100%;
+  height: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: clamp(14px, 2vw, 18px);
+  background: none;
+  appearance: none;
+  color: var(--color-gray-500)
+}
+
+
+.text_input>div>img {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  height: 8px;
+  transform: translateY(-50%);
+}
+
+
+
+
+
+
+
+/* scrollbar section  */
+
+.scrollbar_hide {
+  -ms-overflow-style: none;
+  /* for Internet Explorer and Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.scrollbar_hide::-webkit-scrollbar {
+  display: none;
+}
+
+
+.scrollbar_style::-webkit-scrollbar {
+  height: 2px;
+  width: 4px;
+}
+
+/* Track */
+.scrollbar_style::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(187, 187, 187);
+  border-radius: 10px;
+}
+
+/* Handle */
+.scrollbar_style::-webkit-scrollbar-thumb {
+  background: rgb(187, 187, 187);
+  border-radius: 90px;
+
+}
+
+.scrollbar_style::-webkit-scrollbar-corner {}
+
+/* Handle on hover */
+.scrollbar_style::-webkit-scrollbar-thumb:hover {
+  background: rgb(187, 187, 187)
+}
+
+
+
+/* buttons */
+.btn_primary {
+  border-radius: 4px;
+  background: var(--color-primary, #076988);
+  height: 48px;
+  min-width: 188px;
+  padding: 0 12px;
+  font-size: clamp(14px, 2vw, 16px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  color: white;
+}
+
+
+.btn_secondary {
+  border-radius: 4px;
+  background: var(--color-gray-100, #EDEEF1);
+  height: 48px;
+  min-width: 188px;
+  padding: 0 12px;
+  font-size: clamp(14px, 2vw, 16px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  color: black;
+}
