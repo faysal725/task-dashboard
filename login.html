@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <!-- Inter font from Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- accordion cdn  -->
+
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        lexend: ['Lexend Deca', 'sans-serif'],
+                    },
+                    maxWidth: {
+                        '8xl': '1408px', // custom max-width
+                    },
+                    colors: {
+                        'primary': 'var(--color-primary)',
+                        'black': 'var(--color-black)',
+
+                        'success': 'var(--color-success)',
+                        'warning': 'var(--color-warning)',
+                        'error': 'var(--color-error)',
+                        'info': 'var(--color-info)',
+
+                        // Primary shade palette
+                        'primaryS-50': 'var(--color-primary-shade-50)',
+                        'primaryS-100': 'var(--color-primary-shade-100)',
+                        'primaryS-200': 'var(--color-primary-shade-200)',
+                        'primaryS-300': 'var(--color-primary-shade-300)',
+                        'primaryS-400': 'var(--color-primary-shade-400)',
+                        'primaryS-500': 'var(--color-primary-shade-500)',
+                        'primaryS-600': 'var(--color-primary-shade-600)',
+                        'primaryS-700': 'var(--color-primary-shade-700)',
+                        'primaryS-800': 'var(--color-primary-shade-800)',
+                        'primaryS-900': 'var(--color-primary-shade-900)',
+                        'primaryS-950': 'var(--color-primary-shade-950)',
+
+                        // Gray palette
+                        'gray-100': 'var(--color-gray-100)',
+                        'gray-200': 'var(--color-gray-200)',
+                        'gray-300': 'var(--color-gray-300)',
+                        'gray-400': 'var(--color-gray-400)',
+                        'gray-500': 'var(--color-gray-500)',
+                        'gray-600': 'var(--color-gray-600)',
+                        'gray-700': 'var(--color-gray-700)',
+                        'gray-800': 'var(--color-gray-800)',
+                        'gray-900': 'var(--color-gray-900)',
+
+                    },
+                    screens: {
+                        // Mobile sizes
+                        'xxs': '320px',   // iPhone SE, small Android
+                        'xs': '375px',    // iPhone X, 12 mini
+                        'sm': '414px',    // iPhone 12/13/14 Pro Max
+                        'msm': '480px',   // small phones / older Android
+                        'md': '600px',    // large phones / small tablets
+                        'lg': '768px',    // tablets (portrait)
+                        'xl': '992px',    // tablets (landscape), small laptops
+                        '2xl': '1200px',  // standard laptop
+                        '3xl': '1366px',  // common laptop resolutions
+                        '4xl': '1440px',  // wide laptops / HD screens
+                        '5xl': '1600px',  // large monitors
+                        '6xl': '1920px',  // full HD / desktop monitors
+                        '7xl': '2560px',  // 2K / ultrawide screens
+                        '8xl': '3840px',  // 4K displays
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+
+</head>
+
+<body class="">
+
+
+    <main class="grid grid-cols-1 md:grid-cols-2 h-screen max-h-screen max-w-[1440px] mx-auto overflow-y-auto scrollbar_hide">
+        <!-- image section -->
+        <div class="justify-end hidden md:flex">
+            <img src="./assets/images/login/login_img.png" alt="man with computer" class="">
+        </div>
+
+        <!-- form section -->
+        <div class="md:bg-black flex items-center justify-center px-6 xl:px-20 relative">
+            <div class="bg-[url('./assets/images/login/login_img.png')] bg-cover bg-center absolute top-0 right-0 w-full h-full md:hidden">
+
+            </div>
+
+
+            <form
+                class="w-full p-5 xl:p-10 bg-black md:bg-white/5 rounded-2xl outline outline-1 outline-offset-[-0.50px] outline-white/10 flex flex-col gap-3 xl:gap-6  z-10">
+                <div class=" py-6 border-b border-white/25 w-full space-y-6 flex flex-col items-center">
+                    <img src="./assets/logo/logo-2.png" alt="logo-2" class="h-auto w-48">
+                    <div class="space-y-1">
+                        <p class="text-center text-white text-base lg:text-xl xl:text-2xl font-medium  leading-loose">
+                            Welcome back.</p>
+                        <p
+                            class="text-center text-white/60 text-xs lg:text-sm xl:text-base font-normal  leading-normal">
+                            Log in to manage your
+                            tasks effectively.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <label for="user_mail" class="text_input_2">
+                        <p>Enter Address</p>
+                        <input type="email" name="user_mail" id="user_mail" placeholder="Enter your email" required>
+                    </label>
+
+
+                    <label for="user_pass" class="text_input_2">
+                        <p>Password</p>
+                        <input type="password" name="user_pass" id="user_pass" placeholder="Enter Password">
+
+                        <img onclick="togglePasswordVisibility('user_pass')" src="./assets/icons/inputBox/eye-slash.svg"
+                            alt="" class="hidden eye-slash">
+
+
+                        <img onclick="togglePasswordVisibility('user_pass')" src="./assets/icons/inputBox/eye.svg"
+                            alt="eye" class="eye">
+
+                    </label>
+
+                </div>
+
+                <button type="submit" class="btn_primary_lg">
+                    Sign In
+                </button>
+            </form>
+        </div>
+    </main>
+
+
+    <script src="./js/formFieldControll.js"></script>
+</body>
+
+</html>
