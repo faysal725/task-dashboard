@@ -188,77 +188,52 @@
                 </div>
 
                 <!-- sidebar panel links  -->
-                <nav class="space-y-1">
+                <nav class="space-y-2">
                     <a href="/"
                         class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
                         <img src="../../assets/icons/sidebarIcons/dashboard.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
                             Dashboard</p>
                     </a>
                     <a href="/"
                         class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/calendar.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
-                            Calendar</p>
+                        <img src="../../assets/icons/sidebarIcons/globe.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                            Domain</p>
 
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
                     </a>
                     <a href="/"
                         class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/cmnts.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
-                            Massage</p>
+                        <img src="../../assets/icons/sidebarIcons/building.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                            Organization</p>
 
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
                     </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/board.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
-                            Task</p>
+                    <div class="">
+                        <div onclick="expandOrCollapseSubsection('company_essential_sm')"
+                            class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white cursor-pointer">
+                            <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
+                            <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                Company Essential </p>
 
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
-                    </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/folder.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
-                            Library </p>
+                            <i class="fa fa-chevron-down text-white fa-xs ml-auto block" aria-hidden="true"></i>
+                        </div>
 
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
-                    </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/group.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
-                            Groups </p>
-
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
-                    </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/day.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
-                            Day Sheet </p>
-
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
-                    </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/board-check.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
-                            Assessments </p>
-
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
-                    </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug">
-                            Forms </p>
-
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto hidden 4xl:block" aria-hidden="true"></i>
-                    </a>
+                        <div id="company_essential_sm"
+                            class="text-white pl-8 max-h-0 overflow-hidden transition-all duration-400 "
+                            aria-expanded="false">
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 1</p>
+                            </div>
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 2</p>
+                            </div>
+                        </div>
+                    </div>
                 </nav>
 
 
@@ -308,7 +283,7 @@
                 </button>
 
                 <!-- sidebar links  -->
-                <nav class="space-y-1">
+                <nav class="space-y-2">
                     <a href="/"
                         class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
                         <img src="../../assets/icons/sidebarIcons/dashboard.svg" alt="">
@@ -329,14 +304,31 @@
                             Organization</p>
 
                     </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
-                            Company Essential </p>
+                    <div class="">
+                        <div onclick="expandOrCollapseSubsection('company_essential')"
+                            class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white cursor-pointer">
+                            <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
+                            <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                Company Essential </p>
 
-                        <i class="fa fa-chevron-down text-white fa-xs ml-auto block" aria-hidden="true"></i>
-                    </a>
+                            <i class="fa fa-chevron-down text-white fa-xs ml-auto block" aria-hidden="true"></i>
+                        </div>
+
+                        <div id="company_essential"
+                            class="text-white pl-8 max-h-0 overflow-hidden transition-all duration-400 "
+                            aria-expanded="false">
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 1</p>
+                            </div>
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 2</p>
+                            </div>
+                        </div>
+                    </div>
                 </nav>
 
             </div>
@@ -358,12 +350,12 @@
                     </button>
 
                     <button>
-                        <img src="../../assets/icons/sidebarIcons/calendar.svg" alt="">
+                        <img src="../../assets/icons/sidebarIcons/globe.svg" alt="">
                     </button>
 
 
                     <button>
-                        <img src="../../assets/icons/sidebarIcons/cmnts.svg" alt="">
+                        <img src="../../assets/icons/sidebarIcons/building.svg" alt="">
                     </button>
 
 

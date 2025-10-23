@@ -21,5 +21,10 @@ function expandeOrCollapseSidebar() {
     runUpper440()
   }
 
-  // runBelow1440()
+}
+
+
+function expandOrCollapseSubsection(subsectionId) {
+  let subsection = document.getElementById(subsectionId)
+  subsection.classList.toggle("max-h-52");
 }
