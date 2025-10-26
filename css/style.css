@@ -512,24 +512,74 @@ body {
 
 
 /* pagination */
-.pagination_container{
+.pagination_container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
 }
 
-.pagination_container>button{
+.pagination_container>button {
   background-color: var(--color-gray-100, #EDEEF1);
   padding: 8px;
   padding-left: 16px;
   padding-right: 16px;
-  color:var(--color-primary, #076988);
-  border-radius:4px;
+  color: var(--color-primary, #076988);
+  border-radius: 4px;
 }
 
 
-.pagination_container>.selected{
+.pagination_container>.selected {
   background-color: var(--color-primary, #076988);
   color: white;
 }
+
+
+/* sections */
+/* .common_section {
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+
+.common_section>.section_header {
+  padding: 16px;
+  border-bottom: 1px solid var(--color-gray-100, #EDEEF1);
+}
+
+.common_section>.section_header >div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.common_section>.section_header>p {
+  color: var(--color-black, #17181D);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.common_section>.section_header>.button_section {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: auto;
+}
+
+@media (max-width: 600px) {
+  .common_section>.section_header {
+    flex-direction: row; */
+    /* Change to row for viewports 600px or smaller */
+  /* }
+}
+
+@media (max-width: 768px) {
+  .common_section>.section_header>.button_section {
+    justify-content: end;
+  }
+} */
