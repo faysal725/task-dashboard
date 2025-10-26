@@ -485,28 +485,48 @@
                 <div class="w-full h-full space-y-6 ">
 
 
-                    <!-- Organization -->
+                    <!-- Industry -->
                     <div class=" bg-white rounded-lg">
                         <div class="border-b border-gray-100 p-4 ">
                             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                                <p class="text-black text-3xl font-semibold font-['Lexend_Deca'] leading-10">Industry
-                                    List
+                                <p class="text-black text-3xl font-semibold font-['Lexend_Deca'] leading-10">
+                                    Organization
                                 </p>
 
 
-                                <button onclick="toggleModal('list')"
-                                    class="relative px-3 py-1 flex justify-between items-center gap-2 bg-primary h-10 rounded ">
+                                <div class="flex justify-start lg:justify-end items-center flex-wrap gap-2 ml-auto">
+                                    <button class="relative w-fit">
 
-                                    <p
-                                        class="text-white text-xs font-normal font-['Lexend_Deca'] leading-tight text-nowrap">
-                                        Create New </p>
+                                        <select
+                                            class="outline-none  rounded appearance-none bg-neutral-100 w-44 h-10 pl-4 text-xs font-medium font-['Lexend_Deca'] leading-tight">
+
+                                            <option value="all">
+                                                All Organization
+                                            </option>
+                                            <option value="user-1">
+                                                user 1
+                                            </option>
+                                        </select>
+
+                                        <span class="absolute top-4 right-3">
+                                            <img src="../../assets/icons/chevron-down.svg" alt="">
+                                        </span>
+                                    </button>
+
+                                    <button
+                                        class="relative px-3 py-1 flex justify-between items-center gap-2 bg-primary h-10 rounded ">
+
+                                        <p
+                                            class="text-white text-xs font-normal font-['Lexend_Deca'] leading-tight text-nowrap">
+                                            Create New Organization </p>
 
 
 
-                                    <div class="w-6 h-6 relative flex items-center justify-center">
-                                        <img src="../../assets/icons/plus-box.svg" alt="" class="w-4 h-4">
-                                    </div>
-                                </button>
+                                        <div class="w-6 h-6 relative flex items-center justify-center">
+                                            <img src="../../assets/icons/plus.svg" alt="" class="w-4 h-4">
+                                        </div>
+                                    </button>
+                                </div>
                             </div>
 
                         </div>
@@ -514,120 +534,152 @@
                         <!-- cards -->
                         <div class="p-4 ">
                             <div class="bg-gray-100 p-4 rounded-lg">
-                                <div
-                                    class="bg-white rounded-lg p-4 flex justify-between items-stretch flex-col lg:flex-row  gap-2 lg:gap-6">
-                                    <div class="grow flex flex-col gap-2">
+                                <div class="bg-white rounded-lg p-4 space-y-4">
 
-                                        <!-- industry 1 -->
-                                        <div class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
-                                            <p
-                                                class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
-                                                Industry Name Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                                Provident adipisci repellat omnis corrupti. Sunt accusamus corrupti vel
-                                                architecto aliquam molestias.</p>
+                                    <!-- organization cards -->
+                                    <!-- card 1 -->
+                                    <div
+                                        class="p-4 space-y-2 bg-neutral-100 rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)]">
+                                        <p class=" text-primary text-xl font-semibold font-['Lexend_Deca'] leading-7">
+                                            Organization Name</p>
 
-                                            <button class="ml-auto w-6 h-6">
-                                                <img src="../../assets/icons/delete.svg" alt="">
-                                            </button>
-                                            <button onclick="toggleModal('editIndustry')">
+                                        <p class="text-black text-sm font-normal leading-snug">
+                                            Gideon Financial: Empowering families to achieve their dreams.</p>
 
-                                                <img src="../../assets/icons/edit.svg" alt="">
-                                            </button>
-                                        </div>
+                                        <div
+                                            class="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0">
 
-                                        <!-- industry 2 -->
-                                        <div class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
-                                            <p
-                                                class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
-                                                Industry Name</p>
+                                            <div class="flex justify-start gap-2">
+                                                <div class="flex justify-start items-center">
+                                                    <img src="../../assets/images/navbar/profile.png" alt=""
+                                                        class="w-6 h-6 rounded-full">
+                                                    <img src="../../assets/images/navbar/profile.png" alt=""
+                                                        class="w-6 h-6 rounded-full -ml-3">
+                                                    <img src="../../assets/images/navbar/profile.png" alt=""
+                                                        class="w-6 h-6 rounded-full -ml-3">
+                                                </div>
+                                                <p class="text-black text-sm font-medium leading-snug">20 Members</p>
+                                            </div>
 
-                                            <button class="ml-auto w-6 h-6">
-                                                <img src="../../assets/icons/delete.svg" alt="">
-                                            </button>
-
-                                            <button onclick="toggleModal('editIndustry')">
-
-                                                <img src="../../assets/icons/edit.svg" alt="">
-                                            </button>
-                                        </div>
-
-                                        <!-- industry 3 -->
-                                        <div class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
-                                            <p
-                                                class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
-                                                Industry Name</p>
-
-                                            <button class="ml-auto w-6 h-6">
-                                                <img src="../../assets/icons/delete.svg" alt="">
-                                            </button>
-
-                                            <button onclick="toggleModal('editIndustry')">
-
-                                                <img src="../../assets/icons/edit.svg" alt="">
+                                            <button
+                                                class="h-8 px-3 bg-white rounded-md outline outline-1 outline-offset-[-1px] outline-primary inline-flex justify-center items-center gap-1">
+                                                <div
+                                                    class="text-center justify-start text-primary text-xs font-medium font-['Lexend_Deca'] leading-tight">
+                                                    View Details</div>
                                             </button>
                                         </div>
                                     </div>
 
-                                    <!-- Divider -->
-                                    <div class="hidden lg:flex">
-                                        <span class="block w-px h-full bg-gray-100"></span>
-                                    </div>
+                                    <!-- card 2 -->
+                                    <div
+                                        class="p-4 space-y-2 bg-neutral-100 rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)]">
+                                        <p class=" text-primary text-xl font-semibold font-['Lexend_Deca'] leading-7">
+                                            Organization Name</p>
 
-                                    <div class="grow flex flex-col gap-2">
+                                        <p class="text-black text-sm font-normal leading-snug">
+                                            Gideon Financial: Empowering families to achieve their dreams.</p>
 
+                                        <div
+                                            class="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0">
 
-                                        <!-- industry 4 -->
-                                        <div class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
-                                            <p
-                                                class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
-                                                Industry Name</p>
+                                            <div class="flex justify-start gap-2">
+                                                <div class="flex justify-start items-center">
+                                                    <img src="../../assets/images/navbar/profile.png" alt=""
+                                                        class="w-6 h-6 rounded-full">
+                                                    <img src="../../assets/images/navbar/profile.png" alt=""
+                                                        class="w-6 h-6 rounded-full -ml-3">
+                                                    <img src="../../assets/images/navbar/profile.png" alt=""
+                                                        class="w-6 h-6 rounded-full -ml-3">
+                                                </div>
+                                                <p class="text-black text-sm font-medium leading-snug">20 Members</p>
+                                            </div>
 
-                                            <button class="ml-auto w-6 h-6">
-                                                <img src="../../assets/icons/delete.svg" alt="">
-                                            </button>
-
-                                            <button onclick="toggleModal('editIndustry')">
-
-                                                <img src="../../assets/icons/edit.svg" alt="">
-                                            </button>
-                                        </div>
-
-
-                                        <!-- industry 5 -->
-                                        <div class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
-                                            <p
-                                                class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
-                                                Industry Name</p>
-
-                                            <button class="ml-auto w-6 h-6">
-                                                <img src="../../assets/icons/delete.svg" alt="">
-                                            </button>
-
-                                            <button onclick="toggleModal('editIndustry')">
-
-                                                <img src="../../assets/icons/edit.svg" alt="">
-                                            </button>
-                                        </div>
-
-
-
-                                        <!-- industry 6 -->
-                                        <div class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
-                                            <p
-                                                class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
-                                                Industry Name</p>
-
-                                            <button class="ml-auto w-6 h-6">
-                                                <img src="../../assets/icons/delete.svg" alt="">
-                                            </button>
-
-                                            <button onclick="toggleModal('editIndustry')">
-
-                                                <img src="../../assets/icons/edit.svg" alt="">
+                                            <button
+                                                class="h-8 px-3 bg-white rounded-md outline outline-1 outline-offset-[-1px] outline-primary inline-flex justify-center items-center gap-1">
+                                                <div
+                                                    class="text-center justify-start text-primary text-xs font-medium font-['Lexend_Deca'] leading-tight">
+                                                    View Details</div>
                                             </button>
                                         </div>
                                     </div>
 
+
+                                    <!-- card 3 -->
+                                    <div
+                                        class="p-4 space-y-2 bg-neutral-100 rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)]">
+                                        <p class=" text-primary text-xl font-semibold font-['Lexend_Deca'] leading-7">
+                                            Organization Name</p>
+
+                                        <p class="text-black text-sm font-normal leading-snug">
+                                            Gideon Financial: Empowering families to achieve their dreams.</p>
+
+                                        <div
+                                            class="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0">
+
+                                            <div class="flex justify-start gap-2">
+                                                <div class="flex justify-start items-center">
+                                                    <img src="../../assets/images/navbar/profile.png" alt=""
+                                                        class="w-6 h-6 rounded-full">
+                                                    <img src="../../assets/images/navbar/profile.png" alt=""
+                                                        class="w-6 h-6 rounded-full -ml-3">
+                                                    <img src="../../assets/images/navbar/profile.png" alt=""
+                                                        class="w-6 h-6 rounded-full -ml-3">
+                                                </div>
+                                                <p class="text-black text-sm font-medium leading-snug">20 Members</p>
+                                            </div>
+
+                                            <button
+                                                class="h-8 px-3 bg-white rounded-md outline outline-1 outline-offset-[-1px] outline-primary inline-flex justify-center items-center gap-1">
+                                                <div
+                                                    class="text-center justify-start text-primary text-xs font-medium font-['Lexend_Deca'] leading-tight">
+                                                    View Details</div>
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- card 4 -->
+                                    <div
+                                        class="p-4 space-y-2 bg-neutral-100 rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)]">
+                                        <p class=" text-primary text-xl font-semibold font-['Lexend_Deca'] leading-7">
+                                            Organization Name</p>
+
+                                        <p class="text-black text-sm font-normal leading-snug">
+                                            Gideon Financial: Empowering families to achieve their dreams.</p>
+
+                                        <div
+                                            class="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0">
+
+                                            <div class="flex justify-start gap-2">
+                                                <div class="flex justify-start items-center">
+                                                    <img src="../../assets/images/navbar/profile.png" alt=""
+                                                        class="w-6 h-6 rounded-full">
+                                                    <img src="../../assets/images/navbar/profile.png" alt=""
+                                                        class="w-6 h-6 rounded-full -ml-3">
+                                                    <img src="../../assets/images/navbar/profile.png" alt=""
+                                                        class="w-6 h-6 rounded-full -ml-3">
+                                                </div>
+                                                <p class="text-black text-sm font-medium leading-snug">20 Members</p>
+                                            </div>
+
+                                            <button
+                                                class="h-8 px-3 bg-white rounded-md outline outline-1 outline-offset-[-1px] outline-primary inline-flex justify-center items-center gap-1">
+                                                <div
+                                                    class="text-center justify-start text-primary text-xs font-medium font-['Lexend_Deca'] leading-tight">
+                                                    View Details</div>
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+
+                                    <!-- pagination -->
+                                    <div class="pagination_container truncate">
+                                        <button class="">1</button>
+                                        <button class="">2</button>
+                                        <button class="selected">3</button>
+                                        <button class="">4</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -638,76 +690,6 @@
         </section>
     </main>
 
-    <!-- modal -->
-    <!-- create industry -->
-    <section id="list" class="modal_container">
-
-        <!-- backdrop -->
-        <div onclick="toggleModal('list')" class="modal_backdrop"></div>
-
-        <!-- modal content -->
-        <div class="modal_content">
-            <form class="flex flex-col gap-5 w-full lg:w-[485px]  relative z-10">
-
-                <p
-                    class="text-center justify-start text-gray-900 text-xl md:text-2xl font-bold font-['Poppins'] leading-loose">
-                    Create
-                    New Industry </p>
-
-
-                <label for="industry_name" class="space-y-2">
-                    <p class="text-black text-base md:text-lg font-medium font-['Poppins'] leading-relaxed">Industry
-                        Name</p>
-                    <input type="text" name="industry_name" id="industry_name"
-                        class="h-12 md:h-14 p-4 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-gray-300 w-full placeholder:text-slate-500 text-sm md:text-lg "
-                        placeholder="Enter Industry name">
-                </label>
-
-                <button type="submit"
-                    class="h-12 px-6 py-3.5 bg-cyan-700 rounded inline-flex justify-center items-center gap-2">
-                    <p
-                        class="text-center justify-start text-white text-lg font-medium font-['Poppins'] leading-relaxed">
-                        Submit</p>
-                </button>
-            </form>
-
-        </div>
-    </section>
-
-
-    <!-- Edit industry -->
-    <section id="editIndustry" class="modal_container">
-
-        <!-- backdrop -->
-        <div onclick="toggleModal('editIndustry')" class="modal_backdrop"></div>
-
-        <!-- modal content -->
-        <div class="modal_content">
-            <form class="flex flex-col gap-5 w-full lg:w-[485px]  relative z-10">
-
-                <p
-                    class="text-center justify-start text-gray-900 text-xl md:text-2xl font-bold font-['Poppins'] leading-loose">
-                    Edit Industry </p>
-
-
-                <label for="industry_name" class="space-y-2">
-                    <p class="text-black text-base md:text-lg font-medium font-['Poppins'] leading-relaxed">Industry
-                        Name</p>
-                    <input type="text" name="industry_name" id="industry_name"
-                        class="h-12 md:h-14 p-4 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-gray-300 w-full placeholder:text-slate-500 text-sm md:text-lg "
-                        placeholder="Enter Industry name">
-                </label>
-
-                <button type="submit"
-                    class="h-12 px-6 py-3.5 bg-cyan-700 rounded inline-flex justify-center items-center gap-2">
-                    <p
-                        class="text-center justify-start text-white text-lg font-medium font-['Poppins'] leading-relaxed">
-                        Submit</p>
-                </button>
-            </form>
-
-        </div>
-    </section>
 
     <script src="../../js/global.js"></script>
     <script src="../../js/modal.js"></script>

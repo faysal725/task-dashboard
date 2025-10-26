@@ -441,6 +441,24 @@ body {
   line-height: 26px;
 }
 
+.btn_sm {
+  background-color: var(--color-primary, #076988);
+  padding: 12px;
+  border-radius: 4px;
+  color: white;
+  font-size: clamp(12px, 2vw, 14px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  border: 1px solid var(--color-primary, #076988);
+  transition: all 0.3s ease-in-out;
+}
+
+/* small buttons */
+.btn_sm:hover {
+  background-color: #fff;
+  color: var(--color-primary, #076988);
+}
 
 
 /* modal base */
@@ -490,4 +508,28 @@ body {
 .modal_container.active .modal_content {
   transform: scale(1);
   opacity: 1;
+}
+
+
+/* pagination */
+.pagination_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination_container>button{
+  background-color: var(--color-gray-100, #EDEEF1);
+  padding: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color:var(--color-primary, #076988);
+  border-radius:4px;
+}
+
+
+.pagination_container>.selected{
+  background-color: var(--color-primary, #076988);
+  color: white;
 }
