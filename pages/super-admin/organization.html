@@ -478,193 +478,240 @@
                 </div>
             </div>
 
-            <div class="p-2 md:p-6 ">
+
+            <div class="p-2 md:p-6  ">
 
                 <!-- page content -->
-                <div class="w-full h-full bg-white rounded-lg overflow-y-auto scrollbar_hide">
-                    <div class="border-b border-gray-100 p-4 ">
-                        <p class="text-xl md:text-3xl font-semibold leading-10">Create Organization</p>
+                <div class="w-full h-full space-y-6 ">
+
+
+                    <!-- Organization -->
+                    <div class=" bg-white rounded-lg">
+                        <div class="border-b border-gray-100 p-4 ">
+                            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                                <p class="text-black text-3xl font-semibold font-['Lexend_Deca'] leading-10">Industry
+                                    List
+                                </p>
+
+
+                                <button onclick="toggleModal('list')"
+                                    class="relative px-3 py-1 flex justify-between items-center gap-2 bg-primary h-10 rounded ">
+
+                                    <p
+                                        class="text-white text-xs font-normal font-['Lexend_Deca'] leading-tight text-nowrap">
+                                        Create New </p>
+
+
+
+                                    <div class="w-6 h-6 relative flex items-center justify-center">
+                                        <img src="../../assets/icons/plus-box.svg" alt="" class="w-4 h-4">
+                                    </div>
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <!-- cards -->
+                        <div class="p-4 ">
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <div
+                                    class="bg-white rounded-lg p-4 flex justify-between items-stretch flex-col lg:flex-row  gap-2 lg:gap-6">
+                                    <div class="grow flex flex-col gap-2">
+
+                                        <!-- industry 1 -->
+                                        <div class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
+                                            <p
+                                                class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
+                                                Industry Name Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                                Provident adipisci repellat omnis corrupti. Sunt accusamus corrupti vel
+                                                architecto aliquam molestias.</p>
+
+                                            <button class="ml-auto w-6 h-6">
+                                                <img src="../../assets/icons/delete.svg" alt="">
+                                            </button>
+                                            <button onclick="toggleModal('editIndustry')">
+
+                                                <img src="../../assets/icons/edit.svg" alt="">
+                                            </button>
+                                        </div>
+
+                                        <!-- industry 2 -->
+                                        <div class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
+                                            <p
+                                                class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
+                                                Industry Name</p>
+
+                                            <button class="ml-auto w-6 h-6">
+                                                <img src="../../assets/icons/delete.svg" alt="">
+                                            </button>
+
+                                            <button onclick="toggleModal('editIndustry')">
+
+                                                <img src="../../assets/icons/edit.svg" alt="">
+                                            </button>
+                                        </div>
+
+                                        <!-- industry 3 -->
+                                        <div class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
+                                            <p
+                                                class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
+                                                Industry Name</p>
+
+                                            <button class="ml-auto w-6 h-6">
+                                                <img src="../../assets/icons/delete.svg" alt="">
+                                            </button>
+
+                                            <button onclick="toggleModal('editIndustry')">
+
+                                                <img src="../../assets/icons/edit.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Divider -->
+                                    <div class="hidden lg:flex">
+                                        <span class="block w-px h-full bg-gray-100"></span>
+                                    </div>
+
+                                    <div class="grow flex flex-col gap-2">
+
+
+                                        <!-- industry 4 -->
+                                        <div class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
+                                            <p
+                                                class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
+                                                Industry Name</p>
+
+                                            <button class="ml-auto w-6 h-6">
+                                                <img src="../../assets/icons/delete.svg" alt="">
+                                            </button>
+
+                                            <button onclick="toggleModal('editIndustry')">
+
+                                                <img src="../../assets/icons/edit.svg" alt="">
+                                            </button>
+                                        </div>
+
+
+                                        <!-- industry 5 -->
+                                        <div class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
+                                            <p
+                                                class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
+                                                Industry Name</p>
+
+                                            <button class="ml-auto w-6 h-6">
+                                                <img src="../../assets/icons/delete.svg" alt="">
+                                            </button>
+
+                                            <button onclick="toggleModal('editIndustry')">
+
+                                                <img src="../../assets/icons/edit.svg" alt="">
+                                            </button>
+                                        </div>
+
+
+
+                                        <!-- industry 6 -->
+                                        <div class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
+                                            <p
+                                                class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
+                                                Industry Name</p>
+
+                                            <button class="ml-auto w-6 h-6">
+                                                <img src="../../assets/icons/delete.svg" alt="">
+                                            </button>
+
+                                            <button onclick="toggleModal('editIndustry')">
+
+                                                <img src="../../assets/icons/edit.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    <form class="p-4 space-y-4 ">
-                        <div class="p-4 bg-gray-100 rounded-lg ">
-                            <div class="w-full h-full bg-white rounded-lg p-4 space-y-6">
-                                <div class="border-b border-gray-100 md:p-3">
-                                    <p class="text-zinc-900 text-lg md:text-2xl font-medium leading-loose">Company
-                                        Profile</p>
-
-                                </div>
-
-                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                                    <label for="company_name" class="text_input">
-                                        <p class="required">Company Name</p>
-                                        <input type="text" id="company_name" placeholder="Write Company Name" required>
-                                    </label>
-
-
-                                    <label for="email" class="text_input">
-                                        <p class="required">Email Address</p>
-                                        <input type="email" id="email" placeholder="Write email address" required>
-                                    </label>
-                                </div>
-
-
-                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    <label for="industry" class="text_input">
-                                        <p>Company Name</p>
-                                        <div>
-                                            <select name="industry" id="industry">
-                                                <option>Select industry</option>
-                                                <option value="Finance">Finance</option>
-                                                <option value="Health">Health</option>
-                                                <option value="Education">Education</option>
-                                            </select>
-
-                                            <img src="../../assets/icons/chevron-down.svg" alt="">
-                                        </div>
-                                    </label>
-
-
-                                    <label for="legal" class="text_input">
-                                        <p>Legal Form</p>
-                                        <div>
-                                            <select name="legal" id="legal">
-                                                <option>Select Legal From</option>
-                                                <option value="Finance">Finance</option>
-                                                <option value="Health">Health</option>
-                                                <option value="Education">Education</option>
-                                            </select>
-
-                                            <img src="../../assets/icons/chevron-down.svg" alt="">
-                                        </div>
-                                    </label>
-
-                                    <label for="activity" class="text_input">
-                                        <p>Sector of Activity </p>
-                                        <div>
-                                            <select name="activity" id="activity">
-                                                <option>Select sector of activity</option>
-                                                <option value="Finance">Finance</option>
-                                                <option value="Health">Health</option>
-                                                <option value="Education">Education</option>
-                                            </select>
-
-                                            <img src="../../assets/icons/chevron-down.svg" alt="">
-                                        </div>
-                                    </label>
-                                </div>
-
-
-                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    <label for="date_creation" class="text_input">
-                                        <p>Date of Creation</p>
-                                        <input type="date" id="date_creation" placeholder="Write Date of Creation">
-                                    </label>
-
-
-                                    <label for="Size" class="text_input">
-                                        <p>Size of the Company</p>
-                                        <input type="Size" id="Size" placeholder="Write Company Size">
-                                    </label>
-
-
-                                    <label for="no_of_employee" class="text_input">
-                                        <p>Number of Employee</p>
-                                        <input type="text" id="no_of_employee" placeholder="Write number of employee">
-                                    </label>
-                                </div>
-
-
-                                <div class="">
-
-                                    <label for="description" class="text_input">
-                                        <p>Description</p>
-
-                                        <textarea id="description" name="description" rows="6" cols="50" placeholder="Write description"></textarea>
-                                    </label>
-
-
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-                        <div class="p-4 bg-gray-100 rounded-lg ">
-                            <div class="w-full h-full bg-white rounded-lg p-4 space-y-6">
-                                <div class="border-b border-gray-100 md:p-3">
-                                    <p class="text-zinc-900 text-lg md:text-2xl font-medium leading-loose">User Profile
-                                    </p>
-
-                                </div>
-
-                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                                    <label for="first_name" class="text_input">
-                                        <p>First Name</p>
-                                        <input type="text" id="first_name" placeholder="Write first Name" required>
-                                    </label>
-
-
-                                    <label for="last_name" class="text_input">
-                                        <p>Last Name</p>
-                                        <input type="text" id="last_name" placeholder="Write Last Name" required>
-                                    </label>
-                                </div>
-
-
-                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                                    <label for="email" class="text_input">
-                                        <p>Email Address</p>
-                                        <input type="email" id="email" placeholder="Write email address" required>
-                                    </label>
-
-
-
-                                    <label for="telephone" class="text_input">
-                                        <p>Telephone</p>
-                                        <input type="telephone" id="telephone" placeholder="Write telephone address"
-                                            required>
-                                    </label>
-
-                                    <label for="activity" class="text_input">
-                                        <p>Department </p>
-                                        <div>
-                                            <select name="activity" id="activity">
-                                                <option>Select Department</option>
-                                                <option value="Finance">Finance</option>
-                                                <option value="Health">Health</option>
-                                                <option value="Education">Education</option>
-                                            </select>
-
-                                            <img src="../../assets/icons/chevron-down.svg" alt="">
-                                        </div>
-                                    </label>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-
-                        <div class="flex justify-end flex-col md:flex-row gap-4">
-                            <button class="btn_secondary">Back</button>
-                            <button type="submit" class="btn_primary">Create Organization</button>
-                        </div>
-                    </form>
-
 
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- modal -->
+    <!-- create industry -->
+    <section id="list" class="modal_container">
 
-    <script src="../../js/accordion.js"></script>
-    <script src="../../js/calender.js"></script>
-    <script src="../../js/sidebar.js"></script>
+        <!-- backdrop -->
+        <div onclick="toggleModal('list')" class="modal_backdrop"></div>
+
+        <!-- modal content -->
+        <div class="modal_content">
+            <form class="flex flex-col gap-5 w-full lg:w-[485px]  relative z-10">
+
+                <p
+                    class="text-center justify-start text-gray-900 text-xl md:text-2xl font-bold font-['Poppins'] leading-loose">
+                    Create
+                    New Industry </p>
+
+
+                <label for="industry_name" class="space-y-2">
+                    <p class="text-black text-base md:text-lg font-medium font-['Poppins'] leading-relaxed">Industry
+                        Name</p>
+                    <input type="text" name="industry_name" id="industry_name"
+                        class="h-12 md:h-14 p-4 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-gray-300 w-full placeholder:text-slate-500 text-sm md:text-lg "
+                        placeholder="Enter Industry name">
+                </label>
+
+                <button type="submit"
+                    class="h-12 px-6 py-3.5 bg-cyan-700 rounded inline-flex justify-center items-center gap-2">
+                    <p
+                        class="text-center justify-start text-white text-lg font-medium font-['Poppins'] leading-relaxed">
+                        Submit</p>
+                </button>
+            </form>
+
+        </div>
+    </section>
+
+
+    <!-- Edit industry -->
+    <section id="editIndustry" class="modal_container">
+
+        <!-- backdrop -->
+        <div onclick="toggleModal('editIndustry')" class="modal_backdrop"></div>
+
+        <!-- modal content -->
+        <div class="modal_content">
+            <form class="flex flex-col gap-5 w-full lg:w-[485px]  relative z-10">
+
+                <p
+                    class="text-center justify-start text-gray-900 text-xl md:text-2xl font-bold font-['Poppins'] leading-loose">
+                    Edit Industry </p>
+
+
+                <label for="industry_name" class="space-y-2">
+                    <p class="text-black text-base md:text-lg font-medium font-['Poppins'] leading-relaxed">Industry
+                        Name</p>
+                    <input type="text" name="industry_name" id="industry_name"
+                        class="h-12 md:h-14 p-4 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-gray-300 w-full placeholder:text-slate-500 text-sm md:text-lg "
+                        placeholder="Enter Industry name">
+                </label>
+
+                <button type="submit"
+                    class="h-12 px-6 py-3.5 bg-cyan-700 rounded inline-flex justify-center items-center gap-2">
+                    <p
+                        class="text-center justify-start text-white text-lg font-medium font-['Poppins'] leading-relaxed">
+                        Submit</p>
+                </button>
+            </form>
+
+        </div>
+    </section>
+
     <script src="../../js/global.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/sidebar.js"></script>
 </body>
 
 </html>
