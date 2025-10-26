@@ -261,7 +261,7 @@
         </section>
 
         <!-- sidebar section  -->
-        <section class="bg-black w-28 4xl:min-w-80 p-6 hidden xl:flex flex-col gap-4 transition-all duration-300"
+        <section class="bg-black w-28 4xl:min-w-80 4xl:p-6 hidden xl:flex flex-col gap-4 transition-all duration-300"
             id="sidebar_container">
 
             <div class="border-b border-white/10 pb-4" id="logo_container">
@@ -340,13 +340,23 @@
 
                 <!-- sidebar links  -->
                 <nav class="flex flex-col items-center justify-center gap-8 h-full">
-                    <button class="mb-auto">
+                    <button class="mb-auto p-6 relative group">
 
-                        <img src="../../assets/icons/search.svg" alt="">
+                        <div class="h-6 w-6">
+
+                            <img src="../../assets/icons/search.svg" alt="" class="w-full h-full">
+                        </div>
+
+
+                        <div
+                            class="absolute top-0 right-0 w-52 h-full bg-blue-500 scale-x-0  z-30 group-hover:scale-x-100  transition-all duration-300 origin-left">
+                            asdfsdf
+                        </div>
                     </button>
 
-                    <button>
+                    <button class="relative">
                         <img src="../../assets/icons/sidebarIcons/dashboard.svg" alt="">
+
                     </button>
 
                     <button>
@@ -518,13 +528,11 @@
                                             <div class="space-y-2">
                                                 <p
                                                     class="text-slate-500 text-sm md:text-lg font-medium font-['Lexend_Deca'] leading-tight md:leading-6">
-                                                    Admin</p>
-                                                <div class="flex justify-start items-center gap-1">
-                                                    <img src="../../assets/images/navbar/profile.png"
-                                                        alt="profile image" class="w-7 h-7 rounded-full">
+                                                    Company Name</p>
+                                                <div>
                                                     <p
                                                         class="text-black text-xs md:text-xl font-medium font-['Lexend_Deca'] leading-7 truncate">
-                                                        Tarik Bin Aziz</p>
+                                                        Aziz Biri & Tea</p>
                                                 </div>
                                             </div>
                                             <div class="space-y-2">
