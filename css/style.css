@@ -214,6 +214,18 @@ body {
 
 
 /* input box */
+
+.common_radio{
+
+}
+
+.common_checkbox{
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary, #076988);
+
+}
+
 .text_input {
   display: flex;
   flex-direction: column;
