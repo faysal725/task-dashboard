@@ -101,6 +101,172 @@
 
     <main class="flex justify-start bg-blue-600 h-screen max-h-screen overflow-hidden">
 
+        <!-- message box panel -->
+        <section class="bottom_panel_container" id="msg_box_panel">
+
+            <div class="bg-white space-y-2 h-full max-h-[95vh] overflow-y-auto">
+
+                <!-- msg box -->
+                <section
+                    class="msg_box_container  h-full  rounded-lg rounded-b-none overflow-hidden flex flex-col justify-start">
+                    <header class="sticky top-0 right-0 bg-black p-4 flex justify-start items-center gap-4">
+                        <img src="../../assets/images/navbar/profile.png" alt=""
+                            class="w-12 h-12 rounded-full outline outline-[1.29px] outline-offset-[-0.64px] outline-cyan-700">
+
+                        <div>
+                            <p class="text-white text-lg font-semibold font-['Poppins'] leading-6">
+                                Tarik Bin Aziz</p>
+                            <p class="text-slate-500 text-xs font-medium font-['Poppins'] leading-5">
+                                6 min ago </p>
+                        </div>
+
+                        <button class="ml-auto" onclick="togglePanels('msg_box_panel')">
+                            <img src="./assets/icons/x-white.svg" alt="" class="w-6 h-6">
+                        </button>
+                    </header>
+
+                    <!-- messages -->
+                    <div class="flex-1 overflow-y-auto p-4 scrollbar_style flex flex-col gap-6">
+                        <!-- user msg -->
+                        <div class="w-full flex justify-end items-end gap-2">
+
+                            <div class="space-y-[10px]">
+                                <div class="px-4 py-2 bg-primary rounded">
+                                    <p
+                                        class="max-w-sm min-h-10 text-white text-xs xl:text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                                        elit. Autem eos, inventore quis eaque cum quibusdam
+                                        magni consequatur vel minima ullam distinctio cumque
+                                        dolorum incidunt provident, praesentium fugiat
+                                        harum, maiores molestiae.</p>
+                                </div>
+
+                                <div class="px-4 py-2 bg-primary rounded">
+                                    <p
+                                        class="max-w-sm min-h-10 text-white text-xs xl:text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                        Lorem ipsum dolor sit</p>
+                                </div>
+                                <div class="inline-flex justify-start items-center gap-2">
+                                    <p
+                                        class="justify-center text-slate-500 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                                        12/10/2025</p>
+                                    <p class="text-[10px] text-gray-300">|</p>
+                                    <div
+                                        class="justify-center text-slate-500 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                                        14:00</div>
+                                </div>
+                            </div>
+                            <img class="w-7 h-7 rounded-full border-[0.57px] border-primary mb-7"
+                                src="../../assets/images/navbar/profile.png" />
+                        </div>
+
+
+                        <!-- admin msg -->
+                        <div class="w-full flex justify-start items-end gap-2">
+
+                            <img class="w-7 h-7 rounded-full border-[0.57px] border-primary mb-7"
+                                src="../../assets/images/navbar/profile.png" />
+                            <div class="space-y-[10px]">
+                                <div class="px-4 py-2 bg-neutral-100 rounded">
+                                    <p
+                                        class="max-w-sm min-h-10 text-black text-xs xl:text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                                        elit. Quod magni consequatur vitae praesentium
+                                        repudiandae dolorum similique deleniti et nam. Rem.
+                                    </p>
+                                </div>
+
+                                <div class="px-4 py-2 bg-neutral-100 rounded">
+                                    <p
+                                        class="max-w-sm min-h-10 text-black text-xs xl:text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                        Lorem ipsum, dolor sit amet </p>
+                                </div>
+
+
+                                <div class="px-4 py-2 bg-neutral-100 rounded">
+                                    <p
+                                        class="max-w-sm min-h-10 text-black text-xs xl:text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                        Lorem ipsum, dolor sit amet Lorem ipsum, dolor sit
+                                        amet consectetur adipisicing elit. Ipsam, quia.</p>
+                                </div>
+
+
+                                <div class="px-4 py-2 bg-neutral-100 rounded">
+                                    <p
+                                        class="max-w-sm min-h-10 text-black text-xs xl:text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                        Lorem ipsum, dolor sit amet </p>
+                                </div>
+
+                                <div class="inline-flex justify-end items-center gap-2 w-full">
+                                    <p
+                                        class="justify-center text-slate-500 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                                        12/10/2025</p>
+                                    <p class="text-[10px] text-gray-300">|</p>
+                                    <div
+                                        class="justify-center text-slate-500 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                                        14:00</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- user msg -->
+                        <div class="w-full flex justify-end items-end gap-2">
+
+                            <div class="space-y-[10px]">
+                                <div class="px-4 py-2 bg-primary rounded">
+                                    <p
+                                        class="max-w-sm min-h-10 text-white text-xs xl:text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                                        elit. Autem eos, inventore quis eaque cum quibusdam
+                                        magni consequatur vel minima ullam distinctio cumque
+                                        dolorum incidunt provident, praesentium fugiat
+                                        harum, maiores molestiae.</p>
+                                </div>
+
+                                <div class="px-4 py-2 bg-primary rounded">
+                                    <p
+                                        class="max-w-sm min-h-10 text-white text-xs xl:text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                        Lorem ipsum dolor sit</p>
+                                </div>
+                                <div class="inline-flex justify-start items-center gap-2">
+                                    <p
+                                        class="justify-center text-slate-500 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                                        12/10/2025</p>
+                                    <p class="text-[10px] text-gray-300">|</p>
+                                    <div
+                                        class="justify-center text-slate-500 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                                        14:00</div>
+                                </div>
+                            </div>
+                            <img class="w-7 h-7 rounded-full border-[0.57px] border-primary mb-7"
+                                src="../../assets/images/navbar/profile.png" />
+                        </div>
+
+                    </div>
+
+                    <form class="sticky bottom-0  bg-gray-100 p-4 flex items-center gap-2">
+                        <button onclick="handleUpload('fileInput2')"
+                            class="w-12 h-12 bg-white rounded-lg flex justify-center items-center">
+                            <img src="./assets/icons/paperclip.svg" alt="">
+                        </button>
+                        <input type="file" id="fileInput2" class="hidden" />
+
+                        <div class="w-full h-12 bg-white rounded-lg px-4 text-sm relative">
+                            <input type="text" class="w-full h-full outline-none">
+                            <button type="submit" class="w-8 h-full absolute top-0 right-0">
+                                <img src="./assets/icons/paper-plane.svg" alt="" class="w-6 h-6 ">
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+            </div>
+
+
+        </section>
+
         <!-- profile panel -->
         <section class="fixed right-0 w-80 h-full bg-black z-50 transition-all duration-300 translate-x-[100%] p-6 "
             id="profile_panel">
@@ -499,73 +665,94 @@
                         </div>
 
 
-                        <div class="p-4 pt-3 ">
+                        <div class="md:p-4 pt-3 ">
                             <section class="grid grid-cols-12 gap-4">
-                                <div class="col-span-4 bg-neutral-100 rounded-lg p-4">
+                                <div
+                                    class="col-span-12 lg:col-span-5 2xl:col-span-4 bg-neutral-100 md:rounded-lg md:p-4">
 
 
                                     <!-- msg cards -->
                                     <div
-                                        class="p-4 bg-white h-full space-y-2 min-h-[70vh] max-h-[70vh] overflow-y-auto scrollbar_style">
+                                        class=" h-full space-y-2 ">
 
-                                        <!-- card 1  -->
-                                        <div
-                                            class="p-3 flex justify-between gap-2 bg-[radial-gradient(ellipse_119.79%_1050.12%_at_34.05%_-0.00%,_#DDF7FF_0%,_white_100%)] rounded-lg">
-                                            <div
-                                                class="w-12 h-12 rounded-full outline outline-[1.29px] outline-offset-[-0.64px] outline-primary p-0.5">
-                                                <img src="./assets/images/navbar/profile.png" alt=""
-                                                    class="w-full h-full rounded-full border-[0.86px] border-primary">
+                                        <!-- searchbox -->
+                                        <form
+                                            class="flex justify-start items-center bg-blue-500 h-14 px-3 py-1 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-gray-300">
+                                            <input type="text" placeholder="search..."
+                                                class="flex-1 bg-transparent h-full outline-none text-slate-600 text-base font-normal font-['Poppins'] leading-6">
+
+
+                                            <button type="submit">
+                                                <img src="../../assets/icons/search.svg" alt="">
+                                            </button>
+                                        </form>
+
+                                        <div class="bg-white p-4 space-y-2 rounded-lg h-full min-h-[60vh] max-h-[60vh] overflow-y-auto scrollbar_style">
+
+                                            <!-- card 1  -->
+                                            <div onclick="togglePanels('msg_box_panel')"
+                                                class="p-3 flex justify-between gap-2 bg-[radial-gradient(ellipse_119.79%_1050.12%_at_34.05%_-0.00%,_#DDF7FF_0%,_white_100%)] rounded-lg">
+                                                <div
+                                                    class="w-12 h-12 rounded-full outline outline-[1.29px] outline-offset-[-0.64px] outline-primary p-0.5">
+                                                    <img src="./assets/images/navbar/profile.png" alt=""
+                                                        class="w-full h-full rounded-full border-[0.86px] border-primary">
+                                                </div>
+
+                                                <div class="grow">
+                                                    <p
+                                                        class=" text-primary text-sm font-medium font-['Lexend_Deca'] leading-snug">
+                                                        Tarik
+                                                        Bin Aziz</p>
+
+                                                    <p
+                                                        class="text-gray-500 text-xs font-normal font-['Lexend_Deca'] leading-tight">
+                                                        Wow,
+                                                        this is incredible!</p>
+
+                                                    <p
+                                                        class="text-gray-500 text-[10px] font-normal font-['Lexend_Deca'] leading-none block sm:hidden mt-2">
+                                                        6 min
+                                                        ago</p>
+                                                </div>
+
+                                                <p
+                                                    class="text-gray-500 text-[10px] font-normal font-['Lexend_Deca'] leading-none hidden sm:block">
+                                                    6 min
+                                                    ago</p>
                                             </div>
 
-                                            <div class="grow">
-                                                <p
-                                                    class=" text-primary text-sm font-medium font-['Lexend_Deca'] leading-snug">
-                                                    Tarik
-                                                    Bin Aziz</p>
 
-                                                <p
-                                                    class="text-gray-500 text-xs font-normal font-['Lexend_Deca'] leading-tight">
-                                                    Wow,
-                                                    this is incredible!</p>
+                                            <!-- card 2  -->
+                                            <div class="p-3 flex justify-between gap-2 bg-neutral-100 rounded-lg">
+                                                <div
+                                                    class="w-12 h-12 rounded-full outline outline-[1.29px] outline-offset-[-0.64px] outline-primary p-0.5">
+                                                    <img src="./assets/images/navbar/profile.png" alt=""
+                                                        class="w-full h-full rounded-full border-[0.86px] border-primary">
+                                                </div>
+
+                                                <div class="grow">
+                                                    <p
+                                                        class=" text-primary text-sm font-medium font-['Lexend_Deca'] leading-snug">
+                                                        Tarik
+                                                        Bin Aziz</p>
+
+                                                    <p
+                                                        class="text-gray-500 text-xs font-normal font-['Lexend_Deca'] leading-tight">
+                                                        Wow,
+                                                        this is incredible!</p>
+                                                </div>
+
+                                                <span class="inline-block h-3 w-3 bg-success rounded-full"></span>
                                             </div>
 
-                                            <p
-                                                class="text-gray-500 text-[10px] font-normal font-['Lexend_Deca'] leading-none">
-                                                6 min
-                                                ago</p>
+
                                         </div>
-
-
-                                        <!-- card 2  -->
-                                        <div class="p-3 flex justify-between gap-2 bg-neutral-100 rounded-lg">
-                                            <div
-                                                class="w-12 h-12 rounded-full outline outline-[1.29px] outline-offset-[-0.64px] outline-primary p-0.5">
-                                                <img src="./assets/images/navbar/profile.png" alt=""
-                                                    class="w-full h-full rounded-full border-[0.86px] border-primary">
-                                            </div>
-
-                                            <div class="grow">
-                                                <p
-                                                    class=" text-primary text-sm font-medium font-['Lexend_Deca'] leading-snug">
-                                                    Tarik
-                                                    Bin Aziz</p>
-
-                                                <p
-                                                    class="text-gray-500 text-xs font-normal font-['Lexend_Deca'] leading-tight">
-                                                    Wow,
-                                                    this is incredible!</p>
-                                            </div>
-
-                                            <span class="inline-block h-3 w-3 bg-success rounded-full"></span>
-                                        </div>
-
-
 
                                     </div>
 
                                 </div>
 
-                                <div class="col-span-8">
+                                <div class="hidden lg:block col-span-12 lg:col-span-7 2xl:col-span-8">
                                     <div class="bg-neutral-100 rounded-lg p-4 h-full">
                                         <div class="bg-white space-y-2 h-full max-h-[70vh] overflow-y-auto">
 
@@ -600,7 +787,7 @@
                                                         <div class="space-y-[10px]">
                                                             <div class="px-4 py-2 bg-primary rounded">
                                                                 <p
-                                                                    class="max-w-sm min-h-10 text-white text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                                                    class="max-w-sm min-h-10 text-white text-xs xl:text-sm font-normal font-['Lexend_Deca'] leading-5">
                                                                     Lorem ipsum dolor sit, amet consectetur adipisicing
                                                                     elit. Autem eos, inventore quis eaque cum quibusdam
                                                                     magni consequatur vel minima ullam distinctio cumque
@@ -610,7 +797,7 @@
 
                                                             <div class="px-4 py-2 bg-primary rounded">
                                                                 <p
-                                                                    class="max-w-sm min-h-10 text-white text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                                                    class="max-w-sm min-h-10 text-white text-xs xl:text-sm font-normal font-['Lexend_Deca'] leading-5">
                                                                     Lorem ipsum dolor sit</p>
                                                             </div>
                                                             <div class="inline-flex justify-start items-center gap-2">
@@ -636,7 +823,7 @@
                                                         <div class="space-y-[10px]">
                                                             <div class="px-4 py-2 bg-neutral-100 rounded">
                                                                 <p
-                                                                    class="max-w-sm min-h-10 text-black text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                                                    class="max-w-sm min-h-10 text-black text-xs xl:text-sm font-normal font-['Lexend_Deca'] leading-5">
                                                                     Lorem ipsum, dolor sit amet consectetur adipisicing
                                                                     elit. Quod magni consequatur vitae praesentium
                                                                     repudiandae dolorum similique deleniti et nam. Rem.
@@ -645,14 +832,14 @@
 
                                                             <div class="px-4 py-2 bg-neutral-100 rounded">
                                                                 <p
-                                                                    class="max-w-sm min-h-10 text-black text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                                                    class="max-w-sm min-h-10 text-black text-xs xl:text-sm font-normal font-['Lexend_Deca'] leading-5">
                                                                     Lorem ipsum, dolor sit amet </p>
                                                             </div>
 
 
                                                             <div class="px-4 py-2 bg-neutral-100 rounded">
                                                                 <p
-                                                                    class="max-w-sm min-h-10 text-black text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                                                    class="max-w-sm min-h-10 text-black text-xs xl:text-sm font-normal font-['Lexend_Deca'] leading-5">
                                                                     Lorem ipsum, dolor sit amet Lorem ipsum, dolor sit
                                                                     amet consectetur adipisicing elit. Ipsam, quia.</p>
                                                             </div>
@@ -660,11 +847,11 @@
 
                                                             <div class="px-4 py-2 bg-neutral-100 rounded">
                                                                 <p
-                                                                    class="max-w-sm min-h-10 text-black text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                                                    class="max-w-sm min-h-10 text-black text-xs xl:text-sm font-normal font-['Lexend_Deca'] leading-5">
                                                                     Lorem ipsum, dolor sit amet </p>
                                                             </div>
 
-                                                            <div class="inline-flex justify-start items-center gap-2">
+                                                            <div class="inline-flex justify-end items-center gap-2 w-full">
                                                                 <p
                                                                     class="justify-center text-slate-500 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
                                                                     12/10/2025</p>
@@ -684,7 +871,7 @@
                                                         <div class="space-y-[10px]">
                                                             <div class="px-4 py-2 bg-primary rounded">
                                                                 <p
-                                                                    class="max-w-sm min-h-10 text-white text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                                                    class="max-w-sm min-h-10 text-white text-xs xl:text-sm font-normal font-['Lexend_Deca'] leading-5">
                                                                     Lorem ipsum dolor sit, amet consectetur adipisicing
                                                                     elit. Autem eos, inventore quis eaque cum quibusdam
                                                                     magni consequatur vel minima ullam distinctio cumque
@@ -694,7 +881,7 @@
 
                                                             <div class="px-4 py-2 bg-primary rounded">
                                                                 <p
-                                                                    class="max-w-sm min-h-10 text-white text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                                                    class="max-w-sm min-h-10 text-white text-xs xl:text-sm font-normal font-['Lexend_Deca'] leading-5">
                                                                     Lorem ipsum dolor sit</p>
                                                             </div>
                                                             <div class="inline-flex justify-start items-center gap-2">
@@ -714,8 +901,7 @@
                                                 </div>
 
                                                 <form class="sticky bottom-0  bg-gray-100 p-4 flex items-center gap-2">
-                                                    <button
-                                                    onclick="handleUpload('fileInput')"
+                                                    <button onclick="handleUpload('fileInput')"
                                                         class="w-12 h-12 bg-white rounded-lg flex justify-center items-center">
                                                         <img src="./assets/icons/paperclip.svg" alt="">
                                                     </button>
