@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <!-- Inter font from Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- accordion cdn  -->
+
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        lexend: ['Lexend Deca', 'sans-serif'],
+                    },
+                    maxWidth: {
+                        '8xl': '1408px', // custom max-width
+                    },
+                    colors: {
+                        'primary': 'var(--color-primary)',
+                        'black': 'var(--color-black)',
+
+                        'success': 'var(--color-success)',
+                        'warning': 'var(--color-warning)',
+                        'error': 'var(--color-error)',
+                        'info': 'var(--color-info)',
+
+                        // Primary shade palette
+                        'primaryS-50': 'var(--color-primary-shade-50)',
+                        'primaryS-100': 'var(--color-primary-shade-100)',
+                        'primaryS-200': 'var(--color-primary-shade-200)',
+                        'primaryS-300': 'var(--color-primary-shade-300)',
+                        'primaryS-400': 'var(--color-primary-shade-400)',
+                        'primaryS-500': 'var(--color-primary-shade-500)',
+                        'primaryS-600': 'var(--color-primary-shade-600)',
+                        'primaryS-700': 'var(--color-primary-shade-700)',
+                        'primaryS-800': 'var(--color-primary-shade-800)',
+                        'primaryS-900': 'var(--color-primary-shade-900)',
+                        'primaryS-950': 'var(--color-primary-shade-950)',
+
+                        // Gray palette
+                        'gray-100': 'var(--color-gray-100)',
+                        'gray-200': 'var(--color-gray-200)',
+                        'gray-300': 'var(--color-gray-300)',
+                        'gray-400': 'var(--color-gray-400)',
+                        'gray-500': 'var(--color-gray-500)',
+                        'gray-600': 'var(--color-gray-600)',
+                        'gray-700': 'var(--color-gray-700)',
+                        'gray-800': 'var(--color-gray-800)',
+                        'gray-900': 'var(--color-gray-900)',
+
+                    },
+                    screens: {
+                        // Mobile sizes
+                        'xxs': '320px',   // iPhone SE, small Android
+                        'xs': '375px',    // iPhone X, 12 mini
+                        'sm': '414px',    // iPhone 12/13/14 Pro Max
+                        'msm': '480px',   // small phones / older Android
+                        'md': '600px',    // large phones / small tablets
+                        'lg': '768px',    // tablets (portrait)
+                        'xl': '992px',    // tablets (landscape), small laptops
+                        '2xl': '1200px',  // standard laptop
+                        '3xl': '1366px',  // common laptop resolutions
+                        '4xl': '1440px',  // wide laptops / HD screens
+                        '5xl': '1600px',  // large monitors
+                        '6xl': '1920px',  // full HD / desktop monitors
+                        '7xl': '2560px',  // 2K / ultrawide screens
+                        '8xl': '3840px',  // 4K displays
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/calender.css">
+
+
+</head>
+
+<body class="">
+
+
+    <main class="flex justify-start bg-blue-600 h-screen max-h-screen overflow-hidden">
+
+        <!-- profile panel -->
+        <section class="fixed right-0 w-80 h-full bg-black z-50 transition-all duration-300 translate-x-[100%] p-6 "
+            id="profile_panel">
+
+            <div class="flex justify-end">
+                <button class="text-white border border-white/10 rounded-lg w-8 h-8 " onclick="toggleProfilePanel()">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+
+
+            <div class="inline-flex justify-start items-start gap-3 border-b border-white/20 w-full pb-4 mb-4">
+                <img class="w-12 h-12 rounded-full outline outline-2 outline-primary"
+                    src="../../assets/images/navbar/profile.png" />
+                <div class="inline-flex flex-col justify-start items-start">
+                    <div class="justify-center text-white text-base font-semibold font-['Poppins'] leading-normal">Tarik
+                        Bin Aziz</div>
+                    <div class="justify-center text-primary text-sm font-normal font-['Poppins'] leading-snug">Admin
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col justify-center items-center gap-3">
+                <button class=" relative w-full ">
+                    <img src="../../assets/icons/navbarIcons/language.svg" alt="" class="absolute top-3 left-3 ">
+
+                    <select
+                        class="outline-none  rounded-lg appearance-none bg-neutral-100 w-full h-10 pl-10 text-zinc-900 text-xs font-normal font-['Poppins'] leading-tight">
+
+                        <option value="eng">
+                            <span>
+                                <img src="../../assets/icons/navbarIcons/language.svg" alt="">
+                            </span>
+                            <span>English</span>
+                        </option>
+                        <option value="Ar">
+                            <span>Arabic</span>
+                        </option>
+                    </select>
+
+                    <span class="absolute top-4 right-6">
+                        <img src="../../assets/icons/chevron-down.svg" alt="">
+                    </span>
+                </button>
+
+                <button class="bg-gray-50 rounded-lg p-2 relative flex justify-start items-center gap-1 w-full">
+                    <img src="../../assets/icons/navbarIcons/bell.svg" alt="" class="w-6 h-6">
+                    <p class="justify-start text-zinc-900 text-xs font-normal font-['Poppins'] leading-tight">
+                        Notification </p>
+                    <span class="ml-auto inline-block w-4 h-4 bg-error text-[10px] rounded-full text-white">3</span>
+                </button>
+
+
+                <button class="bg-gray-50 rounded-lg p-2 relative flex justify-start items-center gap-1 w-full">
+                    <img src="../../assets/icons/navbarIcons/comment-dot.svg" alt="" class="w-6 h-6">
+                    <p class="justify-start text-zinc-900 text-xs font-normal font-['Poppins'] leading-tight">Massage
+                    </p>
+                    <span class="ml-auto inline-block w-4 h-4 bg-error text-[10px] rounded-full text-white">3</span>
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+        <!-- sidebar panel -->
+        <section
+            class="fixed w-80 h-full bg-black z-50 transition-all duration-300 translate-x-[-100%] p-6 flex flex-col gap-4"
+            id="sidepanel">
+            <div class="border-b border-white/10 pb-4 flex justify-between">
+                <img src="../../assets/logo/logo.png" alt="" class="h-10 w-auto object-contain">
+
+                <button class="text-white border border-white/10 rounded-lg w-8 h-8" onclick="toggleSidebar()">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="flex flex-col justify-start grow">
+                <!-- search box -->
+                <div
+                    class=" h-12 px-3 py-1 bg-white/10 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/10 flex items-center gap-2 mb-4">
+                    <input type="text" placeholder="Search" class="w-full bg-transparent outline-none text-white">
+                    <img src="../../assets/icons/search.svg" alt="">
+                </div>
+
+                <!-- sidebar panel links  -->
+                <nav class="space-y-2">
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/dashboard.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                            Dashboard</p>
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/globe.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                            Domain</p>
+
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/building.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                            Organization</p>
+
+                    </a>
+                    <div class="">
+                        <div onclick="expandOrCollapseSubsection('company_essential_sm')"
+                            class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white cursor-pointer">
+                            <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
+                            <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                Company Essential </p>
+
+                            <i class="fa fa-chevron-down text-white fa-xs ml-auto block" aria-hidden="true"></i>
+                        </div>
+
+                        <div id="company_essential_sm"
+                            class="text-white pl-8 max-h-0 overflow-hidden transition-all duration-400 "
+                            aria-expanded="false">
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 1</p>
+                            </div>
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 2</p>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+
+                <div class="sticky bottom-0 z-10 p-3 bg-white/5 rounded flex justify-between items-center mt-auto">
+                    <button>
+                        <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                    </button>
+
+                    <button>
+                        <img src="../../assets/icons/settings.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                    </button>
+                    <button>
+                        <img src="../../assets/icons/user.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                    </button>
+                    <button>
+
+                        <img src="../../assets/icons/log-out.svg" alt="" class="w-6 h-6 cursor-pointer">
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- sidebar section  -->
+        <section class="bg-black w-28 4xl:min-w-80 p-6 hidden xl:flex flex-col gap-4 transition-all duration-300"
+            id="sidebar_container">
+
+            <div class="border-b border-white/10 pb-4" id="logo_container">
+                <img src="../../assets/logo/logo.png" alt="" class="h-10 w-auto object-contain">
+            </div>
+
+            <!-- for 4xl -->
+            <div class=" grow" id="lg_nav">
+                <!-- search box -->
+                <div
+                    class=" h-12 px-3 py-1 bg-white/10 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/10 flex items-center gap-2 mb-4">
+                    <input type="text" placeholder="Search" class="w-full bg-transparent outline-none text-white">
+                    <img src="../../assets/icons/search.svg" alt="">
+                </div>
+
+                <button class=" 4xl:hidden">
+
+                    <img src="../../assets/icons/search.svg" alt="">
+                </button>
+
+                <!-- sidebar links  -->
+                <nav class="space-y-2">
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/dashboard.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                            Dashboard</p>
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/globe.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                            Domain</p>
+
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/building.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                            Organization</p>
+
+                    </a>
+                    <div class="">
+                        <div onclick="expandOrCollapseSubsection('company_essential')"
+                            class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white cursor-pointer">
+                            <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
+                            <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                Company Essential </p>
+
+                            <i class="fa fa-chevron-down text-white fa-xs ml-auto block" aria-hidden="true"></i>
+                        </div>
+
+                        <div id="company_essential"
+                            class="text-white pl-8 max-h-0 overflow-hidden transition-all duration-400 "
+                            aria-expanded="false">
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 1</p>
+                            </div>
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 2</p>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+
+
+            <!-- for smaller then 4xl -->
+            <div class=" grow" id="small_nav">
+
+
+                <!-- sidebar links  -->
+                <nav class="flex flex-col items-center justify-center gap-8 h-full">
+                    <button class="mb-auto">
+
+                        <img src="../../assets/icons/search.svg" alt="">
+                    </button>
+
+                    <button>
+                        <img src="../../assets/icons/sidebarIcons/dashboard.svg" alt="">
+                    </button>
+
+                    <button>
+                        <img src="../../assets/icons/sidebarIcons/globe.svg" alt="">
+                    </button>
+
+
+                    <button>
+                        <img src="../../assets/icons/sidebarIcons/building.svg" alt="">
+                    </button>
+
+
+                    <button>
+                        <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
+                    </button>
+
+                    <div class="mt-auto flex flex-col items-center gap-4 bg-white/5 rounded w-full py-4">
+                        <button class="">
+                            <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                        </button>
+
+                        <button class="">
+                            <img src="../../assets/icons/settings.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                        </button>
+                        <button class="">
+                            <img src="../../assets/icons/user.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                        </button>
+                        <button class="">
+
+                            <img src="../../assets/icons/log-out.svg" alt="" class="w-6 h-6 cursor-pointer">
+                        </button>
+                    </div>
+
+                </nav>
+
+
+            </div>
+
+
+
+            <div class="sticky bottom-0 z-10 p-3 bg-white/5 rounded flex justify-between items-center"
+                id="bottom_options">
+                <button>
+                    <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                </button>
+
+                <button>
+                    <img src="../../assets/icons/settings.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                </button>
+                <button>
+                    <img src="../../assets/icons/user.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                </button>
+                <button>
+
+                    <img src="../../assets/icons/log-out.svg" alt="" class="w-6 h-6 cursor-pointer">
+                </button>
+            </div>
+        </section>
+
+
+
+        <!-- contant section -->
+        <section class="bg-gray-50 grow overflow-y-auto bg-neutral-100">
+
+            <!-- navbar -->
+            <div class="bg-white py-4 px-6 flex justify-between items-center sticky top-0 z-20">
+                <button class="p-1 bg-gray-50 rounded hidden 4xl:block" onclick="expandeOrCollapseSidebar()">
+                    <img src="../../assets/icons/navbarIcons/bars.svg" alt="">
+                </button>
+                <button class="p-1 bg-gray-50 rounded block 4xl:hidden" onclick="toggleSidebar()">
+                    <img src="../../assets/icons/navbarIcons/bars.svg" alt="">
+                </button>
+
+                <div class="flex justify-center items-center gap-6">
+                    <div class="flex gap-3">
+
+
+                        <button class="hidden md:block relative">
+                            <img src="../../assets/icons/navbarIcons/language.svg" alt=""
+                                class="absolute top-3 left-3 ">
+
+                            <select class="outline-none  rounded-lg appearance-none bg-neutral-100 w-36 h-10 pl-10">
+
+                                <option value="eng">
+                                    <span>
+                                        <img src="../../assets/icons/navbarIcons/language.svg" alt="">
+                                    </span>
+                                    <span>English</span>
+                                </option>
+                                <option value="Ar">
+                                    <span>Arabic</span>
+                                </option>
+                            </select>
+
+                            <span class="absolute top-4 right-6">
+                                <img src="../../assets/icons/chevron-down.svg" alt="">
+                            </span>
+                        </button>
+
+                        <button class="bg-gray-50 rounded-lg p-2 relative hidden md:flex justify-center items-center">
+                            <span
+                                class="inline-block w-4 h-4 bg-error text-[10px] rounded-full text-white absolute -top-1 -right-1">3</span>
+                            <img src="../../assets/icons/navbarIcons/bell.svg" alt="">
+                        </button>
+
+
+                        <button class="bg-gray-50 rounded-lg p-2 relative hidden md:flex justify-center items-center">
+                            <span
+                                class="inline-block w-4 h-4 bg-error text-[10px] rounded-full text-white absolute -top-1 -right-1">3</span>
+                            <img src="../../assets/icons/navbarIcons/comment-dot.svg" alt="">
+                        </button>
+                    </div>
+                    <button class="flex items-start gap-3" onclick="toggleProfilePanel()">
+                        <div>
+                            <p class="text-black text-base font-semibold font-['Poppins'] leading-normal">Tarik Bin Aziz
+                            </p>
+                            <p class="text-primary text-sm font-normal font-['Poppins'] leading-snug">Admin</p>
+                        </div>
+                        <div>
+                            <img src="../../assets/images/navbar/profile.png" alt="" class="rounded-full">
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="p-2 md:p-6  ">
+
+                <!-- page content -->
+                <div class="w-full h-full space-y-6 ">
+
+
+                    <!-- Organization -->
+                    <div class=" bg-white rounded-lg ">
+                        <div class="border-b border-gray-100 p-4 pb-3">
+                            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                                <p class="text-black text-3xl font-semibold font-['Lexend_Deca'] leading-10">
+                                    Massage
+                                </p>
+
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="p-4 pt-3 ">
+                            <section class="grid grid-cols-12 gap-4">
+                                <div class="col-span-4 bg-neutral-100 rounded-lg p-4">
+
+
+                                    <!-- msg cards -->
+                                    <div
+                                        class="p-4 bg-white h-full space-y-2 min-h-[70vh] max-h-[70vh] overflow-y-auto scrollbar_style">
+
+                                        <!-- card 1  -->
+                                        <div
+                                            class="p-3 flex justify-between gap-2 bg-[radial-gradient(ellipse_119.79%_1050.12%_at_34.05%_-0.00%,_#DDF7FF_0%,_white_100%)] rounded-lg">
+                                            <div
+                                                class="w-12 h-12 rounded-full outline outline-[1.29px] outline-offset-[-0.64px] outline-primary p-0.5">
+                                                <img src="./assets/images/navbar/profile.png" alt=""
+                                                    class="w-full h-full rounded-full border-[0.86px] border-primary">
+                                            </div>
+
+                                            <div class="grow">
+                                                <p
+                                                    class=" text-primary text-sm font-medium font-['Lexend_Deca'] leading-snug">
+                                                    Tarik
+                                                    Bin Aziz</p>
+
+                                                <p
+                                                    class="text-gray-500 text-xs font-normal font-['Lexend_Deca'] leading-tight">
+                                                    Wow,
+                                                    this is incredible!</p>
+                                            </div>
+
+                                            <p
+                                                class="text-gray-500 text-[10px] font-normal font-['Lexend_Deca'] leading-none">
+                                                6 min
+                                                ago</p>
+                                        </div>
+
+
+                                        <!-- card 2  -->
+                                        <div class="p-3 flex justify-between gap-2 bg-neutral-100 rounded-lg">
+                                            <div
+                                                class="w-12 h-12 rounded-full outline outline-[1.29px] outline-offset-[-0.64px] outline-primary p-0.5">
+                                                <img src="./assets/images/navbar/profile.png" alt=""
+                                                    class="w-full h-full rounded-full border-[0.86px] border-primary">
+                                            </div>
+
+                                            <div class="grow">
+                                                <p
+                                                    class=" text-primary text-sm font-medium font-['Lexend_Deca'] leading-snug">
+                                                    Tarik
+                                                    Bin Aziz</p>
+
+                                                <p
+                                                    class="text-gray-500 text-xs font-normal font-['Lexend_Deca'] leading-tight">
+                                                    Wow,
+                                                    this is incredible!</p>
+                                            </div>
+
+                                            <span class="inline-block h-3 w-3 bg-success rounded-full"></span>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-span-8">
+                                    <div class="bg-neutral-100 rounded-lg p-4 h-full">
+                                        <div class="bg-white space-y-2 h-full max-h-[70vh] overflow-y-auto">
+
+                                            <!-- msg box -->
+                                            <section
+                                                class="msg_box_container  h-full  rounded-lg rounded-b-none overflow-hidden flex flex-col justify-start">
+                                                <header
+                                                    class="sticky top-0 right-0 bg-black p-4 flex justify-start items-center gap-4">
+                                                    <img src="../../assets/images/navbar/profile.png" alt=""
+                                                        class="w-12 h-12 rounded-full outline outline-[1.29px] outline-offset-[-0.64px] outline-cyan-700">
+
+                                                    <div>
+                                                        <p
+                                                            class="text-white text-lg font-semibold font-['Poppins'] leading-6">
+                                                            Tarik Bin Aziz</p>
+                                                        <p
+                                                            class="text-slate-500 text-xs font-medium font-['Poppins'] leading-5">
+                                                            6 min ago </p>
+                                                    </div>
+
+                                                    <button class="ml-auto">
+                                                        <img src="./assets/icons/3-dots.svg" alt="" class="w-6 h-6">
+                                                    </button>
+                                                </header>
+
+                                                <!-- messages -->
+                                                <div
+                                                    class="flex-1 overflow-y-auto p-4 scrollbar_style flex flex-col gap-6">
+                                                    <!-- user msg -->
+                                                    <div class="w-full flex justify-end items-end gap-2">
+
+                                                        <div class="space-y-[10px]">
+                                                            <div class="px-4 py-2 bg-primary rounded">
+                                                                <p class="max-w-sm min-h-10 text-white text-sm font-normal font-['Lexend_Deca'] leading-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem eos, inventore quis eaque cum quibusdam magni consequatur vel minima ullam distinctio cumque dolorum incidunt provident, praesentium fugiat harum, maiores molestiae.</p>
+                                                            </div>
+                                                            
+                                                            <div class="px-4 py-2 bg-primary rounded">
+                                                                <p class="max-w-sm min-h-10 text-white text-sm font-normal font-['Lexend_Deca'] leading-5">Lorem ipsum dolor sit</p>
+                                                            </div>
+                                                            <div class="inline-flex justify-start items-center gap-2">
+                                                                <p
+                                                                    class="justify-center text-slate-500 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                                                                    12/10/2025</p>
+                                                                <p class="text-[10px] text-gray-300">|</p>
+                                                                <div
+                                                                    class="justify-center text-slate-500 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                                                                    14:00</div>
+                                                            </div>
+                                                        </div>
+                                                        <img class="w-7 h-7 rounded-full border-[0.57px] border-primary mb-7"
+                                                            src="../../assets/images/navbar/profile.png" />
+                                                    </div>
+
+
+                                                    <!-- admin msg -->
+                                                    <div class="w-full flex justify-start items-end gap-2">
+
+                                                        <img class="w-7 h-7 rounded-full border-[0.57px] border-primary mb-7"
+                                                            src="../../assets/images/navbar/profile.png" />
+                                                        <div class="space-y-[10px]">
+                                                            <div class="px-4 py-2 bg-neutral-100 rounded">
+                                                                <p class="max-w-sm min-h-10 text-black text-sm font-normal font-['Lexend_Deca'] leading-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod magni consequatur vitae praesentium repudiandae dolorum similique deleniti et nam. Rem.</p>
+                                                            </div>
+
+                                                            <div class="px-4 py-2 bg-neutral-100 rounded">
+                                                                <p class="max-w-sm min-h-10 text-black text-sm font-normal font-['Lexend_Deca'] leading-5">Lorem ipsum, dolor sit amet </p>
+                                                            </div>
+
+                                                            
+                                                            <div class="px-4 py-2 bg-neutral-100 rounded">
+                                                                <p class="max-w-sm min-h-10 text-black text-sm font-normal font-['Lexend_Deca'] leading-5">Lorem ipsum, dolor sit amet Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, quia.</p>
+                                                            </div>
+
+                                                            
+                                                            <div class="px-4 py-2 bg-neutral-100 rounded">
+                                                                <p class="max-w-sm min-h-10 text-black text-sm font-normal font-['Lexend_Deca'] leading-5">Lorem ipsum, dolor sit amet </p>
+                                                            </div>
+
+                                                            <div class="inline-flex justify-start items-center gap-2">
+                                                                <p
+                                                                    class="justify-center text-slate-500 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                                                                    12/10/2025</p>
+                                                                <p class="text-[10px] text-gray-300">|</p>
+                                                                <div
+                                                                    class="justify-center text-slate-500 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                                                                    14:00</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    
+                                                    <!-- user msg -->
+                                                    <div class="w-full flex justify-end items-end gap-2">
+
+                                                        <div class="space-y-[10px]">
+                                                            <div class="px-4 py-2 bg-primary rounded">
+                                                                <p class="max-w-sm min-h-10 text-white text-sm font-normal font-['Lexend_Deca'] leading-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem eos, inventore quis eaque cum quibusdam magni consequatur vel minima ullam distinctio cumque dolorum incidunt provident, praesentium fugiat harum, maiores molestiae.</p>
+                                                            </div>
+                                                            
+                                                            <div class="px-4 py-2 bg-primary rounded">
+                                                                <p class="max-w-sm min-h-10 text-white text-sm font-normal font-['Lexend_Deca'] leading-5">Lorem ipsum dolor sit</p>
+                                                            </div>
+                                                            <div class="inline-flex justify-start items-center gap-2">
+                                                                <p
+                                                                    class="justify-center text-slate-500 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                                                                    12/10/2025</p>
+                                                                <p class="text-[10px] text-gray-300">|</p>
+                                                                <div
+                                                                    class="justify-center text-slate-500 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                                                                    14:00</div>
+                                                            </div>
+                                                        </div>
+                                                        <img class="w-7 h-7 rounded-full border-[0.57px] border-primary mb-7"
+                                                            src="../../assets/images/navbar/profile.png" />
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="sticky bottom-0  bg-gray-100 p-4 flex items-center gap-2">
+                                                    <button
+                                                        class="w-12 h-12 bg-white rounded-lg flex justify-center items-center">
+                                                        <img src="./assets/icons/paperclip.svg" alt="">
+                                                    </button>
+                                                    <input type="text"
+                                                        class="w-full h-12 bg-white rounded-lg outline-none px-4 text-sm">
+                                                </div>
+                                            </section>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="../../js/global.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/sidebar.js"></script>
+</body>
+
+</html>
