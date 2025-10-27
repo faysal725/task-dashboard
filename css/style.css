@@ -370,6 +370,24 @@ input[type="time"] {
   /* Or padding-right if positioned on the right */
 }
 
+
+/* select box */
+.select_box{
+  appearance: none;
+  position: relative;
+}
+
+.select_box::after{
+  content: "⌄";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: black
+}
+
+
 /* toggle button */
 .switch {
   position: relative;
@@ -674,3 +692,22 @@ input:checked+.slider:before {
     justify-content: end;
   }
 } */
+
+
+
+/* panels */
+.panel_container {
+  position: fixed;
+  right: 0;
+  width: 16rem; 
+  height: 100%; 
+  background-color: white;
+  z-index: 50; 
+  transition: all 0.3s;
+  transform: translateX(100%); 
+    /* transform: translateX(0); */
+}
+
+.panel_container.active {
+  transform: translateX(0);
+}

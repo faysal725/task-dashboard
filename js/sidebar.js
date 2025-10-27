@@ -11,6 +11,14 @@ function toggleProfilePanel() {
 }
 
 
+// for all panels
+function togglePanels(id) {
+  const sidepanel = document.getElementById(id);
+  sidepanel.classList.toggle('active');
+}
+
+
+
 function expandeOrCollapseSidebar() {
 
   let sidebarContainer = document.getElementById('sidebar_container')
@@ -28,3 +36,12 @@ function expandOrCollapseSubsection(subsectionId) {
   let subsection = document.getElementById(subsectionId)
   subsection.classList.toggle("max-h-52");
 }
+
+
+// handle outside click
+// function handleOutsideClick(event) {
+//   if (!sidepanel.contains(event.target)) {
+//     sidepanel.classList.remove('active');
+//     document.removeEventListener('click', handleOutsideClick);
+//   }
+// }
