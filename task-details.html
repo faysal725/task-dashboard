@@ -542,7 +542,8 @@
                                     </div>
 
                                     <div>
-                                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pb-3 md:pb-6 mb-3 md:mb-6">
+                                        <div
+                                            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pb-3 md:pb-6 mb-3 md:mb-6">
                                             <div class="space-y-2">
                                                 <p
                                                     class="text-slate-500 text-sm md:text-lg font-medium font-['Lexend_Deca'] leading-tight md:leading-6">
@@ -876,8 +877,9 @@
                                     </div>
 
                                     <div
-                                        class="h-[254px] w-full rounded-lg border border-primary border-dashed flex flex-col justify-center items-center gap-4">
-                                        <img src="./assets/icons/task/upload.png" alt="" class="w-10 h-10 msm:w-14 msm:h-14 ">
+                                        class="h-fit w-full rounded-lg border border-primary border-dashed flex flex-col justify-center items-center gap-4 p-4">
+                                        <img src="./assets/icons/task/upload.png" alt=""
+                                            class="w-10 h-10 msm:w-14 msm:h-14 ">
                                         <p
                                             class="justify-start text-slate-500 text-sm msm:text-xl md:text-2xl font-semibold font-['Lexend_Deca'] leading-tight msm:leading-8 text-center">
                                             Drag your file(s) to start uploading</p>
@@ -897,20 +899,12 @@
                                         <label for="attachment"
                                             class="w-32 h-10 px-3 py-1.5 bg-cyan-50 rounded-[5px] outline outline-1 outline-offset-[-1px] outline-cyan-700 inline-flex justify-center items-center gap-2 cursor-pointer">
                                             <input type="file" id="attachment" class="hidden"
-                                                        accept="image/jpeg, image/png, image/jpg, application/pdf"
-                                                        onchange="handleFileUpload(this, 'attatchment_container')" multiple>
+                                                accept="image/jpeg, image/png, image/jpg, application/pdf"
+                                                onchange="handleFileUpload(this, 'attatchment_container')" multiple>
                                             <p
                                                 class="justify-center text-cyan-700 text-sm font-normal font-['Lexend_Deca'] leading-5">
                                                 Browse files</p>
                                         </label>
-                                        <!-- <label for="attachment"
-                                                    class="cursor-pointer px-4 py-3  border border-dashed border-primary-400 flex items-center gap-2 text-primary text-xs">
-                                                    <input type="file" id="attachment" class="hidden"
-                                                        accept="image/jpeg, image/png, image/jpg, application/pdf"
-                                                        @change="onFileChange">
-                                                    
-                                                    <p>Click to upload or, drag and drop here</p> 
-                                                </label> -->
                                     </div>
 
                                     <div class="space-y-3">
@@ -928,8 +922,9 @@
                                                         class="justify-start text-slate-500 text-xs md:text-sm font-normal font-['Lexend_Deca'] leading-5">
                                                         5.3MB</p>
                                                 </div>
-                                                <div class="w-6 h-6 relative">
-                                                    <img src="./assets/icons/download.svg" alt="">
+                                                <div
+                                                    class="w-6 h-6 relative bg-error rounded flex justify-center items-center">
+                                                    <img src="./assets/icons/x-white.svg" alt="" class="w-4 h-4">
                                                 </div>
                                             </div>
                                         </section>
@@ -948,8 +943,10 @@
                                                         class="justify-start text-slate-500 text-xs md:text-sm font-normal font-['Lexend_Deca'] leading-5">
                                                         5.3MB</p>
                                                 </div>
-                                                <div class="w-6 h-6 relative">
-                                                    <img src="./assets/icons/download.svg" alt="">
+
+                                                <div
+                                                    class="w-6 h-6 relative bg-error rounded flex justify-center items-center">
+                                                    <img src="./assets/icons/x-white.svg" alt="" class="w-4 h-4">
                                                 </div>
                                             </div>
                                         </section>

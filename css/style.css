@@ -366,21 +366,13 @@ body {
 }
 
 input[type="time"]::-webkit-calendar-picker-indicator {
-  display: none;
+  /* display: none; */
+  height: 20px;
+  width: 20px;
+    filter: invert(70%) sepia(0%) saturate(0%) brightness(90%) contrast(85%);
+
 }
 
-input[type="time"] {
-  background-image: url("https://cdn-icons-png.flaticon.com/512/109/109613.png");
-  /* Replace with your icon path */
-  background-repeat: no-repeat;
-  background-position: left center;
-  /* Adjust 'left' to 'right' or other positions */
-  background-size: contain;
-  /* Or specify a size like 20px */
-  padding-left: 10px;
-  /* Adjust padding to make space for the icon if positioned on the left */
-  /* Or padding-right if positioned on the right */
-}
 
 
 /* select box */

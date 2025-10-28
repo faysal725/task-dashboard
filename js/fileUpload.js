@@ -8,7 +8,7 @@ function handleFileUpload(input, containerId) {
     // Loop through selected files
     Array.from(input.files).forEach(file => {
         const li = document.createElement('li');
-        li.className = 'text-xs text-cyan-700';
+        li.className = 'text-xs text-cyan-700 truncate';
         li.textContent = file.name;
         container.appendChild(li);
     });
