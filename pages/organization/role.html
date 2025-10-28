@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <!-- Inter font from Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- accordion cdn  -->
+
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        lexend: ['Lexend Deca', 'sans-serif'],
+                    },
+                    maxWidth: {
+                        '8xl': '1408px', // custom max-width
+                    },
+                    colors: {
+                        'primary': 'var(--color-primary)',
+                        'black': 'var(--color-black)',
+
+                        'success': 'var(--color-success)',
+                        'warning': 'var(--color-warning)',
+                        'error': 'var(--color-error)',
+                        'info': 'var(--color-info)',
+
+                        // Primary shade palette
+                        'primaryS-50': 'var(--color-primary-shade-50)',
+                        'primaryS-100': 'var(--color-primary-shade-100)',
+                        'primaryS-200': 'var(--color-primary-shade-200)',
+                        'primaryS-300': 'var(--color-primary-shade-300)',
+                        'primaryS-400': 'var(--color-primary-shade-400)',
+                        'primaryS-500': 'var(--color-primary-shade-500)',
+                        'primaryS-600': 'var(--color-primary-shade-600)',
+                        'primaryS-700': 'var(--color-primary-shade-700)',
+                        'primaryS-800': 'var(--color-primary-shade-800)',
+                        'primaryS-900': 'var(--color-primary-shade-900)',
+                        'primaryS-950': 'var(--color-primary-shade-950)',
+
+                        // Gray palette
+                        'gray-100': 'var(--color-gray-100)',
+                        'gray-200': 'var(--color-gray-200)',
+                        'gray-300': 'var(--color-gray-300)',
+                        'gray-400': 'var(--color-gray-400)',
+                        'gray-500': 'var(--color-gray-500)',
+                        'gray-600': 'var(--color-gray-600)',
+                        'gray-700': 'var(--color-gray-700)',
+                        'gray-800': 'var(--color-gray-800)',
+                        'gray-900': 'var(--color-gray-900)',
+
+                    },
+                    screens: {
+                        // Mobile sizes
+                        'xxs': '320px',   // iPhone SE, small Android
+                        'xs': '375px',    // iPhone X, 12 mini
+                        'sm': '414px',    // iPhone 12/13/14 Pro Max
+                        'msm': '480px',   // small phones / older Android
+                        'md': '600px',    // large phones / small tablets
+                        'lg': '768px',    // tablets (portrait)
+                        'xl': '992px',    // tablets (landscape), small laptops
+                        '2xl': '1200px',  // standard laptop
+                        '3xl': '1366px',  // common laptop resolutions
+                        '4xl': '1440px',  // wide laptops / HD screens
+                        '5xl': '1600px',  // large monitors
+                        '6xl': '1920px',  // full HD / desktop monitors
+                        '7xl': '2560px',  // 2K / ultrawide screens
+                        '8xl': '3840px',  // 4K displays
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/calender.css">
+
+
+</head>
+
+<body class="">
+
+
+    <main class="flex justify-start bg-blue-600 h-screen max-h-screen overflow-hidden">
+
+        <!-- permission panel -->
+        <section class="bottom_panel_container" id="permission_panel">
+
+            <div class="bg-white space-y-4 h-full max-h-[95vh] overflow-y-auto p-4">
+
+                <header class="border-b border-gray-100 py-3 flex justify-between items-center flex-wrap gap-2">
+                    <p class="text-zinc-900 text-lg md:text-2xl font-medium leading-loose">
+                        Permission
+                    </p>
+
+                    <button onclick="togglePanels('permission_panel')">
+                        <img src="../../assets/icons/x-black.svg" alt="">
+                    </button>
+                </header>
+
+
+
+                <!-- checklist 1 -->
+                <div class="bg-neutral-100 rounded-lg">
+                    <header class="flex justify-between items-center px-4 py-2 border-b border-gray-300">
+                        <p class="text-zinc-800 text-base font-semibold font-['Lexend_Deca'] leading-6">
+                            Organization</p>
+
+                        <label for="display-2" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="display-2" id="display-2" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                Select All</p>
+                        </label>
+                    </header>
+
+                    <div class="p-4 flex justify-start items-center gap-6 flex-wrap">
+                        <label for="LIST" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="LIST" id="LIST" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                LIST</p>
+                        </label>
+
+                        <label for="create" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="create" id="create" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                create</p>
+                        </label>
+
+                        <label for="edit" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="edit" id="edit" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                edit</p>
+                        </label>
+
+
+                        <label for="enable" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="enable" id="enable" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                enable/disable</p>
+                        </label>
+
+
+                        <label for="edit" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="edit" id="edit" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                edit</p>
+                        </label>
+
+
+                        <label for="edit" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="edit" id="edit" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                edit</p>
+                        </label>
+                    </div>
+                </div>
+
+
+
+                <!-- checklist 2 -->
+                <div class="bg-neutral-100 rounded-lg">
+                    <header class="flex justify-between items-center px-4 py-2 border-b border-gray-300">
+                        <p class="text-zinc-800 text-base font-semibold font-['Lexend_Deca'] leading-6">
+                            Task</p>
+
+                        <label for="display-2" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="display-2" id="display-2" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                Select All</p>
+                        </label>
+                    </header>
+
+                    <div class="p-4 flex justify-start items-center gap-6 flex-wrap">
+                        <label for="LIST" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="LIST" id="LIST" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                LIST</p>
+                        </label>
+
+                        <label for="create" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="create" id="create" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                create</p>
+                        </label>
+
+                        <label for="edit" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="edit" id="edit" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                edit</p>
+                        </label>
+
+
+                        <label for="enable" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="enable" id="enable" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                enable/disable</p>
+                        </label>
+
+
+                        <label for="edit" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="edit" id="edit" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                edit</p>
+                        </label>
+
+
+                        <label for="edit" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="edit" id="edit" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                edit</p>
+                        </label>
+                    </div>
+                </div>
+
+
+
+                <!-- checklist 3 -->
+                <div class="bg-neutral-100 rounded-lg">
+                    <header class="flex justify-between items-center px-4 py-2 border-b border-gray-300">
+                        <p class="text-zinc-800 text-base font-semibold font-['Lexend_Deca'] leading-6">
+                            Massage</p>
+
+                        <label for="display-2" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="display-2" id="display-2" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                Select All</p>
+                        </label>
+                    </header>
+
+                    <div class="p-4 flex justify-start items-center gap-6 flex-wrap">
+                        <label for="LIST" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="LIST" id="LIST" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                LIST</p>
+                        </label>
+
+                        <label for="create" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="create" id="create" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                create</p>
+                        </label>
+
+                        <label for="edit" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="edit" id="edit" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                edit</p>
+                        </label>
+
+
+                        <label for="enable" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="enable" id="enable" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                enable/disable</p>
+                        </label>
+
+
+                        <label for="edit" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="edit" id="edit" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                edit</p>
+                        </label>
+
+
+                        <label for="edit" class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                            <input type="checkbox" name="edit" id="edit" class="common_checkbox">
+                            <p class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                edit</p>
+                        </label>
+                    </div>
+                </div>
+
+
+            </div>
+            </div>
+
+
+        </section>
+
+        <!-- profile panel -->
+        <section class="fixed right-0 w-80 h-full bg-black z-50 transition-all duration-300 translate-x-[100%] p-6 "
+            id="profile_panel">
+
+            <div class="flex justify-end">
+                <button class="text-white border border-white/10 rounded-lg w-8 h-8 " onclick="toggleProfilePanel()">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+
+
+            <div class="inline-flex justify-start items-start gap-3 border-b border-white/20 w-full pb-4 mb-4">
+                <img class="w-12 h-12 rounded-full outline outline-2 outline-primary"
+                    src="../../assets/images/navbar/profile.png" />
+                <div class="inline-flex flex-col justify-start items-start">
+                    <div class="justify-center text-white text-base font-semibold font-['Poppins'] leading-normal">Tarik
+                        Bin Aziz</div>
+                    <div class="justify-center text-primary text-sm font-normal font-['Poppins'] leading-snug">Admin
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col justify-center items-center gap-3">
+                <button class=" relative w-full ">
+                    <img src="../../assets/icons/navbarIcons/language.svg" alt="" class="absolute top-3 left-3 ">
+
+                    <select
+                        class="outline-none  rounded-lg appearance-none bg-neutral-100 w-full h-10 pl-10 text-zinc-900 text-xs font-normal font-['Poppins'] leading-tight">
+
+                        <option value="eng">
+                            <span>
+                                <img src="../../assets/icons/navbarIcons/language.svg" alt="">
+                            </span>
+                            <span>English</span>
+                        </option>
+                        <option value="Ar">
+                            <span>Arabic</span>
+                        </option>
+                    </select>
+
+                    <span class="absolute top-4 right-6">
+                        <img src="../../assets/icons/chevron-down.svg" alt="">
+                    </span>
+                </button>
+
+                <button class="bg-gray-50 rounded-lg p-2 relative flex justify-start items-center gap-1 w-full">
+                    <img src="../../assets/icons/navbarIcons/bell.svg" alt="" class="w-6 h-6">
+                    <p class="justify-start text-zinc-900 text-xs font-normal font-['Poppins'] leading-tight">
+                        Notification </p>
+                    <span class="ml-auto inline-block w-4 h-4 bg-error text-[10px] rounded-full text-white">3</span>
+                </button>
+
+
+                <button class="bg-gray-50 rounded-lg p-2 relative flex justify-start items-center gap-1 w-full">
+                    <img src="../../assets/icons/navbarIcons/comment-dot.svg" alt="" class="w-6 h-6">
+                    <p class="justify-start text-zinc-900 text-xs font-normal font-['Poppins'] leading-tight">Massage
+                    </p>
+                    <span class="ml-auto inline-block w-4 h-4 bg-error text-[10px] rounded-full text-white">3</span>
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+        <!-- sidebar panel -->
+        <section
+            class="fixed w-80 h-full bg-black z-50 transition-all duration-300 translate-x-[-100%] p-6 flex flex-col gap-4"
+            id="sidepanel">
+            <div class="border-b border-white/10 pb-4 flex justify-between">
+                <img src="../../assets/logo/logo.png" alt="" class="h-10 w-auto object-contain">
+
+                <button class="text-white border border-white/10 rounded-lg w-8 h-8" onclick="toggleSidebar()">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="flex flex-col justify-start grow">
+                <!-- search box -->
+                <div
+                    class=" h-12 px-3 py-1 bg-white/10 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/10 flex items-center gap-2 mb-4">
+                    <input type="text" placeholder="Search" class="w-full bg-transparent outline-none text-white">
+                    <img src="../../assets/icons/search.svg" alt="">
+                </div>
+
+                <!-- sidebar panel links  -->
+                <nav class="space-y-2">
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/dashboard.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                            Dashboard</p>
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/globe.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                            Domain</p>
+
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/building.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                            Organization</p>
+
+                    </a>
+                    <div class="">
+                        <div onclick="expandOrCollapseSubsection('company_essential_sm')"
+                            class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white cursor-pointer">
+                            <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
+                            <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                Company Essential </p>
+
+                            <i class="fa fa-chevron-down text-white fa-xs ml-auto block" aria-hidden="true"></i>
+                        </div>
+
+                        <div id="company_essential_sm"
+                            class="text-white pl-8 max-h-0 overflow-hidden transition-all duration-400 "
+                            aria-expanded="false">
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 1</p>
+                            </div>
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 2</p>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+
+                <div class="sticky bottom-0 z-10 p-3 bg-white/5 rounded flex justify-between items-center mt-auto">
+                    <button>
+                        <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                    </button>
+
+                    <button>
+                        <img src="../../assets/icons/settings.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                    </button>
+                    <button>
+                        <img src="../../assets/icons/user.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                    </button>
+                    <button>
+
+                        <img src="../../assets/icons/log-out.svg" alt="" class="w-6 h-6 cursor-pointer">
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- sidebar section  -->
+        <section class="bg-black w-28 4xl:min-w-80 p-6 hidden xl:flex flex-col gap-4 transition-all duration-300"
+            id="sidebar_container">
+
+            <div class="border-b border-white/10 pb-4" id="logo_container">
+                <img src="../../assets/logo/logo.png" alt="" class="h-10 w-auto object-contain">
+            </div>
+
+            <!-- for 4xl -->
+            <div class=" grow" id="lg_nav">
+                <!-- search box -->
+                <div
+                    class=" h-12 px-3 py-1 bg-white/10 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/10 flex items-center gap-2 mb-4">
+                    <input type="text" placeholder="Search" class="w-full bg-transparent outline-none text-white">
+                    <img src="../../assets/icons/search.svg" alt="">
+                </div>
+
+                <button class=" 4xl:hidden">
+
+                    <img src="../../assets/icons/search.svg" alt="">
+                </button>
+
+                <!-- sidebar links  -->
+                <nav class="space-y-2">
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/dashboard.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                            Dashboard</p>
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/globe.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                            Domain</p>
+
+                    </a>
+                    <a href="/"
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/building.svg" alt="">
+                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                            Organization</p>
+
+                    </a>
+                    <div class="">
+                        <div onclick="expandOrCollapseSubsection('company_essential')"
+                            class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white cursor-pointer">
+                            <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
+                            <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                Company Essential </p>
+
+                            <i class="fa fa-chevron-down text-white fa-xs ml-auto block" aria-hidden="true"></i>
+                        </div>
+
+                        <div id="company_essential"
+                            class="text-white pl-8 max-h-0 overflow-hidden transition-all duration-400 "
+                            aria-expanded="false">
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 1</p>
+                            </div>
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 2</p>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+
+
+            <!-- for smaller then 4xl -->
+            <div class=" grow" id="small_nav">
+
+
+                <!-- sidebar links  -->
+                <nav class="flex flex-col items-center justify-center gap-8 h-full">
+                    <button class="mb-auto">
+
+                        <img src="../../assets/icons/search.svg" alt="">
+                    </button>
+
+                    <button>
+                        <img src="../../assets/icons/sidebarIcons/dashboard.svg" alt="">
+                    </button>
+
+                    <button>
+                        <img src="../../assets/icons/sidebarIcons/globe.svg" alt="">
+                    </button>
+
+
+                    <button>
+                        <img src="../../assets/icons/sidebarIcons/building.svg" alt="">
+                    </button>
+
+
+                    <button>
+                        <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
+                    </button>
+
+                    <div class="mt-auto flex flex-col items-center gap-4 bg-white/5 rounded w-full py-4">
+                        <button class="">
+                            <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                        </button>
+
+                        <button class="">
+                            <img src="../../assets/icons/settings.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                        </button>
+                        <button class="">
+                            <img src="../../assets/icons/user.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                        </button>
+                        <button class="">
+
+                            <img src="../../assets/icons/log-out.svg" alt="" class="w-6 h-6 cursor-pointer">
+                        </button>
+                    </div>
+
+                </nav>
+
+
+            </div>
+
+
+
+            <div class="sticky bottom-0 z-10 p-3 bg-white/5 rounded flex justify-between items-center"
+                id="bottom_options">
+                <button>
+                    <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                </button>
+
+                <button>
+                    <img src="../../assets/icons/settings.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                </button>
+                <button>
+                    <img src="../../assets/icons/user.svg" alt="" class="w-6 h-6 cursor-pointer">
+
+                </button>
+                <button>
+
+                    <img src="../../assets/icons/log-out.svg" alt="" class="w-6 h-6 cursor-pointer">
+                </button>
+            </div>
+        </section>
+
+
+
+        <!-- contant section -->
+        <section class="bg-gray-50 grow overflow-y-auto bg-neutral-100">
+
+            <!-- navbar -->
+            <div class="bg-white py-4 px-6 flex justify-between items-center sticky top-0 z-20">
+                <button class="p-1 bg-gray-50 rounded hidden 4xl:block" onclick="expandeOrCollapseSidebar()">
+                    <img src="../../assets/icons/navbarIcons/bars.svg" alt="">
+                </button>
+                <button class="p-1 bg-gray-50 rounded block 4xl:hidden" onclick="toggleSidebar()">
+                    <img src="../../assets/icons/navbarIcons/bars.svg" alt="">
+                </button>
+
+                <div class="flex justify-center items-center gap-6">
+                    <div class="flex gap-3">
+
+
+                        <button class="hidden md:block relative">
+                            <img src="../../assets/icons/navbarIcons/language.svg" alt=""
+                                class="absolute top-3 left-3 ">
+
+                            <select class="outline-none  rounded-lg appearance-none bg-neutral-100 w-36 h-10 pl-10">
+
+                                <option value="eng">
+                                    <span>
+                                        <img src="../../assets/icons/navbarIcons/language.svg" alt="">
+                                    </span>
+                                    <span>English</span>
+                                </option>
+                                <option value="Ar">
+                                    <span>Arabic</span>
+                                </option>
+                            </select>
+
+                            <span class="absolute top-4 right-6">
+                                <img src="../../assets/icons/chevron-down.svg" alt="">
+                            </span>
+                        </button>
+
+                        <button class="bg-gray-50 rounded-lg p-2 relative hidden md:flex justify-center items-center">
+                            <span
+                                class="inline-block w-4 h-4 bg-error text-[10px] rounded-full text-white absolute -top-1 -right-1">3</span>
+                            <img src="../../assets/icons/navbarIcons/bell.svg" alt="">
+                        </button>
+
+
+                        <button class="bg-gray-50 rounded-lg p-2 relative hidden md:flex justify-center items-center">
+                            <span
+                                class="inline-block w-4 h-4 bg-error text-[10px] rounded-full text-white absolute -top-1 -right-1">3</span>
+                            <img src="../../assets/icons/navbarIcons/comment-dot.svg" alt="">
+                        </button>
+                    </div>
+                    <button class="flex items-start gap-3" onclick="toggleProfilePanel()">
+                        <div>
+                            <p class="text-black text-base font-semibold font-['Poppins'] leading-normal">Tarik Bin Aziz
+                            </p>
+                            <p class="text-primary text-sm font-normal font-['Poppins'] leading-snug">Admin</p>
+                        </div>
+                        <div>
+                            <img src="../../assets/images/navbar/profile.png" alt="" class="rounded-full">
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="p-2 md:p-6  ">
+
+                <!-- page content -->
+                <div class="w-full h-full space-y-6 ">
+
+
+                    <!-- Organization -->
+                    <div class=" bg-white rounded-lg ">
+                        <div class="border-b border-gray-100 p-4 pb-3">
+                            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                                <p class="text-black text-3xl font-semibold font-['Lexend_Deca'] leading-10">
+                                    Role Management
+                                </p>
+
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="md:p-4 pt-3 ">
+                            <section class="grid grid-cols-12 gap-4">
+                                <div
+                                    class="col-span-12 lg:col-span-5 2xl:col-span-4 bg-neutral-100 md:rounded-lg md:p-4">
+
+
+
+                                    <div
+                                        class="bg-white p-4 space-y-4 rounded-lg h-full min-h-[70vh] max-h-[70vh] overflow-y-auto scrollbar_style">
+
+                                        <div
+                                            class="border-b border-gray-100 py-3 flex justify-between items-center flex-wrap gap-2">
+                                            <p class="text-zinc-900 text-lg md:text-2xl font-medium leading-loose">
+                                                Role
+                                            </p>
+
+
+                                            <button onclick="toggleModal('role')"
+                                                class="relative px-3 py-1 flex justify-between items-center gap-2 bg-primary h-10 rounded ">
+
+                                                <p
+                                                    class="text-white text-xs font-normal font-['Lexend_Deca'] leading-tight text-nowrap">
+                                                    Create New </p>
+
+
+
+                                                <div class="w-6 h-6 relative flex items-center justify-center">
+                                                    <img src="../../assets/icons/plus.svg" alt="" class="w-4 h-4">
+                                                </div>
+                                            </button>
+                                        </div>
+
+                                        <div class="space-y-2">
+                                            <!-- card 1 -->
+                                            <div onclick="togglePanels('permission_panel')"
+                                                class="flex justify-start items-center gap-2  p-2 bg-neutral-100 rounded cursor-pointer min-h-10 ">
+
+                                                <p
+                                                    class="text-black text-sm md:text-base font-normal font-['Lexend_Deca'] leading-6 flex-1">
+                                                    Front display cleaned and organized</p>
+
+
+                                                <div class="flex justify-start items-center gap-4">
+                                                    <button>
+                                                        <img src="../../assets/icons/delete.svg" alt="delete">
+                                                    </button>
+                                                    <button>
+                                                        <img src="../../assets/icons/edit.svg" alt="edit">
+
+                                                    </button>
+                                                </div>
+                                            </div>
+
+
+
+                                            <!-- card 2 -->
+                                            <div
+                                                class="flex justify-start items-center gap-2  p-2 bg-neutral-100 rounded cursor-pointer min-h-10 ">
+
+                                                <p
+                                                    class="text-black text-sm md:text-base font-normal font-['Lexend_Deca'] leading-6 flex-1">
+                                                    Front display cleaned and organized</p>
+
+
+                                                <div class="flex justify-start items-center gap-4">
+                                                    <button>
+                                                        <img src="../../assets/icons/delete.svg" alt="delete">
+                                                    </button>
+                                                    <button>
+                                                        <img src="../../assets/icons/edit.svg" alt="edit">
+
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="hidden lg:block col-span-12 lg:col-span-7 2xl:col-span-8">
+                                    <div class="bg-neutral-100 rounded-lg p-4 h-full">
+                                        <div class="bg-white space-y-4 h-full max-h-[70vh] overflow-y-auto p-4">
+
+                                            <header
+                                                class="border-b border-gray-100 py-3 flex justify-between items-center flex-wrap gap-2">
+                                                <p class="text-zinc-900 text-lg md:text-2xl font-medium leading-loose">
+                                                    Permission
+                                                </p>
+
+                                            </header>
+
+
+
+                                            <!-- checklist 1 -->
+                                            <div class="bg-neutral-100 rounded-lg">
+                                                <header
+                                                    class="flex justify-between items-center px-4 py-2 border-b border-gray-300">
+                                                    <p
+                                                        class="text-zinc-800 text-lg font-semibold font-['Lexend_Deca'] leading-6">
+                                                        Organization</p>
+
+                                                    <label for="display-2"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="display-2" id="display-2"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            Select All</p>
+                                                    </label>
+                                                </header>
+
+                                                <div class="p-4 flex justify-start items-center gap-6 flex-wrap">
+                                                    <label for="LIST"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="LIST" id="LIST"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            LIST</p>
+                                                    </label>
+
+                                                    <label for="create"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="create" id="create"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            create</p>
+                                                    </label>
+
+                                                    <label for="edit"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="edit" id="edit"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            edit</p>
+                                                    </label>
+
+
+                                                    <label for="enable"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="enable" id="enable"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            enable/disable</p>
+                                                    </label>
+
+
+                                                    <label for="edit"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="edit" id="edit"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            edit</p>
+                                                    </label>
+
+
+                                                    <label for="edit"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="edit" id="edit"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            edit</p>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
+
+                                            <!-- checklist 2 -->
+                                            <div class="bg-neutral-100 rounded-lg">
+                                                <header
+                                                    class="flex justify-between items-center px-4 py-2 border-b border-gray-300">
+                                                    <p
+                                                        class="text-zinc-800 text-lg font-semibold font-['Lexend_Deca'] leading-6">
+                                                        Task</p>
+
+                                                    <label for="display-2"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="display-2" id="display-2"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            Select All</p>
+                                                    </label>
+                                                </header>
+
+                                                <div class="p-4 flex justify-start items-center gap-6 flex-wrap">
+                                                    <label for="LIST"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="LIST" id="LIST"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            LIST</p>
+                                                    </label>
+
+                                                    <label for="create"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="create" id="create"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            create</p>
+                                                    </label>
+
+                                                    <label for="edit"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="edit" id="edit"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            edit</p>
+                                                    </label>
+
+
+                                                    <label for="enable"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="enable" id="enable"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            enable/disable</p>
+                                                    </label>
+
+
+                                                    <label for="edit"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="edit" id="edit"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            edit</p>
+                                                    </label>
+
+
+                                                    <label for="edit"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="edit" id="edit"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            edit</p>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
+
+                                            <!-- checklist 3 -->
+                                            <div class="bg-neutral-100 rounded-lg">
+                                                <header
+                                                    class="flex justify-between items-center px-4 py-2 border-b border-gray-300">
+                                                    <p
+                                                        class="text-zinc-800 text-lg font-semibold font-['Lexend_Deca'] leading-6">
+                                                        Massage</p>
+
+                                                    <label for="display-2"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="display-2" id="display-2"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            Select All</p>
+                                                    </label>
+                                                </header>
+
+                                                <div class="p-4 flex justify-start items-center gap-6 flex-wrap">
+                                                    <label for="LIST"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="LIST" id="LIST"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            LIST</p>
+                                                    </label>
+
+                                                    <label for="create"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="create" id="create"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            create</p>
+                                                    </label>
+
+                                                    <label for="edit"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="edit" id="edit"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            edit</p>
+                                                    </label>
+
+
+                                                    <label for="enable"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="enable" id="enable"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            enable/disable</p>
+                                                    </label>
+
+
+                                                    <label for="edit"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="edit" id="edit"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            edit</p>
+                                                    </label>
+
+
+                                                    <label for="edit"
+                                                        class="flex justify-start items-center gap-2  p-2 cursor-pointer">
+
+                                                        <input type="checkbox" name="edit" id="edit"
+                                                            class="common_checkbox">
+                                                        <p
+                                                            class="text-zinc-900 text-base font-normal font-['Lexend_Deca'] leading-6 capitalize">
+                                                            edit</p>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <!-- modal -->
+        <!-- create industry -->
+        <section id="role" class="modal_container">
+
+            <!-- backdrop -->
+            <div onclick="toggleModal('role')" class="modal_backdrop"></div>
+
+            <!-- modal content -->
+            <div class="modal_content">
+                <form class="flex flex-col gap-5 w-full lg:w-[485px]  relative z-10">
+
+                    <p
+                        class="text-center justify-start text-gray-900 text-xl md:text-2xl font-bold font-['Poppins'] leading-loose">
+                        Create
+                        New Role </p>
+
+
+                    <label for="industry_name" class="space-y-2">
+                        <p class="text-black text-base md:text-lg font-medium font-['Poppins'] leading-relaxed">Role
+                            Name</p>
+                        <input type="text" name="industry_name" id="industry_name"
+                            class="h-12 md:h-14 p-4 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-gray-300 w-full placeholder:text-slate-500 text-sm md:text-lg "
+                            placeholder="Enter Role name">
+                    </label>
+
+
+                    <button class="h-12 px-6 py-3.5 bg-cyan-700 rounded inline-flex justify-center items-center gap-2">
+                        <p
+                            class="text-center justify-start text-white text-lg font-medium font-['Poppins'] leading-relaxed">
+                            Create</p>
+                    </button>
+                </form>
+
+            </div>
+        </section>
+    </main>
+
+
+    <script src="../../js/global.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/sidebar.js"></script>
+    <script src="../../js/upload.js"></script>
+</body>
+
+</html>
