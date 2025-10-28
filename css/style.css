@@ -373,7 +373,12 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 }
 
-
+input[type="checkbox"]{
+  
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary, #076988);
+}
 
 /* select box */
 .select_box{
