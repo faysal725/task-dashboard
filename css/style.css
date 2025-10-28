@@ -215,11 +215,9 @@ body {
 
 /* input box */
 
-.common_radio{
+.common_radio {}
 
-}
-
-.common_checkbox{
+.common_checkbox {
   width: 18px;
   height: 18px;
   accent-color: var(--color-primary, #076988);
@@ -369,24 +367,24 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   /* display: none; */
   height: 20px;
   width: 20px;
-    filter: invert(70%) sepia(0%) saturate(0%) brightness(90%) contrast(85%);
+  filter: invert(70%) sepia(0%) saturate(0%) brightness(90%) contrast(85%);
 
 }
 
-input[type="checkbox"]{
-  
+input[type="checkbox"] {
+
   width: 18px;
   height: 18px;
   accent-color: var(--color-primary, #076988);
 }
 
 /* select box */
-.select_box{
+.select_box {
   appearance: none;
   position: relative;
 }
 
-.select_box::after{
+.select_box::after {
   content: "⌄";
   position: absolute;
   top: 50%;
@@ -528,6 +526,28 @@ input:checked+.slider:before {
   color: white;
 }
 
+
+.btn_outline_icon {
+  border-radius: 8px;
+  background: #fff;
+  height: 40px;
+  padding: 0 12px;
+  font-size: clamp(12px, 2vw, 14px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--color-primary, #076988);
+  border: 1px solid var(--color-primary, #076988);
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn_outline_icon >img{
+  height: 16px;
+  width: 16px;
+}
 
 .btn_secondary {
   border-radius: 4px;
@@ -708,13 +728,13 @@ input:checked+.slider:before {
 .panel_container {
   position: fixed;
   right: 0;
-  width: 16rem; 
-  height: 100%; 
+  width: 16rem;
+  height: 100%;
   background-color: white;
-  z-index: 50; 
+  z-index: 50;
   transition: all 0.3s;
-  transform: translateX(100%); 
-    /* transform: translateX(0); */
+  transform: translateX(100%);
+  /* transform: translateX(0); */
 }
 
 .panel_container.active {
@@ -726,10 +746,10 @@ input:checked+.slider:before {
 .bottom_panel_container {
   position: fixed;
   right: 0;
-  width: 100%; 
-  height: 100%; 
+  width: 100%;
+  height: 100%;
   background-color: white;
-  z-index: 50; 
+  z-index: 50;
   transition: all 0.3s;
   transform: translateY(100%);
 }
