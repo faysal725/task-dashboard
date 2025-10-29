@@ -341,9 +341,7 @@ body {
 
 .text_input_2>input:focus {
   border-color: var(--color-error);
-  /* Change border on focus */
   box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.2);
-  /* Optional soft focus glow */
 }
 
 .text_input_2>input::placeholder {
@@ -357,6 +355,53 @@ body {
 .text_input_2>img {
   position: absolute;
   bottom: 18%;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+
+}
+
+
+.text_input_3 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.text_input_3>p {
+  color: var(--color-black);
+
+  font-size: clamp(14px, 2vw, 18px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.text_input_3>input {
+  height: 48px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--Gray-100, #EDEEF1);
+  outline: none;
+  background: var(--Gray-50, #F6F7F9);
+}
+
+.text_input_3>input:focus {
+  border: 1px solid var(--color-black, black);
+}
+
+.text_input_3>input::placeholder {
+  color: var(--color-gray-500, #687387);
+  font-size: clamp(12px, 2vw, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.text_input_3>img {
+  position: absolute;
+  bottom: 15%;
   right: 16px;
   width: 24px;
   height: 24px;
