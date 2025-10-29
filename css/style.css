@@ -544,7 +544,7 @@ input:checked+.slider:before {
   align-items: center;
 }
 
-.btn_outline_icon >img{
+.btn_outline_icon>img {
   height: 16px;
   width: 16px;
 }
@@ -641,6 +641,8 @@ input:checked+.slider:before {
   transform: scale(0.9);
   opacity: 0;
   transition: all 0.3s ease;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 
 .modal_container.active .modal_content {
