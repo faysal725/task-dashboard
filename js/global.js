@@ -33,7 +33,7 @@ function runBelow1440() {
 }
 
 function runUpper440() {
-    console.log("Viewport more then 1440!");
+    // console.log("Viewport more then 1440!");
     // your code here
     let sidebarContainer = document.getElementById('sidebar_container')
     let logoContainer = document.getElementById('logo_container')
@@ -41,7 +41,7 @@ function runUpper440() {
     let smallNav = document.getElementById('small_nav')
     let bottomOptions = document.getElementById('bottom_options')
 
-    console.log(sidebarContainer)
+    // console.log(sidebarContainer)
 
     sidebarContainer.classList.add("w-80");
     sidebarContainer.classList.add("4xl:min-w-80");

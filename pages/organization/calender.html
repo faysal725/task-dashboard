@@ -15,8 +15,128 @@
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- accordion cdn  -->
+    <!-- calender cdn  -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js'></script>
 
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                initialDate: '2025-09-07',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                events: [
+                    {
+                        title: 'All Day Event',
+                        start: '2025-09-01',
+                        end: '2025-09-03',
+                        allDay: true,
+                        className: 'px-1 py-1 rounded  rounded',
+                        peoples: [
+                            {
+                                name: "A",
+                                color: "red",
+                                imgSrc: "https://placehold.co/400",
+                            },
+                            {
+                                name: "B",
+                                color: "blue",
+                                imgSrc: "https://placehold.co/400",
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Long Event',
+                        start: '2025-09-07',
+                        end: '2025-09-10',
+                        className: 'px-1 py-1 rounded  rounded'
+                    },
+                    {
+                        groupId: '999',
+                        title: 'Repeating Event',
+                        start: '2025-09-09T16:00:00',
+                        className: 'px-1 py-1 rounded  rounded'
+                    },
+                    {
+                        groupId: '999',
+                        title: 'Repeating Event',
+                        start: '2025-09-16T16:00:00',
+                        className: 'px-1 py-1 rounded  rounded'
+                    },
+                    {
+                        title: 'Conference',
+                        start: '2025-09-11',
+                        end: '2025-09-13',
+                        className: 'px-1 py-1 rounded  rounded'
+                    },
+                    {
+                        title: 'Meeting',
+                        start: '2025-09-12T10:30:00',
+                        end: '2025-09-12T12:30:00',
+                        className: 'px-1 py-1 rounded  rounded'
+                    },
+                    {
+                        title: 'Lunch',
+                        start: '2025-09-12T12:00:00',
+                        className: 'px-1 py-1 rounded  rounded'
+                    },
+                    {
+                        title: 'Meeting',
+                        start: '2025-09-12T14:30:00',
+                        className: 'px-1 py-1 rounded  rounded'
+                    },
+                    {
+                        title: 'Birthday Party',
+                        start: '2025-09-13T07:00:00',
+                        className: 'px-1 py-1 rounded  rounded'
+                    },
+                    {
+                        title: 'Click for Google',
+                        url: 'https://google.com/',
+                        start: '2025-09-28',
+                        className: 'px-1 py-1 rounded  rounded'
+                    }
+                ],
+                // eventContent: function (arg) {
+                //     // Get peoples array if exists
+                //     const peoples = arg.event.extendedProps.peoples || [];
+
+                //     // Create image HTML
+                //     const peopleHTML = peoples
+                //         .map(p => `<img src="${p.imgSrc}" alt="${p.name}" class="w-5 h-5 rounded-full border border-white -ml-1 first:ml-0">`)
+                //         .join('');
+
+                //     // Return custom HTML for the event box
+                //     return {
+                //         html: `
+                //             <div class="flex items-center gap-1 px-1 py-1.5 rounded">
+                //             <div class="flex -space-x-1">${peopleHTML}</div>
+                //             <span class="font-medium text-xs text-gray-700">${arg.event.title}</span>
+                //             </div>
+                //         `
+                //     };
+                // },
+
+                eventClick: function (info) {
+                    console.log(info.event.extendedProps)
+                    console.log(info.el.style)
+                    // change the border color just for fun
+                    // info.el.style.borderColor = 'red';
+                    toggleModal('employees')
+                }
+            });
+
+            calendar.render();
+        });
+
+    </script>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -91,9 +211,11 @@
 
     <!-- custom CSS -->
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/calender.css">
+    <link rel="stylesheet" href="../../css/calender2.css">
 
+    <style>
 
+    </style>
 </head>
 
 <body class="">
@@ -494,7 +616,7 @@
                                 </p>
 
 
-                                <div class="flex justify-start lg:justify-end items-center flex-wrap gap-2 ml-auto">
+                                <!-- <div class="flex justify-start lg:justify-end items-center flex-wrap gap-2 ml-auto">
 
                                     <button class="relative">
 
@@ -517,7 +639,8 @@
                                         </span>
                                     </button>
 
-                                    <label for="times" class="h-10 px-3 bg-neutral-100 rounded-md outline outline-1 outline-offset-[-1px] outline-gray-100 flex justify-between items-center gap-2">
+                                    <label for="times"
+                                        class="h-10 px-3 bg-neutral-100 rounded-md outline outline-1 outline-offset-[-1px] outline-gray-100 flex justify-between items-center gap-2">
                                         <input type="time" name="times" id="times"
                                             class=" text-xs font-normal font-['Lexend_Deca'] leading-tight bg-transparent">
 
@@ -557,18 +680,159 @@
                                             <img src="../../assets/icons/plus-box.svg" alt="" class="w-4 h-4">
                                         </div>
                                     </button>
-                                </div>
+                                </div> -->
                             </div>
 
                         </div>
 
 
                         <div class="p-4">
-                            calender
+                            <div id='calendar'></div>
                         </div>
                     </div>
 
                 </div>
+            </div>
+        </section>
+
+
+
+        <!-- modal -->
+        <!-- connected employee -->
+        <section id="employees" class="modal_container">
+
+            <!-- backdrop -->
+            <div onclick="toggleModal('employees')" class="modal_backdrop"></div>
+
+            <!-- modal content -->
+            <div class="modal_content w-full md:w-[700px]  relative z-10">
+                <form class="flex flex-col gap-5 ">
+
+                    <div class="pb-5 border-b border-gray-200 flex justify-center items-center">
+                        <p
+                            class="text-center justify-start text-gray-900 text-lg md:text-xl lg:text-2xl font-semibold font-['Lexend_Deca'] leading-8">
+                            Employees </p>
+
+
+                        <button class="block md:hidden ml-auto" onclick="toggleModal('employees')">
+                            <img src="../../assets/icons/x-black.svg" alt="" class="h-3 w-3">
+                        </button>
+                    </div>
+
+
+                    <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-2 lg:gap-6 items-stretch ">
+                        <div class="grow flex flex-col gap-2">
+
+
+                            <!-- card 1 -->
+                            <div class="p-3 bg-white rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)]">
+                                <div class="space-y-2">
+
+                                    <div class="flex justify-start items-center gap-2">
+                                        <img src="../../assets/images/navbar/profile.png" alt=""
+                                            class="w-8 h-8 rounded-full">
+                                        <p
+                                            class="justify-start text-zinc-900 text-xl font-medium font-['Lexend_Deca'] leading-7">
+                                            Tarik Bin Aziz</p>
+
+                                        <button
+                                            class="w-8 h-8 p-1 bg-red-500/20 rounded-2xl text-red-500 text-base font-semibold font-['Lexend_Deca'] leading-6 ml-auto">
+                                            5
+                                        </button>
+                                    </div>
+                                    <p class=" text-slate-500 text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                        12/10/2025 14:30</p>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+
+
+                            
+                            <!-- card 2 -->
+                            <div class="p-3 bg-white rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)]">
+                                <div class="space-y-2">
+
+                                    <div class="flex justify-start items-center gap-2">
+                                        <img src="../../assets/images/navbar/profile.png" alt=""
+                                            class="w-8 h-8 rounded-full">
+                                        <p
+                                            class="justify-start text-zinc-900 text-xl font-medium font-['Lexend_Deca'] leading-7">
+                                            Tarik Bin Aziz</p>
+
+                                        <button
+                                            class="w-8 h-8 p-1 bg-red-500/20 rounded-2xl text-red-500 text-base font-semibold font-['Lexend_Deca'] leading-6 ml-auto">
+                                            5
+                                        </button>
+                                    </div>
+                                    <p class=" text-slate-500 text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                        12/10/2025 14:30</p>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Divider -->
+                        <div class="w-px bg-gray-100 h-full hidden lg:block"></div>
+                        <div class="grow flex flex-col gap-2">
+
+
+                            <!-- card 1 -->
+                            <div class="p-3 bg-white rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)]">
+                                <div class="space-y-2">
+
+                                    <div class="flex justify-start items-center gap-2">
+                                        <img src="../../assets/images/navbar/profile.png" alt=""
+                                            class="w-8 h-8 rounded-full">
+                                        <p
+                                            class="justify-start text-zinc-900 text-xl font-medium font-['Lexend_Deca'] leading-7">
+                                            Tarik Bin Aziz</p>
+
+                                        <button
+                                            class="w-8 h-8 p-1 bg-red-500/20 rounded-2xl text-red-500 text-base font-semibold font-['Lexend_Deca'] leading-6 ml-auto">
+                                            5
+                                        </button>
+                                    </div>
+                                    <p class=" text-slate-500 text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                        12/10/2025 14:30</p>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+
+
+                            
+                            <!-- card 2 -->
+                            <div class="p-3 bg-white rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)]">
+                                <div class="space-y-2">
+
+                                    <div class="flex justify-start items-center gap-2">
+                                        <img src="../../assets/images/navbar/profile.png" alt=""
+                                            class="w-8 h-8 rounded-full">
+                                        <p
+                                            class="justify-start text-zinc-900 text-xl font-medium font-['Lexend_Deca'] leading-7">
+                                            Tarik Bin Aziz</p>
+
+                                        <button
+                                            class="w-8 h-8 p-1 bg-red-500/20 rounded-2xl text-red-500 text-base font-semibold font-['Lexend_Deca'] leading-6 ml-auto">
+                                            5
+                                        </button>
+                                    </div>
+                                    <p class=" text-slate-500 text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                        12/10/2025 14:30</p>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+
             </div>
         </section>
     </main>
