@@ -34,7 +34,7 @@
   --color-gray-950: #24262D;
 
 
-  --fc-event-border-color : transparent;
+  --fc-event-border-color: transparent;
 
 }
 
@@ -427,19 +427,58 @@ input[type="checkbox"] {
 }
 
 /* select box */
-.select_box {
-  appearance: none;
+.custom-select {
   position: relative;
+  width: 100%;
+  font-family: Arial, sans-serif;
 }
 
-.select_box::after {
-  content: "⌄";
+.select-selected {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.select-selected img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.select-items {
   position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-  pointer-events: none;
-  color: black
+  background-color: #fff;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: 1px solid #ccc;
+  z-index: 99;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.select-items div {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.select-items div:hover {
+  background-color: #f1f1f1;
+}
+
+.select-items img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.select-hide {
+  display: none;
 }
 
 
