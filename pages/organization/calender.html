@@ -38,7 +38,6 @@
                         start: '2025-09-01',
                         end: '2025-09-03',
                         allDay: true,
-                        className: 'px-1 py-1 rounded  rounded',
                         peoples: [
                             {
                                 name: "A",
@@ -50,80 +49,145 @@
                                 color: "blue",
                                 imgSrc: "https://placehold.co/400",
                             }
-                        ]
+                        ],
+                        status: 'done'
                     },
                     {
                         title: 'Long Event',
                         start: '2025-09-07',
                         end: '2025-09-10',
-                        className: 'px-1 py-1 rounded  rounded'
+                        peoples: [
+                            {
+                                name: "A",
+                                color: "red",
+                                imgSrc: "https://placehold.co/400",
+                            },
+                            {
+                                name: "B",
+                                color: "blue",
+                                imgSrc: "https://placehold.co/400",
+                            }
+                        ],
+                        status: 'cancel'
+                        
                     },
                     {
                         groupId: '999',
                         title: 'Repeating Event',
                         start: '2025-09-09T16:00:00',
-                        className: 'px-1 py-1 rounded  rounded'
+                        peoples: [
+                            {
+                                name: "A",
+                                color: "red",
+                                imgSrc: "https://placehold.co/400",
+                            },
+                            {
+                                name: "B",
+                                color: "blue",
+                                imgSrc: "https://placehold.co/400",
+                            },
+                            {
+                                name: "B",
+                                color: "blue",
+                                imgSrc: "https://placehold.co/400",
+                            },
+                            {
+                                name: "B",
+                                color: "blue",
+                                imgSrc: "https://placehold.co/400",
+                            }
+                        ],
+                        status: 'running'
                     },
                     {
                         groupId: '999',
                         title: 'Repeating Event',
                         start: '2025-09-16T16:00:00',
-                        className: 'px-1 py-1 rounded  rounded'
+                        status: 'running'
+                        
                     },
                     {
                         title: 'Conference',
                         start: '2025-09-11',
                         end: '2025-09-13',
-                        className: 'px-1 py-1 rounded  rounded'
+                        status: 'running'
+                        
                     },
                     {
                         title: 'Meeting',
                         start: '2025-09-12T10:30:00',
                         end: '2025-09-12T12:30:00',
-                        className: 'px-1 py-1 rounded  rounded'
+                        status: 'running'
+                        
                     },
                     {
                         title: 'Lunch',
                         start: '2025-09-12T12:00:00',
-                        className: 'px-1 py-1 rounded  rounded'
+                        status: 'cancel'
+                        
                     },
                     {
                         title: 'Meeting',
                         start: '2025-09-12T14:30:00',
-                        className: 'px-1 py-1 rounded  rounded'
+                        status: 'cancel'
+                        
                     },
                     {
                         title: 'Birthday Party',
                         start: '2025-09-13T07:00:00',
-                        className: 'px-1 py-1 rounded  rounded'
+                        status: 'cancel'
+                        
                     },
                     {
                         title: 'Click for Google',
                         url: 'https://google.com/',
                         start: '2025-09-28',
-                        className: 'px-1 py-1 rounded  rounded'
+                        status: 'running'
+                        
                     }
                 ],
-                // eventContent: function (arg) {
-                //     // Get peoples array if exists
-                //     const peoples = arg.event.extendedProps.peoples || [];
+                eventContent: function (arg) {
+                    // Get peoples array if exists
+                    const peoples = arg.event.extendedProps.peoples || [];
 
-                //     // Create image HTML
-                //     const peopleHTML = peoples
-                //         .map(p => `<img src="${p.imgSrc}" alt="${p.name}" class="w-5 h-5 rounded-full border border-white -ml-1 first:ml-0">`)
-                //         .join('');
+                    // Create image HTML
+                    const peopleHTML = peoples
+                        .map(p => `<img src="${p.imgSrc}" alt="${p.name}" class="w-5 h-5 rounded-full border border-white -ml-1 first:ml-0">`)
+                        .join('');
 
-                //     // Return custom HTML for the event box
-                //     return {
-                //         html: `
-                //             <div class="flex items-center gap-1 px-1 py-1.5 rounded">
-                //             <div class="flex -space-x-1">${peopleHTML}</div>
-                //             <span class="font-medium text-xs text-gray-700">${arg.event.title}</span>
-                //             </div>
-                //         `
-                //     };
-                // },
+                    // Return custom HTML for the event box
+                    return {
+                        html: `
+                            <div class="flex items-center gap-1 px-1 py-1.5 rounded">
+                            <div class="flex -space-x-1">${peopleHTML}</div>
+                            <span class="font-medium text-[10px] text-gray-700 inline-block px-2 py-0.5 leading-4 bg-white">${peoples.length}</span>
+                            <span class="font-medium text-xs text-gray-700">${arg.event.title}</span>
+                            </div>
+                        `
+                    };
+                },
 
+                eventTimeFormat: { // like '14:30:00'
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    meridiem: true
+                },
+                eventDidMount: function (info) {
+                    if (info.event.extendedProps.status === 'running') {
+
+                        info.el.style.backgroundColor = '#EFF7FF';
+
+                    }
+                    else if(info.event.extendedProps.status === 'done'){
+                        info.el.style.backgroundColor = '#EFFFF4';
+                    }
+                    else if(info.event.extendedProps.status === 'cancel'){
+                        info.el.style.backgroundColor = '#FFEFF9';
+                    }
+                    else{
+                        info.el.style.backgroundColor = 'transparent';
+                    }
+                },
                 eventClick: function (info) {
                     console.log(info.event.extendedProps)
                     console.log(info.el.style)
@@ -749,7 +813,7 @@
                             </div>
 
 
-                            
+
                             <!-- card 2 -->
                             <div class="p-3 bg-white rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)]">
                                 <div class="space-y-2">
@@ -804,7 +868,7 @@
                             </div>
 
 
-                            
+
                             <!-- card 2 -->
                             <div class="p-3 bg-white rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)]">
                                 <div class="space-y-2">
