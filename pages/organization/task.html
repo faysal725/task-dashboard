@@ -532,15 +532,16 @@
                                             Today</p>
 
                                         <div class="flex justify-between items-center ">
-                                            <button class="cursor-pointer px-4">
+                                            <button class="cursor-pointer px-4"
+                                                onclick="swipePreviousDate('date_swiper')">
                                                 <img src="../../assets/icons/chevron-left.svg" alt="">
                                             </button>
 
-                                            <p
-                                                class="text-right justify-start text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                            <p class="text-right justify-start text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-5"
+                                                id="date_swiper">
                                                 12/10/2025</p>
 
-                                            <button class="cursor-pointer px-4">
+                                            <button class="cursor-pointer px-4" onclick="swipeNextDate('date_swiper')">
                                                 <img src="../../assets/icons/chevron-right.svg" alt="">
                                             </button>
 
@@ -1057,9 +1058,19 @@
 
         </div>
     </section>
+
+
     <script src="../../js/global.js"></script>
     <script src="../../js/modal.js"></script>
     <script src="../../js/sidebar.js"></script>
+    <script src="../../js/dateSwiper.js"></script>
+
+    
+    <script>
+
+        // setting present date
+        setPresentDay('date_swiper')
+    </script>
 </body>
 
 </html>
