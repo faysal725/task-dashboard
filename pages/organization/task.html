@@ -517,7 +517,8 @@
                                         </span>
                                     </button>
 
-                                    <label for="times" class="h-10 px-3 bg-neutral-100 rounded-md outline outline-1 outline-offset-[-1px] outline-gray-100 flex justify-between items-center gap-2">
+                                    <label for="times"
+                                        class="h-10 px-3 bg-neutral-100 rounded-md outline outline-1 outline-offset-[-1px] outline-gray-100 flex justify-between items-center gap-2">
                                         <input type="time" name="times" id="times"
                                             class=" text-xs font-normal font-['Lexend_Deca'] leading-tight bg-transparent">
 
@@ -544,7 +545,7 @@
                                     </div>
 
 
-                                    <button
+                                    <button onclick="toggleModal('task')"
                                         class="relative px-3 py-1 flex justify-between items-center gap-2 bg-primary h-10 rounded ">
 
                                         <p
@@ -965,6 +966,97 @@
     </main>
 
 
+
+    <!-- modal -->
+    <!-- create task -->
+    <section id="task" class="modal_container">
+
+        <!-- backdrop -->
+        <div onclick="toggleModal('task')" class="modal_backdrop"></div>
+
+        <!-- modal content -->
+        <div class="modal_content">
+            <div class="flex flex-col gap-2 w-full lg:w-[485px]  relative z-10">
+                <button onclick="toggleModal('task')"
+                    class="relative px-4 py-[6px] flex justify-center items-center gap-2 bg-primary h-12 rounded ">
+
+                    <p class="text-white text-sm font-medium font-['Lexend_Deca'] leading-5">
+                        Create New </p>
+
+
+
+                    <div class="w-6 h-6 relative flex items-center justify-center">
+                        <img src="../../assets/icons/plus-box.svg" alt="" class="w-4 h-4">
+                    </div>
+                </button>
+
+                <!-- divider -->
+                <div class="w-52 inline-flex justify-start items-center gap-3 mx-auto">
+                    <div class="flex-1 h-px bg-gray-300"></div>
+                    <div
+                        class="text-center justify-start text-slate-500 text-sm font-normal font-['Lexend_Deca'] leading-5">
+                        OR</div>
+                    <div class="flex-1 h-px bg-gray-300"></div>
+                </div>
+
+                <p
+                    class="self-stretch text-center justify-start text-gray-900 text-base font-normal font-['Lexend_Deca'] leading-6 border-b border-gray-100 pb-2">
+                    Select Template </p>
+
+                <!-- cards -->
+                <section
+                    class="p-3 bg-neutral-100 rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1">
+                    <p
+                        class="text-primary text-base font-semibold font-['Lexend_Deca'] leading-6">
+                        Store Audit – Gulshan Branch asdf asdf asdf asdf sdf</p>
+                    <div class="self-stretch flex justify-start items-start gap-2">
+                        <p
+                            class="text-right justify-start text-slate-500 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                            Create Date</p>
+                        <p
+                            class="text-right justify-start text-zinc-900 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                            12/10/2025 14:30</p>
+                    </div>
+                </section>
+
+
+
+                <section
+                    class="p-3 bg-neutral-100 rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1">
+                    <p
+                        class="text-primary text-base font-semibold font-['Lexend_Deca'] leading-6">
+                        Store Audit – Gulshan Branch</p>
+                    <div class="self-stretch flex justify-start items-start gap-2">
+                        <p
+                            class="text-right justify-start text-slate-500 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                            Create Date</p>
+                        <p
+                            class="text-right justify-start text-zinc-900 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                            12/10/2025 14:30</p>
+                    </div>
+                </section>
+
+
+
+                <section
+                    class="p-3 bg-neutral-100 rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,0.16)] inline-flex flex-col justify-start items-start gap-1">
+                    <p
+                        class="text-primary text-base font-semibold font-['Lexend_Deca'] leading-6">
+                        Store Audit – Gulshan Branch</p>
+                    <div class="self-stretch flex justify-start items-start gap-2">
+                        <p
+                            class="text-right justify-start text-slate-500 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                            Create Date</p>
+                        <p
+                            class="text-right justify-start text-zinc-900 text-[10px] font-normal font-['Lexend_Deca'] leading-4">
+                            12/10/2025 14:30</p>
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+    </section>
     <script src="../../js/global.js"></script>
     <script src="../../js/modal.js"></script>
     <script src="../../js/sidebar.js"></script>

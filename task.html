@@ -517,7 +517,8 @@
                                         </span>
                                     </button>
 
-                                    <label for="times" class="h-10 px-3 bg-neutral-100 rounded-md outline outline-1 outline-offset-[-1px] outline-gray-100 flex justify-between items-center gap-2">
+                                    <label for="times"
+                                        class="h-10 px-3 bg-neutral-100 rounded-md outline outline-1 outline-offset-[-1px] outline-gray-100 flex justify-between items-center gap-2">
                                         <input type="time" name="times" id="times"
                                             class=" text-xs font-normal font-['Lexend_Deca'] leading-tight bg-transparent">
 
@@ -549,7 +550,7 @@
 
                                         <p
                                             class="text-white text-xs font-normal font-['Lexend_Deca'] leading-tight text-nowrap">
-                                            Create New </p>
+                                            Create Newsdf </p>
 
 
 
@@ -963,6 +964,72 @@
             </div>
         </section>
     </main>
+
+
+    <!-- modal -->
+    <!-- create task -->
+    <section id="task" class="modal_container">
+
+        <!-- backdrop -->
+        <div onclick="toggleModal('task')" class="modal_backdrop"></div>
+
+        <!-- modal content -->
+        <div class="modal_content">
+            <form class="flex flex-col gap-5 w-full lg:w-[485px]  relative z-10">
+
+                <p
+                    class="text-center justify-start text-gray-900 text-xl md:text-2xl font-bold font-['Poppins'] leading-loose">
+                    Create
+                    New Industry </p>
+
+
+                <label for="industry_name" class="space-y-2">
+                    <p class="text-black text-base md:text-lg font-medium font-['Poppins'] leading-relaxed">Industry
+                        Name</p>
+                    <input type="text" name="industry_name" id="industry_name"
+                        class="h-12 md:h-14 p-4 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-gray-300 w-full placeholder:text-slate-500 text-sm md:text-lg "
+                        placeholder="Enter Industry name">
+                </label>
+
+                <div class="grid grid-cols-2 gap-5">
+                    <label for="serial_no" class="space-y-2 w-full">
+                        <p class="text-black text-base md:text-lg font-medium font-['Poppins'] leading-relaxed">Industry
+                            Name</p>
+
+                        <select name="serial_no" id="serial_no"
+                            class="h-12 md:h-14 p-4 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-gray-300 w-full placeholder:text-slate-500 text-sm md:text-lg">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </label>
+
+                    <div class="space-y-2">
+                        <p class="text-black text-base md:text-lg font-medium font-['Poppins'] leading-relaxed">Status
+                        </p>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <button class="h-12 px-6 py-3.5 bg-cyan-700 rounded inline-flex justify-center items-center gap-2">
+                    <p
+                        class="text-center justify-start text-white text-lg font-medium font-['Poppins'] leading-relaxed">
+                        Submit</p>
+                </button>
+            </form>
+
+        </div>
+    </section>
 
 
     <script src="../../js/global.js"></script>
