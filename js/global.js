@@ -78,33 +78,3 @@ function checkWidth() {
 
 window.addEventListener("resize", checkWidth);
 window.addEventListener("load", checkWidth);
-
-
-
-
-// custom select box
-document.querySelectorAll('.custom-select').forEach(function(select) {
-    const selected = select.querySelector('.select-selected');
-    const items = select.querySelector('.select-items');
-
-    selected.addEventListener('click', function() {
-      items.classList.toggle('select-hide');
-    });
-
-    items.querySelectorAll('div').forEach(function(item) {
-      item.addEventListener('click', function() {
-        const img = this.querySelector('img').outerHTML;
-        const text = this.lastChild.textContent.trim();
-        selected.innerHTML = img + ' ' + text;
-        items.classList.add('select-hide');
-        // You can store value in hidden input if needed
-      });
-    });
-
-    // Close when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!select.contains(e.target)) {
-        items.classList.add('select-hide');
-      }
-    });
-  });
