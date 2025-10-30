@@ -34,7 +34,7 @@
                 },
                 events: [
                     {
-                        title: 'All Day Event',
+                        title: 'Store Audit – Gulshan Branch',
                         start: '2025-09-01',
                         end: '2025-09-03',
                         allDay: true,
@@ -43,17 +43,13 @@
                                 name: "A",
                                 color: "red",
                                 imgSrc: "https://placehold.co/400",
-                            },
-                            {
-                                name: "B",
-                                color: "blue",
-                                imgSrc: "https://placehold.co/400",
                             }
                         ],
-                        status: 'done'
+                        status: 'complete',
+                        priority: 'high'
                     },
                     {
-                        title: 'Long Event',
+                        title: 'Warehouse Audit – Gulshan Branch',
                         start: '2025-09-07',
                         end: '2025-09-10',
                         peoples: [
@@ -68,8 +64,9 @@
                                 imgSrc: "https://placehold.co/400",
                             }
                         ],
-                        status: 'cancel'
-                        
+                        status: 'To do',
+                        priority: 'low'
+
                     },
                     {
                         groupId: '999',
@@ -97,71 +94,141 @@
                                 imgSrc: "https://placehold.co/400",
                             }
                         ],
-                        status: 'running'
+                        status: 'To do',
+                        priority: 'high'
+                    },
+                    {
+                        groupId: '999',
+                        title: 'Repeating Event',
+                        start: '2025-09-10T16:00:00',
+                        peoples: [
+                            {
+                                name: "A",
+                                color: "red",
+                                imgSrc: "https://placehold.co/400",
+                            },
+                            {
+                                name: "B",
+                                color: "blue",
+                                imgSrc: "https://placehold.co/400",
+                            },
+                            {
+                                name: "B",
+                                color: "blue",
+                                imgSrc: "https://placehold.co/400",
+                            },
+                            {
+                                name: "B",
+                                color: "blue",
+                                imgSrc: "https://placehold.co/400",
+                            }
+                        ],
+                        status: 'To do',
+                        priority: 'high'
                     },
                     {
                         groupId: '999',
                         title: 'Repeating Event',
                         start: '2025-09-16T16:00:00',
-                        status: 'running'
-                        
+                        status: 'To do',
+                        priority: 'medium'
+
                     },
                     {
                         title: 'Conference',
                         start: '2025-09-11',
                         end: '2025-09-13',
-                        status: 'running'
-                        
+                        status: 'In Progress',
+                        priority: 'medium'
+
                     },
                     {
                         title: 'Meeting',
                         start: '2025-09-12T10:30:00',
                         end: '2025-09-12T12:30:00',
-                        status: 'running'
-                        
+                        status: 'In Progress',
+                        priority: 'medium'
+
                     },
                     {
                         title: 'Lunch',
                         start: '2025-09-12T12:00:00',
-                        status: 'cancel'
-                        
+                        status: 'In Progress',
+                        priority: 'medium'
+
+
                     },
                     {
                         title: 'Meeting',
                         start: '2025-09-12T14:30:00',
-                        status: 'cancel'
-                        
+                        status: 'In Progress',
+                        priority: 'medium'
+
                     },
                     {
                         title: 'Birthday Party',
                         start: '2025-09-13T07:00:00',
-                        status: 'cancel'
-                        
+                        status: 'In Progress',
+                        priority: 'medium'
+
                     },
                     {
                         title: 'Click for Google',
                         url: 'https://google.com/',
                         start: '2025-09-28',
-                        status: 'running'
-                        
+                        status: 'In Progress',
+                        priority: 'medium'
+
                     }
                 ],
                 eventContent: function (arg) {
                     // Get peoples array if exists
                     const peoples = arg.event.extendedProps.peoples || [];
 
+                    const statusColors = {
+                        'To do': 'text-warning',
+                        'In Progress': 'text-info',
+                        'complete': 'text-success'
+                    };
+
+                    let priorityColors = {
+                        'high': 'text-error',
+                        'medium': 'text-info',
+                        'low': 'text-warning'
+                    };
+
                     // Create image HTML
-                    const peopleHTML = peoples
-                        .map(p => `<img src="${p.imgSrc}" alt="${p.name}" class="w-5 h-5 rounded-full border border-white -ml-1 first:ml-0">`)
-                        .join('');
+                    let peopleHTML
+
+                    if (peoples.length > 1) {
+                        peopleHTML = peoples
+                            .map(p => `<img src="${p.imgSrc}" alt="${p.name}" class="w-5 h-5 rounded-full border border-white -ml-1 first:ml-0">`)
+                            .join('')+`<p class="text-zinc-900 text-[8px] font-normal font-['Lexend_Deca'] leading-[8px] ml-1">${peoples.length} others</p>`;
+                    } else {
+                        peopleHTML = peoples
+                            .map(p => `<div class="flex justify-start items-center gap-1">
+                                <img src="${p.imgSrc}" alt="${p.name}" class="w-5 h-5 rounded-full border border-white ">
+                                <span class="text-zinc-900 text-[8px] font-normal font-['Lexend_Deca'] leading-[8px]">${p.name}</span>
+                                </div>`)
+                            .join('');
+                    }
 
                     // Return custom HTML for the event box
                     return {
                         html: `
-                            <div class="flex items-center gap-1 px-1 py-1.5 rounded">
-                            <div class="flex -space-x-1">${peopleHTML}</div>
-                            <span class="font-medium text-[10px] text-gray-700 inline-block px-2 py-0.5 leading-4 bg-white">${peoples.length}</span>
-                            <span class="font-medium text-xs text-gray-700">${arg.event.title}</span>
+                            <div class="p-2 space-y-1">
+                                <p class="text-zinc-900 text-sm font-medium font-['Lexend_Deca'] leading-5 line-clamp-1">${arg.event.title}</p>
+
+                                <div class="flex items-center gap-1">
+                                    <span class="inline-block px-2 py-1 bg-white capitalize text-[10px] font-normal font-['Lexend_Deca'] leading-4 ${statusColors[arg.event.extendedProps.status]}">
+                                        ${arg.event.extendedProps.status}
+                                    </span>
+                                    <span class="inline-block px-2 py-1 bg-white capitalize text-[10px] font-normal font-['Lexend_Deca'] leading-4 ${priorityColors[arg.event.extendedProps.priority]}">
+                                        ${arg.event.extendedProps.priority}
+                                    </span>
+                                </div>
+
+                                <div class="flex justify-start items-center">${peopleHTML}</div>
                             </div>
                         `
                     };
@@ -173,27 +240,30 @@
                     meridiem: true
                 },
                 eventDidMount: function (info) {
-                    if (info.event.extendedProps.status === 'running') {
+                    if (info.event.extendedProps.status === 'To do') {
+
+                        info.el.style.backgroundColor = '#FFFBEF';
+
+                    }
+                    else if (info.event.extendedProps.status === 'In Progress') {
 
                         info.el.style.backgroundColor = '#EFF7FF';
 
                     }
-                    else if(info.event.extendedProps.status === 'done'){
+                    else if (info.event.extendedProps.status === 'complete') {
                         info.el.style.backgroundColor = '#EFFFF4';
                     }
-                    else if(info.event.extendedProps.status === 'cancel'){
+                    else if (info.event.extendedProps.status === 'cancel') {
                         info.el.style.backgroundColor = '#FFEFF9';
                     }
-                    else{
+                    else {
                         info.el.style.backgroundColor = 'transparent';
                     }
                 },
                 eventClick: function (info) {
                     console.log(info.event.extendedProps)
                     console.log(info.el.style)
-                    // change the border color just for fun
-                    // info.el.style.borderColor = 'red';
-                    toggleModal('employees')
+                    // toggleModal('employees')
                 }
             });
 
