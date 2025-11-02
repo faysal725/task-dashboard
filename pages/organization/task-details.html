@@ -864,14 +864,12 @@
                                     </div>
 
                                     <div class="space-y-3">
-                                        <!-- cards -->
-
 
                                         <section
                                             class="w-full p-2 bg-neutral-100 rounded-lg inline-flex flex-col justify-start items-start gap-2 cursor-pointer">
                                             <div class="w-full inline-flex justify-start items-center gap-2">
                                                 <img src="../../assets/icons/pdf.svg" alt="">
-                                                <div
+                                                <div onclick="loadPDF('https://ontheline.trincoll.edu/images/bookdown/sample-local-pdf.pdf','pdf_container','pdf_modal')"
                                                     class="flex-1 inline-flex flex-col justify-start items-start gap-0.5">
                                                     <p
                                                         class="w-full justify-start text-zinc-900 text-xs msm:text-base md:text-xl font-semibold font-['Lexend_Deca'] leading-7 truncate">
@@ -961,7 +959,7 @@
                                             class="w-full p-2 bg-neutral-100 rounded-lg inline-flex flex-col justify-start items-start gap-2 cursor-pointer">
                                             <div class="w-full inline-flex justify-start items-center gap-2">
                                                 <img src="../../assets/icons/pdf.svg" alt="">
-                                                <div
+                                                <div onclick="loadPDF('https://ontheline.trincoll.edu/images/bookdown/sample-local-pdf.pdf','pdf_container','pdf_modal')"
                                                     class="flex-1 inline-flex flex-col justify-start items-start gap-0.5">
                                                     <p
                                                         class="w-full justify-start text-zinc-900 text-xs msm:text-base md:text-xl font-semibold font-['Lexend_Deca'] leading-7 truncate">
@@ -1008,14 +1006,31 @@
 
                 </div>
             </div>
+
         </section>
     </main>
+
+    <!-- modal -->
+    <!-- pdf modal -->
+    <section id="pdf_modal" class="modal_container">
+
+        <!-- backdrop -->
+        <div onclick="toggleModal('pdf_modal')" class="modal_backdrop"></div>
+
+        <!-- modal content -->
+        <div class="modal_content w-full md:w-[70%] h-[70%]  relative z-10">
+            <embed src="#" type="application/pdf" width="100%" height="100%" id="pdf_container">
+        </div>
+    </section>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
     <script src="../../js/global.js"></script>
     <script src="../../js/modal.js"></script>
     <script src="../../js/sidebar.js"></script>
     <script src="../../js/fileUpload.js"></script>
+    <script src="../../js/pdfHandler.js"></script>
 
 
     <script>
