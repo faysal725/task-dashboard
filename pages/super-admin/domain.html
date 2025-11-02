@@ -101,6 +101,82 @@
 
     <main class="flex justify-start bg-blue-600 h-screen max-h-screen overflow-hidden">
 
+
+        <!-- group details panel -->
+        <section class="bottom_panel_container" id="group_details_panel">
+            <div class="">
+                <div class="flex justify-between items-center p-4 pt-4">
+                    <p class=" justify-start text-zinc-900 text-2xl font-semibold font-['Lexend_Deca'] leading-8">
+                        Group Name</p>
+                    <button onclick="togglePanels('group_details_panel')">
+                        <img src="./assets/icons/x-black.svg" alt="">
+                    </button>
+                </div>
+                <div class="p-4 bg-white space-y-2 h-full">
+
+
+                    <!-- cards -->
+                    <div class="w-full p-3 bg-neutral-100 rounded-lg inline-flex justify-start items-center gap-2">
+                        <div class="flex-1 flex justify-start items-center gap-2">
+                            <img class="w-14 h-14 rounded-full border border-white" src="https://placehold.co/56x56" />
+                            <div class="flex-1 inline-flex flex-col justify-start items-start gap-0.5">
+                                <div
+                                    class="justify-start text-zinc-900 text-sm font-medium font-['Lexend_Deca'] leading-5">
+                                    Tarik Bin Aziz</div>
+                                <div
+                                    class="self-stretch justify-start text-slate-500 text-xs font-normal font-['Lexend_Deca'] leading-5 line-clamp-1">
+                                    Manager</div>
+                            </div>
+                        </div>
+                        <div class="w-6 h-6 relative">
+
+                            <img src="./assets/icons/message-text.svg" alt="" class="w-6 h-6">
+                        </div>
+                    </div>
+
+
+                    <div class="w-full p-3 bg-neutral-100 rounded-lg inline-flex justify-start items-center gap-2">
+                        <div class="flex-1 flex justify-start items-center gap-2">
+                            <img class="w-14 h-14 rounded-full border border-white" src="https://placehold.co/56x56" />
+                            <div class="flex-1 inline-flex flex-col justify-start items-start gap-0.5">
+                                <div
+                                    class="justify-start text-zinc-900 text-sm font-medium font-['Lexend_Deca'] leading-5">
+                                    Tarik Bin Aziz</div>
+                                <div
+                                    class="self-stretch justify-start text-slate-500 text-xs font-normal font-['Lexend_Deca'] leading-5 line-clamp-1">
+                                    Manager</div>
+                            </div>
+                        </div>
+                        <div class="w-6 h-6 relative">
+
+                            <img src="./assets/icons/message-text.svg" alt="" class="w-6 h-6">
+                        </div>
+                    </div>
+
+
+                    <div class="w-full p-3 bg-neutral-100 rounded-lg inline-flex justify-start items-center gap-2">
+                        <div class="flex-1 flex justify-start items-center gap-2">
+                            <img class="w-14 h-14 rounded-full border border-white" src="https://placehold.co/56x56" />
+                            <div class="flex-1 inline-flex flex-col justify-start items-start gap-0.5">
+                                <div
+                                    class="justify-start text-zinc-900 text-sm font-medium font-['Lexend_Deca'] leading-5">
+                                    Tarik Bin Aziz</div>
+                                <div
+                                    class="self-stretch justify-start text-slate-500 text-xs font-normal font-['Lexend_Deca'] leading-5 line-clamp-1">
+                                    Manager</div>
+                            </div>
+                        </div>
+                        <div class="w-6 h-6 relative">
+
+                            <img src="./assets/icons/message-text.svg" alt="" class="w-6 h-6">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
         <!-- profile panel -->
         <section class="fixed right-0 w-80 h-full bg-black z-50 transition-all duration-300 translate-x-[100%] p-6 "
             id="profile_panel">
@@ -538,16 +614,17 @@
                 <div class="w-full h-full space-y-6 ">
 
 
-                    <!-- Industry -->
+                    <!-- Organization -->
                     <div class=" bg-white rounded-lg">
-                        <div class="border-b border-gray-100 p-4 ">
+                        <div class="border-b border-gray-100 p-4 pb-3">
                             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                                <p class="text-black text-3xl font-semibold font-['Lexend_Deca'] leading-10">Create New
-                                    Group
+                                <p class="text-black text-3xl font-semibold font-['Lexend_Deca'] leading-10">
+                                    Domain
                                 </p>
 
 
-                                <!-- <button onclick="toggleModal('list')"
+
+                                <button onclick="toggleModal('employee')"
                                     class="relative px-3 py-1 flex justify-between items-center gap-2 bg-primary h-10 rounded ">
 
                                     <p
@@ -557,319 +634,374 @@
 
 
                                     <div class="w-6 h-6 relative flex items-center justify-center">
-                                        <img src="../../assets/icons/plus-box.svg" alt="" class="w-4 h-4">
+                                        <img src="../../assets/icons/plus.svg" alt="" class="w-3 h-3">
                                     </div>
-                                </button> -->
+                                </button>
                             </div>
 
                         </div>
 
-                        <!-- cards -->
-                        <div class="p-4 ">
-                            <div class="bg-gray-100 p-4 rounded-lg">
+                        <div class="md:p-4 pt-3">
+                            <section class="bg-neutral-100 md:rounded-lg md:p-4">
+                                <div class="bg-white p-4 overflow-x-auto">
+                                    <!-- table -->
+                                    <table class="table-auto w-full border border-gray-100 min-w-[1000px]">
+                                        <thead class=" bg-sky-950 ">
+                                            <tr>
+                                                <th
+                                                    class="text-start text-white text-base font-medium font-['Lexend_Deca'] leading-6 p-4 pr-0 rounded-tl-lg">
+                                                    #</th>
+                                                <th
+                                                    class="text-start text-white text-base font-medium font-['Lexend_Deca'] leading-6">
+                                                    Name</th>
+                                                <th
+                                                    class="text-start text-white text-base font-medium font-['Lexend_Deca'] leading-6">
+                                                    Email</th>
+                                                <th style="width: 411px;"
+                                                    class="text-start text-white text-base font-medium font-['Lexend_Deca'] leading-6">
+                                                    Domain</th>
+                                                <th style="width: 150px;"
+                                                    class="text-end text-white text-base font-medium font-['Lexend_Deca'] leading-6 p-4 pl-0 rounded-tr-lg">
+                                                    Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="text-sky-950 text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                                <td class="text-start p-4 pr-0">1</td>
+                                                <td class="text-start flex justify-start items-center gap-2">
+                                                    <img src="../../assets/images/navbar/profile.png" alt=""
+                                                        class="w-6 h-6 rounded-full">
+                                                    <p>Davit Jams</p>
+                                                </td>
+                                                <td class="text-start">example@gmail.com</td>
+                                                <td class="text-start">
+                                                    <div class="w-full flex items-center gap-4">
 
-                                <div class="bg-white rounded-lg p-4 ">
+                                                        <a href="https://www.notion.so/Task-and-Team-Management-Supraskills-2919fa66174c81f7864fde448778f408"
+                                                            class="text-blue-600 text-sm font-normal font-['Lexend_Deca'] underline leading-5 line-clamp-2">
+                                                            https://www.notion.so/Task-and-Team-Management-Supraskills-2919fa66174c81f7864fde448778f408
+                                                        </a>
 
-                                    <div
-                                        class="pb-6 mb-6 border-b border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <label for="company_name" class="text_input">
-                                            <p class="">Group Name</p>
-                                            <input type="text" id="company_name" placeholder="Write Company Name"
-                                                required="">
-                                        </label>
-
-
-                                        <label for="member" class="space-y-2">
-                                            <p>Select Memeber</p>
-                                            <div
-                                                class="flex justify-start items-center h-12 px-4 bg-neutral-100 rounded-lg gap-2">
-                                                <img src="../../assets/icons/search.svg" alt="" class="h-5 w-5">
-
-                                                <input type="text" name="member" id="member"
-                                                    class="w-full h-full bg-transparent outline-none text-slate-500 text-sm md:text-base font-normal font-['Poppins'] leading-6"
-                                                    placeholder="Search/Select Member">
-
-                                                <img src="../../assets/icons/chevron-down.svg" alt="" class="ml-auto">
-                                            </div>
-                                        </label>
-                                    </div>
-
-
-
-                                    <p class="text-zinc-800 text-lg font-medium font-['Lexend_Deca'] leading-6 pb-6">
-                                        Group Member</p>
-
-                                    <div
-                                        class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-2 lg:gap-6 items-stretch">
-                                        <div class="grow flex flex-col gap-2">
-
-                                            <!-- industry 1 -->
-                                            <div
-                                                class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
-                                                <p
-                                                    class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
-                                                    Industry Name Lorem ipsum dolor, sit amet consectetur adipisicing
-                                                    elit.
-                                                    Provident adipisci repellat omnis corrupti. Sunt accusamus corrupti
-                                                    vel
-                                                    architecto aliquam molestias.</p>
-
-                                                <button class="ml-auto w-6 h-6">
-                                                    <img src="../../assets/icons/delete.svg" alt="">
-                                                </button>
-                                                <button onclick="toggleModal('editIndustry')">
-
-                                                    <img src="../../assets/icons/edit.svg" alt="">
-                                                </button>
-                                            </div>
-
-                                            <!-- industry 2 -->
-                                            <div
-                                                class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
-                                                <p
-                                                    class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
-                                                    Industry Name</p>
-
-                                                <button class="ml-auto w-6 h-6">
-                                                    <img src="../../assets/icons/delete.svg" alt="">
-                                                </button>
-
-                                                <button onclick="toggleModal('editIndustry')">
-
-                                                    <img src="../../assets/icons/edit.svg" alt="">
-                                                </button>
-                                            </div>
-
-                                            <!-- industry 3 -->
-                                            <div
-                                                class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
-                                                <p
-                                                    class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
-                                                    Industry Name</p>
-
-                                                <button class="ml-auto w-6 h-6">
-                                                    <img src="../../assets/icons/delete.svg" alt="">
-                                                </button>
-
-                                                <button onclick="toggleModal('editIndustry')">
-
-                                                    <img src="../../assets/icons/edit.svg" alt="">
-                                                </button>
-                                            </div>
-                                        </div>
-
-                                        <!-- Divider -->
-                                        <div class="w-px bg-gray-100 h-full hidden lg:block"></div>
-
-                                        <div class="grow flex flex-col gap-2">
+                                                        <button class="w-6 h-6">
+                                                            <img src="../../assets/icons/table/copy.svg" alt=""
+                                                                class="h-full w-full">
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                                <td class="text-end p-4 pl-0 flex justify-end items-center gap-3">
+                                                    <button
+                                                        class="bg-rose-50 rounded-lg  p-2 relative flex justify-center items-center">
+                                                        <img src="../../assets/icons/delete.svg" alt="" class="h-6 w-6">
+                                                    </button>
+                                                    <button onclick="toggleModal('edit_employee')"
+                                                        class="bg-cyan-50 rounded-lg p-2 relative flex justify-center items-center">
+                                                        <img src="../../assets/icons/edit.svg" alt="" class="h-6 w-6">
+                                                    </button>
+                                                </td>
+                                            </tr>
 
 
-                                            <!-- industry 4 -->
-                                            <div
-                                                class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
-                                                <p
-                                                    class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
-                                                    Industry Name</p>
+                                            <tr class="text-sky-950 text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                                <td class="text-start p-4 pr-0">2</td>
+                                                <td class="text-start flex justify-start items-center gap-2">
+                                                    <img src="../../assets/images/navbar/profile.png" alt=""
+                                                        class="w-6 h-6 rounded-full">
+                                                    <p>Davit Jams</p>
+                                                </td>
+                                                <td class="text-start">example@gmail.com</td>
+                                                <td class="text-start">
+                                                    <div class="w-full flex items-center gap-4">
 
-                                                <button class="ml-auto w-6 h-6">
-                                                    <img src="../../assets/icons/delete.svg" alt="">
-                                                </button>
+                                                        <a href="https://www.notion.so/Task-and-Team-Management-Supraskills-2919fa66174c81f7864fde448778f408"
+                                                            class="text-blue-600 text-sm font-normal font-['Lexend_Deca'] underline leading-5 line-clamp-2">
+                                                            https://www.notion.so/Task-and-Team-Management-Supraskills-2919fa66174c81f7864fde448778f408
+                                                        </a>
 
-                                                <button onclick="toggleModal('editIndustry')">
-
-                                                    <img src="../../assets/icons/edit.svg" alt="">
-                                                </button>
-                                            </div>
-
-
-                                            <!-- industry 5 -->
-                                            <div
-                                                class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
-                                                <p
-                                                    class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
-                                                    Industry Name</p>
-
-                                                <button class="ml-auto w-6 h-6">
-                                                    <img src="../../assets/icons/delete.svg" alt="">
-                                                </button>
-
-                                                <button onclick="toggleModal('editIndustry')">
-
-                                                    <img src="../../assets/icons/edit.svg" alt="">
-                                                </button>
-                                            </div>
+                                                        <button class="w-6 h-6">
+                                                            <img src="../../assets/icons/table/copy.svg" alt=""
+                                                                class="h-full w-full">
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                                <td class="text-end p-4 pl-0 flex justify-end items-center gap-3">
+                                                    <button
+                                                        class="bg-rose-50 rounded-lg  p-2 relative flex justify-center items-center">
+                                                        <img src="../../assets/icons/delete.svg" alt="" class="h-6 w-6">
+                                                    </button>
+                                                    <button onclick="toggleModal('edit_employee')"
+                                                        class="bg-cyan-50 rounded-lg p-2 relative flex justify-center items-center">
+                                                        <img src="../../assets/icons/edit.svg" alt="" class="h-6 w-6">
+                                                    </button>
+                                                </td>
+                                            </tr>
 
 
 
-                                            <!-- industry 6 -->
-                                            <div
-                                                class="p-2 bg-neutral-100 rounded flex justify-start items-center gap-4">
-                                                <p
-                                                    class="text-zinc-900 text-sm md:text-base font-normal leading-normal truncate max-w-28 md:max-w-52 overflow-hidden">
-                                                    Industry Name</p>
+                                            <tr class="text-sky-950 text-sm font-normal font-['Lexend_Deca'] leading-5">
+                                                <td class="text-start p-4 pr-0">3</td>
+                                                <td class="text-start flex justify-start items-center gap-2">
+                                                    <img src="../../assets/images/navbar/profile.png" alt=""
+                                                        class="w-6 h-6 rounded-full">
+                                                    <p>Davit Jams</p>
+                                                </td>
+                                                <td class="text-start">example@gmail.com</td>
+                                                <td class="text-start">
+                                                    <div class="w-full flex items-center gap-4">
 
-                                                <button class="ml-auto w-6 h-6">
-                                                    <img src="../../assets/icons/delete.svg" alt="">
-                                                </button>
+                                                        <a href="https://www.notion.so/Task-and-Team-Management-Supraskills-2919fa66174c81f7864fde448778f408"
+                                                            class="text-blue-600 text-sm font-normal font-['Lexend_Deca'] underline leading-5 line-clamp-2">
+                                                            https://www.notion.so/Task-and-Team-Management-Supraskills-2919fa66174c81f7864fde448778f408
+                                                        </a>
 
-                                                <button onclick="toggleModal('editIndustry')">
-
-                                                    <img src="../../assets/icons/edit.svg" alt="">
-                                                </button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="flex justify-end pt-6">
-                                        <button type="submit" class="btn_primary">Save</button>
-                                    </div>
+                                                        <button class="w-6 h-6">
+                                                            <img src="../../assets/icons/table/copy.svg" alt=""
+                                                                class="h-full w-full">
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                                <td class="text-end p-4 pl-0 flex justify-end items-center gap-3">
+                                                    <button
+                                                        class="bg-rose-50 rounded-lg  p-2 relative flex justify-center items-center">
+                                                        <img src="../../assets/icons/delete.svg" alt="" class="h-6 w-6">
+                                                    </button>
+                                                    <button onclick="toggleModal('edit_employee')"
+                                                        class="bg-cyan-50 rounded-lg p-2 relative flex justify-center items-center">
+                                                        <img src="../../assets/icons/edit.svg" alt="" class="h-6 w-6">
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-
-                                
-                            </div>
+                            </section>
                         </div>
                     </div>
 
                 </div>
             </div>
         </section>
+
+
+        <!-- modal -->
+        <!-- create employee -->
+        <section id="employee" class="modal_container">
+
+            <!-- backdrop -->
+            <div onclick="toggleModal('employee')" class="modal_backdrop"></div>
+
+            <!-- modal content -->
+            <div class="modal_content w-full md:w-[485px]  relative z-10">
+                <form class="flex flex-col gap-5 ">
+
+                    <div class="pb-5 border-b border-gray-200 flex justify-center items-center">
+                        <p
+                            class="text-center justify-start text-gray-900 text-lg md:text-xl lg:text-2xl font-semibold font-['Lexend_Deca'] leading-8">
+                            Create New Employee </p>
+
+
+                        <button class="block md:hidden ml-auto" onclick="toggleModal('employee')">
+                            <img src="../../assets/icons/x-black.svg" alt="" class="h-3 w-3">
+                        </button>
+                    </div>
+
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-5 border-b border-gray-200">
+                        <label for="first_name" class="text_input">
+                            <p class="text-slate-500 text-base font-normal font-['Poppins'] leading-6">First Name</p>
+                            <input type="text" id="first_name" placeholder="Write first Name">
+                        </label>
+
+
+                        <label for="last_name" class="text_input">
+                            <p>Last Name</p>
+                            <input type="text" id="last_name" placeholder="Write Last Name">
+                        </label>
+
+
+                        <label for="email" class="text_input">
+                            <p>Email</p>
+                            <input type="email" id="email" placeholder="Enter Email">
+                        </label>
+                        <label for="Telephone" class="text_input">
+                            <p>Telephone</p>
+                            <input type="tel" id="Telephone" placeholder="Enter Contact No">
+                        </label>
+
+                        <label for="activity" class="text_input">
+                            <p>Department </p>
+                            <div>
+                                <select name="activity" id="activity"
+                                    class="text-slate-500 !text-sm md:!text-base font-normal font-['Poppins'] leading-6">
+                                    <option>
+                                        Select Department</option>
+                                    <option value="Finance">Finance</option>
+                                    <option value="Health">Health</option>
+                                    <option value="Education">Education</option>
+                                </select>
+
+                                <img src="../../assets/icons/chevron-down.svg" alt="">
+                            </div>
+                        </label>
+
+
+
+                        <label for="roll" class="text_input">
+                            <p>User Roll</p>
+                            <div>
+                                <select name="roll" id="roll"
+                                    class="text-slate-500 !text-sm md:!text-base font-normal font-['Poppins'] leading-6">
+                                    <option>
+                                        Select Role</option>
+                                    <option value="user">user</option>
+                                    <option value="admin">admin</option>
+                                    <option value="superadmin">super admin</option>
+                                </select>
+
+                                <img src="../../assets/icons/chevron-down.svg" alt="">
+                            </div>
+                        </label>
+
+                        <div class="col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <label for="user_pass" class="text_input_3">
+                                <p>Password</p>
+                                <input type="password" name="user_pass" id="user_pass" placeholder="Enter Password">
+
+                                <img onclick="togglePasswordVisibility('user_pass')"
+                                    src="../../assets/icons/inputBox/eye-slash-black.svg" alt=""
+                                    class="hidden eye-slash">
+
+
+                                <img onclick="togglePasswordVisibility('user_pass')"
+                                    src="../../assets/icons/inputBox/eye-black.svg" alt="eye" class="eye">
+
+                            </label>
+                            <label for="confirm_pass" class="text_input_3">
+                                <p>Confirm Password</p>
+                                <input type="password" name="confirm_pass" id="confirm_pass"
+                                    placeholder="Enter Password">
+
+                                <img onclick="togglePasswordVisibility('confirm_pass')"
+                                    src="../../assets/icons/inputBox/eye-slash-black.svg" alt=""
+                                    class="hidden eye-slash">
+
+
+                                <img onclick="togglePasswordVisibility('confirm_pass')"
+                                    src="../../assets/icons/inputBox/eye-black.svg" alt="eye" class="eye">
+
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <button class="h-12 px-6 py-3.5 bg-cyan-700 rounded inline-flex justify-center items-center gap-2">
+                        <p
+                            class="text-center justify-start text-white text-lg font-medium font-['Poppins'] leading-relaxed">
+                            Submit</p>
+                    </button>
+                </form>
+
+            </div>
+        </section>
+
+
+
+
+        <!-- edit employee -->
+        <section id="edit_employee" class="modal_container">
+
+            <!-- backdrop -->
+            <div onclick="toggleModal('edit_employee')" class="modal_backdrop"></div>
+
+            <!-- modal content -->
+            <div class="modal_content w-full md:w-[485px]  relative z-10">
+                <form class="flex flex-col gap-5 ">
+
+                    <div class="pb-5 border-b border-gray-200 flex justify-center items-center">
+                        <p
+                            class="text-center justify-start text-gray-900 text-lg md:text-xl lg:text-2xl font-semibold font-['Lexend_Deca'] leading-8">
+                            Edit Employee </p>
+
+
+                        <button class="block md:hidden ml-auto" onclick="toggleModal('employee')">
+                            <img src="../../assets/icons/x-black.svg" alt="" class="h-3 w-3">
+                        </button>
+                    </div>
+
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-5 border-b border-gray-200">
+                        <label for="first_name" class="text_input">
+                            <p class="text-slate-500 text-base font-normal font-['Poppins'] leading-6">First Name</p>
+                            <input type="text" id="first_name" placeholder="Write first Name">
+                        </label>
+
+
+                        <label for="last_name" class="text_input">
+                            <p>Last Name</p>
+                            <input type="text" id="last_name" placeholder="Write Last Name">
+                        </label>
+
+
+                        <label for="email" class="text_input">
+                            <p>Email</p>
+                            <input type="email" id="email" placeholder="Enter Email">
+                        </label>
+                        <label for="Telephone" class="text_input">
+                            <p>Telephone</p>
+                            <input type="tel" id="Telephone" placeholder="Enter Contact No">
+                        </label>
+
+                        <label for="activity" class="text_input">
+                            <p>Department </p>
+                            <div>
+                                <select name="activity" id="activity"
+                                    class="text-slate-500 !text-sm md:!text-base font-normal font-['Poppins'] leading-6">
+                                    <option>
+                                        Select Department</option>
+                                    <option value="Finance">Finance</option>
+                                    <option value="Health">Health</option>
+                                    <option value="Education">Education</option>
+                                </select>
+
+                                <img src="../../assets/icons/chevron-down.svg" alt="">
+                            </div>
+                        </label>
+
+
+
+                        <label for="roll" class="text_input">
+                            <p>User Roll</p>
+                            <div>
+                                <select name="roll" id="roll"
+                                    class="text-slate-500 !text-sm md:!text-base font-normal font-['Poppins'] leading-6">
+                                    <option>
+                                        Select Role</option>
+                                    <option value="user">user</option>
+                                    <option value="admin">admin</option>
+                                    <option value="superadmin">super admin</option>
+                                </select>
+
+                                <img src="../../assets/icons/chevron-down.svg" alt="">
+                            </div>
+                        </label>
+                    </div>
+
+
+                    <button class="h-12 px-6 py-3.5 bg-cyan-700 rounded inline-flex justify-center items-center gap-2">
+                        <p
+                            class="text-center justify-start text-white text-lg font-medium font-['Poppins'] leading-relaxed">
+                            Submit</p>
+                    </button>
+                </form>
+
+            </div>
+        </section>
     </main>
 
-    <!-- modal -->
-    <!-- create industry -->
-    <section id="list" class="modal_container">
-
-        <!-- backdrop -->
-        <div onclick="toggleModal('list')" class="modal_backdrop"></div>
-
-        <!-- modal content -->
-        <div class="modal_content">
-            <form class="flex flex-col gap-5 w-full lg:w-[485px]  relative z-10">
-
-                <p
-                    class="text-center justify-start text-gray-900 text-xl md:text-2xl font-bold font-['Poppins'] leading-loose">
-                    Create
-                    New Industry </p>
-
-
-                <label for="industry_name" class="space-y-2">
-                    <p class="text-black text-base md:text-lg font-medium font-['Poppins'] leading-relaxed">Industry
-                        Name</p>
-                    <input type="text" name="industry_name" id="industry_name"
-                        class="h-12 md:h-14 p-4 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-gray-300 w-full placeholder:text-slate-500 text-sm md:text-lg "
-                        placeholder="Enter Industry name">
-                </label>
-
-                <div class="grid grid-cols-2 gap-5">
-                    <label for="serial_no" class="space-y-2 w-full">
-                        <p class="text-black text-base md:text-lg font-medium font-['Poppins'] leading-relaxed">Industry
-                            Name</p>
-
-                        <select name="serial_no" id="serial_no"
-                            class="h-12 md:h-14 p-4 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-gray-300 w-full placeholder:text-slate-500 text-sm md:text-lg">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </label>
-
-                    <div class="space-y-2">
-                        <p class="text-black text-base md:text-lg font-medium font-['Poppins'] leading-relaxed">Status
-                        </p>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                </div>
-
-                <button class="h-12 px-6 py-3.5 bg-cyan-700 rounded inline-flex justify-center items-center gap-2">
-                    <p
-                        class="text-center justify-start text-white text-lg font-medium font-['Poppins'] leading-relaxed">
-                        Submit</p>
-                </button>
-            </form>
-
-        </div>
-    </section>
-
-
-    <!-- Edit industry -->
-    <section id="editIndustry" class="modal_container">
-
-        <!-- backdrop -->
-        <div onclick="toggleModal('editIndustry')" class="modal_backdrop"></div>
-
-        <!-- modal content -->
-        <div class="modal_content">
-            <form class="flex flex-col gap-5 w-full lg:w-[485px]  relative z-10">
-
-                <p
-                    class="text-center justify-start text-gray-900 text-xl md:text-2xl font-bold font-['Poppins'] leading-loose">
-                    Create
-                    New Industry </p>
-
-
-                <label for="industry_name" class="space-y-2">
-                    <p class="text-black text-base md:text-lg font-medium font-['Poppins'] leading-relaxed">Industry
-                        Name</p>
-                    <input type="text" name="industry_name" id="industry_name"
-                        class="h-12 md:h-14 p-4 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-gray-300 w-full placeholder:text-slate-500 text-sm md:text-lg "
-                        placeholder="Enter Industry name">
-                </label>
-
-                <div class="grid grid-cols-2 gap-5">
-                    <label for="serial_no" class="space-y-2 w-full">
-                        <p class="text-black text-base md:text-lg font-medium font-['Poppins'] leading-relaxed">Industry
-                            Name</p>
-
-                        <select name="serial_no" id="serial_no"
-                            class="h-12 md:h-14 p-4 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-gray-300 w-full placeholder:text-slate-500 text-sm md:text-lg">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </label>
-
-                    <div class="space-y-2">
-                        <p class="text-black text-base md:text-lg font-medium font-['Poppins'] leading-relaxed">Status
-                        </p>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                </div>
-
-                <button class="h-12 px-6 py-3.5 bg-cyan-700 rounded inline-flex justify-center items-center gap-2">
-                    <p
-                        class="text-center justify-start text-white text-lg font-medium font-['Poppins'] leading-relaxed">
-                        Submit</p>
-                </button>
-            </form>
-
-        </div>
-    </section>
 
     <script src="../../js/global.js"></script>
     <script src="../../js/modal.js"></script>
     <script src="../../js/sidebar.js"></script>
+    <script src="../../js/formFieldControll.js"></script>
 </body>
 
 </html>

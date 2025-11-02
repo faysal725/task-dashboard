@@ -824,6 +824,7 @@ input:checked+.slider:before {
   transition: all 0.3s;
   transform: translateX(100%);
   /* transform: translateX(0); */
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15); /* ← soft left shadow */
 }
 
 .panel_container.active {
