@@ -92,6 +92,7 @@
     <!-- custom CSS -->
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/calender.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 
 </head>
@@ -273,54 +274,43 @@
                     </a>
                     <a href="/"
                         class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/calendar.svg" alt="">
+                        <img src="../../assets/icons/sidebarIcons/globe.svg" alt="">
                         <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
-                            Calendar</p>
+                            Domain</p>
 
                     </a>
                     <a href="/"
                         class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/board.svg " alt="">
+                        <img src="../../assets/icons/sidebarIcons/building.svg" alt="">
                         <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
-                            task</p>
+                            Organization</p>
 
                     </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/cmnts.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
-                            Message</p>
+                    <div class="">
+                        <div onclick="expandOrCollapseSubsection('company_essential_sm')"
+                            class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white cursor-pointer">
+                            <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
+                            <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                Company Essential </p>
 
-                    </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/folder.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
-                            Library</p>
+                            <i class="fa fa-chevron-down text-white fa-xs ml-auto block" aria-hidden="true"></i>
+                        </div>
 
-                    </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/group.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
-                            Groups</p>
-
-                    </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/users.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
-                            Employee</p>
-
-                    </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
-                        <img src="../../assets/icons/sidebarIcons/key.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
-                            Roll Management</p>
-
-                    </a>
-
+                        <div id="company_essential_sm"
+                            class="text-white pl-8 max-h-0 overflow-hidden transition-all duration-400 "
+                            aria-expanded="false">
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 1</p>
+                            </div>
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 2</p>
+                            </div>
+                        </div>
+                    </div>
                 </nav>
 
 
@@ -348,15 +338,15 @@
         </section>
 
         <!-- sidebar section  -->
-        <section class="bg-black w-28 4xl:min-w-80 hidden xl:flex flex-col gap-4 transition-all duration-300"
+        <section class="bg-black w-28 4xl:min-w-80 p-6 hidden xl:flex flex-col gap-4 transition-all duration-300"
             id="sidebar_container">
 
-            <div class="border-b border-white/10 pb-4 p-6 " id="logo_container">
+            <div class="border-b border-white/10 pb-4" id="logo_container">
                 <img src="../../assets/logo/logo.png" alt="" class="h-10 w-auto object-contain">
             </div>
 
             <!-- for 4xl -->
-            <div class=" grow p-6 " id="lg_nav">
+            <div class=" grow" id="lg_nav">
                 <!-- search box -->
                 <div
                     class=" h-12 px-3 py-1 bg-white/10 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/10 flex items-center gap-2 mb-4">
@@ -372,124 +362,83 @@
                 <!-- sidebar links  -->
                 <nav class="space-y-2">
                     <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white capitalize">
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
                         <img src="../../assets/icons/sidebarIcons/dashboard.svg" alt="">
                         <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
                             Dashboard</p>
                     </a>
                     <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white capitalize">
-                        <img src="../../assets/icons/sidebarIcons/calendar.svg" alt="">
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/globe.svg" alt="">
                         <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
-                            Calendar</p>
+                            Domain</p>
 
                     </a>
                     <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white capitalize">
-                        <img src="../../assets/icons/sidebarIcons/board.svg " alt="">
+                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                        <img src="../../assets/icons/sidebarIcons/building.svg" alt="">
                         <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
-                            task</p>
+                            Organization</p>
 
                     </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white capitalize">
-                        <img src="../../assets/icons/sidebarIcons/cmnts.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
-                            Message</p>
+                    <div class="">
+                        <div onclick="expandOrCollapseSubsection('company_essential')"
+                            class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white cursor-pointer">
+                            <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
+                            <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                Company Essential </p>
 
-                    </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white capitalize">
-                        <img src="../../assets/icons/sidebarIcons/folder.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
-                            Library</p>
+                            <i class="fa fa-chevron-down text-white fa-xs ml-auto block" aria-hidden="true"></i>
+                        </div>
 
-                    </a>
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white capitalize">
-                        <img src="../../assets/icons/sidebarIcons/group.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
-                            Groups</p>
-
-                    </a>
-
-
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white capitalize">
-                        <img src="../../assets/icons/sidebarIcons/users.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
-                            Employee </p>
-
-                    </a>
-
-
-                    <a href="/"
-                        class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white capitalize">
-                        <img src="../../assets/icons/sidebarIcons/key.svg" alt="">
-                        <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
-                            Roll Management </p>
-
-                    </a>
+                        <div id="company_essential"
+                            class="text-white pl-8 max-h-0 overflow-hidden transition-all duration-400 "
+                            aria-expanded="false">
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 1</p>
+                            </div>
+                            <div
+                                class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white">
+                                <p class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug block">
+                                    Route 2</p>
+                            </div>
+                        </div>
+                    </div>
                 </nav>
 
             </div>
 
 
             <!-- for smaller then 4xl -->
-            <div class=" grow p-6 " id="small_nav">
+            <div class=" grow" id="small_nav">
 
 
                 <!-- sidebar links  -->
                 <nav class="flex flex-col items-center justify-center gap-8 h-full">
-                    <button class="mb-auto relative group">
+                    <button class="mb-auto">
 
                         <img src="../../assets/icons/search.svg" alt="">
-
-
-                        <div
-                            class="absolute top-0 right-0 min-w-72 bg-black translate-x-0 transition-all duration-500 opacity-0 group-hover:translate-x-[115%] group-hover:opacity-100 z-50 rounded-lg overflow-hidden">
-                            <div
-                                class=" h-12 px-3 py-1 bg-white/10  outline outline-1 outline-offset-[-1px] outline-white/10 flex items-center gap-2">
-                                <img src="../../assets/icons/search.svg" alt="">
-                                <input type="text" placeholder="Search"
-                                    class="w-full bg-transparent outline-none text-white">
-                            </div>
-                        </div>
                     </button>
 
-                    <a href="#">
+                    <button>
                         <img src="../../assets/icons/sidebarIcons/dashboard.svg" alt="">
-                    </a>
+                    </button>
 
-                    <a href="#">
-                        <img src="../../assets/icons/sidebarIcons/calendar.svg" alt="">
-                    </a>
-
-                    <a href="#">
-                        <img src="../../assets/icons/sidebarIcons/board.svg" alt="">
-                    </a>
-                    <a href="#">
-                        <img src="../../assets/icons/sidebarIcons/cmnts.svg" alt="">
-                    </a>
-
-                    <a href="#">
-                        <img src="../../assets/icons/sidebarIcons/folder.svg" alt="">
-                    </a>
+                    <button>
+                        <img src="../../assets/icons/sidebarIcons/globe.svg" alt="">
+                    </button>
 
 
-                    <a href="#">
-                        <img src="../../assets/icons/sidebarIcons/group.svg" alt="">
-                    </a>
+                    <button>
+                        <img src="../../assets/icons/sidebarIcons/building.svg" alt="">
+                    </button>
 
 
-                    <a href="#">
-                        <img src="../../assets/icons/sidebarIcons/users.svg" alt="">
-                    </a>
-
-
-                    <a href="#">
-                        <img src="../../assets/icons/sidebarIcons/key.svg" alt="">
-                    </a>
+                    <button>
+                        <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
+                    </button>
 
                     <div class="mt-auto flex flex-col items-center gap-4 bg-white/5 rounded w-full py-4">
                         <button class="">
@@ -518,26 +467,25 @@
 
 
 
-            <div class="sticky bottom-0 z-10 p-6" id="bottom_options">
-                <div class="w-full p-3 bg-white/5 rounded flex justify-between items-center">
-                    <button>
-                        <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
+            <div class="sticky bottom-0 z-10 p-3 bg-white/5 rounded flex justify-between items-center"
+                id="bottom_options">
+                <button>
+                    <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
 
-                    </button>
+                </button>
 
-                    <button>
-                        <img src="../../assets/icons/settings.svg" alt="" class="w-6 h-6 cursor-pointer">
+                <button>
+                    <img src="../../assets/icons/settings.svg" alt="" class="w-6 h-6 cursor-pointer">
 
-                    </button>
-                    <button>
-                        <img src="../../assets/icons/user.svg" alt="" class="w-6 h-6 cursor-pointer">
+                </button>
+                <button>
+                    <img src="../../assets/icons/user.svg" alt="" class="w-6 h-6 cursor-pointer">
 
-                    </button>
-                    <button>
+                </button>
+                <button>
 
-                        <img src="../../assets/icons/log-out.svg" alt="" class="w-6 h-6 cursor-pointer">
-                    </button>
-                </div>
+                    <img src="../../assets/icons/log-out.svg" alt="" class="w-6 h-6 cursor-pointer">
+                </button>
             </div>
         </section>
 
@@ -677,12 +625,13 @@
                                                 <td class="text-start">
                                                     <div class="w-full flex items-center gap-4">
 
-                                                        <a href="https://www.notion.so/Task-and-Team-Management-Supraskills-2919fa66174c81f7864fde448778f408"
+                                                        <a id="dom_1"
+                                                            href="https://www.notion.so/Task-and-Team-Management-Supraskills-2919fa66174c81f7864fde448778f408"
                                                             class="text-blue-600 text-sm font-normal font-['Lexend_Deca'] underline leading-5 line-clamp-2">
                                                             https://www.notion.so/Task-and-Team-Management-Supraskills-2919fa66174c81f7864fde448778f408
                                                         </a>
 
-                                                        <button class="w-6 h-6">
+                                                        <button onclick="copyText('dom_1')" class="w-6 h-6">
                                                             <img src="../../assets/icons/table/copy.svg" alt=""
                                                                 class="h-full w-full">
                                                         </button>
@@ -712,12 +661,13 @@
                                                 <td class="text-start">
                                                     <div class="w-full flex items-center gap-4">
 
-                                                        <a href="https://www.notion.so/Task-and-Team-Management-Supraskills-2919fa66174c81f7864fde448778f408"
+                                                        <a id="dom_2"
+                                                            href="https://www.notion.so/Task-and-Team-Management-Supraskills-2919fa66174c81f7864fde448778f408"
                                                             class="text-blue-600 text-sm font-normal font-['Lexend_Deca'] underline leading-5 line-clamp-2">
                                                             https://www.notion.so/Task-and-Team-Management-Supraskills-2919fa66174c81f7864fde448778f408
                                                         </a>
 
-                                                        <button class="w-6 h-6">
+                                                        <button onclick="copyText('dom_2')" class="w-6 h-6">
                                                             <img src="../../assets/icons/table/copy.svg" alt=""
                                                                 class="h-full w-full">
                                                         </button>
@@ -748,12 +698,13 @@
                                                 <td class="text-start">
                                                     <div class="w-full flex items-center gap-4">
 
-                                                        <a href="https://www.notion.so/Task-and-Team-Management-Supraskills-2919fa66174c81f7864fde448778f408"
+                                                        <a id="dom_3"
+                                                            href="https://www.notion.so/Task-and-Team-Management-Supraskills-2919fa66174c81f7864fde448778f408"
                                                             class="text-blue-600 text-sm font-normal font-['Lexend_Deca'] underline leading-5 line-clamp-2">
                                                             https://www.notion.so/Task-and-Team-Management-Supraskills-2919fa66174c81f7864fde448778f408
                                                         </a>
 
-                                                        <button class="w-6 h-6">
+                                                        <button onclick="copyText('dom_3')" class="w-6 h-6">
                                                             <img src="../../assets/icons/table/copy.svg" alt=""
                                                                 class="h-full w-full">
                                                         </button>
@@ -1002,6 +953,9 @@
     <script src="../../js/modal.js"></script>
     <script src="../../js/sidebar.js"></script>
     <script src="../../js/formFieldControll.js"></script>
+    <script src="../../js/copyHandler.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 </body>
 
 </html>
