@@ -10,6 +10,7 @@ function runBelow1440() {
 
 
     sidebarContainer.classList.add("w-28");
+    sidebarContainer.classList.add("4xl:min-w-28");
     sidebarContainer.classList.remove("w-80");
     sidebarContainer.classList.remove("4xl:min-w-80");
     sidebarContainer.setAttribute('aria-expanded', 'false');
@@ -46,6 +47,7 @@ function runUpper440() {
     sidebarContainer.classList.add("w-80");
     sidebarContainer.classList.add("4xl:min-w-80");
     sidebarContainer.classList.remove("w-28");
+    sidebarContainer.classList.remove("4xl:min-w-28");
     sidebarContainer.setAttribute('aria-expanded', 'true');
 
 
