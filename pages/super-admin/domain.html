@@ -338,15 +338,15 @@
         </section>
 
         <!-- sidebar section  -->
-        <section class="bg-black w-28 4xl:min-w-80 p-6 hidden xl:flex flex-col gap-4 transition-all duration-300"
+        <section class="bg-black w-28 4xl:min-w-80 hidden xl:flex flex-col gap-4 transition-all duration-300"
             id="sidebar_container">
 
-            <div class="border-b border-white/10 pb-4" id="logo_container">
+            <div class="border-b border-white/10 pb-4 p-6 " id="logo_container">
                 <img src="../../assets/logo/logo.png" alt="" class="h-10 w-auto object-contain">
             </div>
 
             <!-- for 4xl -->
-            <div class=" grow" id="lg_nav">
+            <div class=" grow p-6 " id="lg_nav">
                 <!-- search box -->
                 <div
                     class=" h-12 px-3 py-1 bg-white/10 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/10 flex items-center gap-2 mb-4">
@@ -412,14 +412,25 @@
 
 
             <!-- for smaller then 4xl -->
-            <div class=" grow" id="small_nav">
+            <div class=" grow p-6 " id="small_nav">
 
 
                 <!-- sidebar links  -->
                 <nav class="flex flex-col items-center justify-center gap-8 h-full">
-                    <button class="mb-auto">
+                    <button class="mb-auto relative group">
 
                         <img src="../../assets/icons/search.svg" alt="">
+
+
+                        <div
+                            class="absolute top-0 right-0 min-w-72 bg-black translate-x-0 transition-all duration-500 opacity-0 group-hover:translate-x-[115%] group-hover:opacity-100 z-50 rounded-lg overflow-hidden">
+                            <div
+                                class=" h-12 px-3 py-1 bg-white/10  outline outline-1 outline-offset-[-1px] outline-white/10 flex items-center gap-2">
+                                <img src="../../assets/icons/search.svg" alt="">
+                                <input type="text" placeholder="Search"
+                                    class="w-full bg-transparent outline-none text-white">
+                            </div>
+                        </div>
                     </button>
 
                     <button>
@@ -436,8 +447,21 @@
                     </button>
 
 
-                    <button>
+                    <button class="relative group">
                         <img src="../../assets/icons/sidebarIcons/file-text.svg" alt="">
+
+                        <div
+                            class="absolute top-0 right-0 min-w-52 bg-black translate-x-0 transition-all duration-500 opacity-0 group-hover:translate-x-[123%] group-hover:opacity-100 z-50 rounded-lg overflow-hidden">
+                            <div
+                                class=" h-fit px-3 py-2 bg-white/10  outline outline-1 outline-offset-[-1px] outline-white/10 flex flex-col items-start justify-start gap-2">
+                                <a href="#"
+                                    class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded  inline-block w-full capitalize">link
+                                    1</a>
+                                <a href="#"
+                                    class="text-white/70 text-sm font-light font-['Lexend_Deca'] leading-snug bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded  inline-block w-full capitalize">link
+                                    2</a>
+                            </div>
+                        </div>
                     </button>
 
                     <div class="mt-auto flex flex-col items-center gap-4 bg-white/5 rounded w-full py-4">
@@ -466,26 +490,26 @@
             </div>
 
 
+            <div class="sticky bottom-0 z-10 p-6" id="bottom_options">
+                <div class="w-full p-3 bg-white/5 rounded flex justify-between items-center">
+                    <button>
+                        <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
 
-            <div class="sticky bottom-0 z-10 p-3 bg-white/5 rounded flex justify-between items-center"
-                id="bottom_options">
-                <button>
-                    <img src="../../assets/icons/expand.svg" alt="" class="w-6 h-6 cursor-pointer">
+                    </button>
 
-                </button>
+                    <button>
+                        <img src="../../assets/icons/settings.svg" alt="" class="w-6 h-6 cursor-pointer">
 
-                <button>
-                    <img src="../../assets/icons/settings.svg" alt="" class="w-6 h-6 cursor-pointer">
+                    </button>
+                    <button>
+                        <img src="../../assets/icons/user.svg" alt="" class="w-6 h-6 cursor-pointer">
 
-                </button>
-                <button>
-                    <img src="../../assets/icons/user.svg" alt="" class="w-6 h-6 cursor-pointer">
+                    </button>
+                    <button>
 
-                </button>
-                <button>
-
-                    <img src="../../assets/icons/log-out.svg" alt="" class="w-6 h-6 cursor-pointer">
-                </button>
+                        <img src="../../assets/icons/log-out.svg" alt="" class="w-6 h-6 cursor-pointer">
+                    </button>
+                </div>
             </div>
         </section>
 
