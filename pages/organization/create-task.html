@@ -337,7 +337,7 @@
 
                     </a>
 
-                    
+
                     <a href="/"
                         class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white capitalize">
                         <img src="../../assets/icons/sidebarIcons/users.svg" alt="">
@@ -346,7 +346,7 @@
 
                     </a>
 
-                    
+
                     <a href="/"
                         class="inline-flex justify-start items-center gap-3 p-2 pr-4 w-full transition-all duration-300 bg-gradient-none hover:bg-gradient-to-r from-white/20 to-sky-900/30 rounded-tr-3xl  hover:rounded-r-full border-l-2 border-transparent hover:border-white capitalize">
                         <img src="../../assets/icons/sidebarIcons/key.svg" alt="">
@@ -565,25 +565,79 @@
                                     </div>
 
                                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                                        <!-- <label for="assign" class="text_input">
-                                            <p>Assigned To</p>
-                                            <div>
-                                                <select name="assign" id="assign">
-                                                    <option>Select industry</option>
-                                                    <option value="Finance">Finance</option>
-                                                    <option value="Health">Health</option>
-                                                    <option value="Education">Education</option>
-                                                </select>
-
-                                                <img src="../../assets/icons/chevron-down.svg" alt="">
-                                            </div>
-                                        </label> -->
 
 
                                         <label for="Task" class="text_input col-span-2">
                                             <p class="required">Task Name</p>
                                             <input type="text" id="Task" placeholder="Write Task Name" required>
                                         </label>
+
+
+                                        <!-- select box with image -->
+                                        <!-- <label for="assign" class="text_input">
+                                            <span class="flex justify-between items-center flex-wrap">
+                                                <p
+                                                    class="text-zinc-800 text-lg font-medium font-['Lexend_Deca'] leading-6">
+                                                    Assigned To</p>
+
+                                                <div class="flex justify-end items-center gap-2">
+                                                    <label for="yes" class="flex justify-start items-center gap-2">
+                                                        <div>
+                                                            <input type="radio" name="display" id="yes"
+                                                                class="peer hidden" checked>
+                                                            <img src="../../assets/icons/inputBox/checked.svg" alt=""
+                                                                class="hidden peer-checked:block">
+                                                            <img src="../../assets/icons/inputBox/unchecked.svg" alt=""
+                                                                class="block peer-checked:hidden">
+                                                        </div>
+                                                        <p
+                                                            class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-5 capitalize">
+                                                            user</p>
+                                                    </label>
+
+
+                                                    <label for="no" class="flex justify-start items-center gap-2">
+
+                                                        <div>
+                                                            <input type="radio" name="display" id="no"
+                                                                class="peer hidden">
+                                                            <img src="../../assets/icons/inputBox/checked.svg" alt=""
+                                                                class="hidden peer-checked:block">
+                                                            <img src="../../assets/icons/inputBox/unchecked.svg" alt=""
+                                                                class="block peer-checked:hidden">
+                                                        </div>
+                                                        <p
+                                                            class="text-zinc-900 text-sm font-normal font-['Lexend_Deca'] leading-5 capitalize">
+                                                            Groups</p>
+                                                    </label>
+                                                </div>
+                                            </span>
+                                            <div 
+                                                onclick="customDropdownHandler(this)"
+                                                class="dropdown_container relative px-4 py-2 group">
+                                                <div 
+                                                class="dropdown_value_container bg-blue-600">
+                                                    asdfsdf
+                                                </div>
+                                                <ul
+                                                    class="dropdown_option_container absolute top-[100%] right-0 w-full h-fit bg-gray-100 p-1 space-y-2  rounded-lg divide-y-2
+                                                    max-h-0 overflow-hidden 
+                                                    transition-all duration-300
+                                                    opacity-0
+                                                    ">
+                                                    <li
+                                                    onclick="selectOptionFromCustomDropdown(this)"
+                                                        class="px-4 hover:bg-black hover:text-white transition-all duration-300 cursor-pointer">
+                                                        sdfsdf</li>
+                                                    <li
+                                                        class="px-4 hover:bg-black hover:text-white transition-all duration-300 cursor-pointer">
+                                                        sdfsdf</li>
+                                                    <li
+                                                        class="px-4 hover:bg-black hover:text-white transition-all duration-300 cursor-pointer">
+                                                        sdfsdf</li>
+                                                </ul>
+                                            </div>
+                                        </label> -->
 
                                         <label for="assign" class="text_input">
                                             <span class="flex justify-between items-center flex-wrap">
@@ -632,6 +686,7 @@
                                                 <img src="../../assets/icons/chevron-down.svg" alt="">
                                             </div>
                                         </label>
+
                                     </div>
 
 
@@ -656,7 +711,22 @@
                                         </label>
 
                                         <label for="date_creation" class="text_input">
-                                            <p>Due Date:</p>
+
+                                            <span class="flex justify-between items-center flex-wrap">
+                                                <p
+                                                    class="text-zinc-800 text-lg font-medium font-['Lexend_Deca'] leading-6">
+                                                    Due Date:</p>
+
+                                                <label for="due_date"
+                                                    class="flex justify-start items-center gap-2">
+
+                                                    <input type="checkbox" name="due_date" id="due_date"
+                                                        class="common_checkbox">
+                                                    <p
+                                                        class=" justify-start text-slate-500 text-xs font-normal font-['Lexend_Deca'] leading-5">
+                                                        Without Due Date</p>
+                                                </label>
+                                            </span>
                                             <input type="date" id="date_creation" placeholder="Write Due Date">
                                         </label>
                                     </div>
@@ -1044,6 +1114,8 @@
     <script src="../../js/modal.js"></script>
     <script src="../../js/sidebar.js"></script>
     <script src="../../js/fileUpload.js"></script>
+    <script src="../../js/formFieldControll.js"></script>
+    s
 </body>
 
 </html>
